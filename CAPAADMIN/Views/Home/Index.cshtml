@@ -2,3 +2,32 @@
     ViewBag.Title = "Home Page";
 }
 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas con chart.js | By Parzibyte</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    @Styles.Render("~/Content/stylemetada")
+</head>
+
+<body>
+    <div class="principalmeta">
+        <div class="metadata1">
+            <canvas id="grafica"></canvas>
+        </div>
+
+        <div class="metadata2">
+            <canvas id="grafica2"></canvas>
+        </div>
+        <div class="metadata3">
+
+        </div>
+        <div class="metadata4">
+
+        </div>
+    </div>
+       
+        @Scripts.Render("~/bundles/metadata")
+</body>
+

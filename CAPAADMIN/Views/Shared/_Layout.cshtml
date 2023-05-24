@@ -7,6 +7,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -128,13 +129,15 @@
                         </div>
                     </nav>
                 </div>
-                <div class="nvren">
+                <div class="nvren" style="background-color:rgb(10,2,22)">
                     @RenderBody()
                 </div>
             </div>
         </div>
 
     </main>
+
+
    
     <script type="text/javascript">
         function ocultar() {

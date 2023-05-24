@@ -28,7 +28,8 @@ html {
    
 }
 .nvren {
-    background-color: black;
+    background-color:none;
+    background-color: #0a0216;
 }
 .mart {
    margin:1em;

@@ -28,7 +28,8 @@ html {
    
 }
 .nvren {
-    background-color: black;
+    background-color:none;
+    background-color: #0a0216;
 }
 .mart {
    margin:1em;
@@ -37,4 +38,18 @@ html {
 a {
     text-decoration: none;
 }
+#itenuser {
+   position:relative;
+   left:90%;
+}
+#aocultar {
+    position: relative;
+    left: 98%;
+    background-color: none;
+   
+}
+    #aocultar:hover {
+        border: solid white 2px;
+
+    }
 

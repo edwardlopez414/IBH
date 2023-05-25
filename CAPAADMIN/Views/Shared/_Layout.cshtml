@@ -7,6 +7,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -16,7 +17,7 @@
     <main>
         <div class="principal">
             <div id="dvrih" class="dvrit">
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-black vh-100" style="width: 280px;">
+                <div class="d-flex flex-column flex-shrink-0 p-3 bg-black vh-100" style="width: 210px;">
                     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                         <span class="fs-4 text-light">IBH</span>
@@ -34,8 +35,9 @@
                         <li class="dropdown m-2">
 
                             <a class="dropdown-toggle text-decoration-none m-2" data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-columns" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 0 .5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 2h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 4h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 6h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 8h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3-event" viewBox="0 0 16 16">
+                                    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                    <path d="M12 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                 </svg>
                                 Eventos
                             </a>
@@ -103,46 +105,53 @@
                         </li>
                     </ul>
                     <hr>
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <strong>mdo</strong>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
-                    </div>
+                  
                 </div>
             </div>
             <div class="dvnav2">
                 <div class="nv2">
-                    <nav class="navbar navbar-expand-lg bg-black">
-                        <div class="container-fluid bg-black">
-                            <button onclick="ocultar()" type="button">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
+                    <nav class="">
+                        <div class="container-fluid bg-black d-flex">
+                            <a onclick="ocultar()" id="aocultar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-nested text-light" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown" id="itenuser">
+                                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                                   
+                                </a>
+                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </nav>
                 </div>
-                <div class="nvren">
+                <div class="nvren bg-white" >
                     @RenderBody()
                 </div>
             </div>
         </div>
 
     </main>
+
+
    
     <script type="text/javascript">
         function ocultar() {
             var x = document.getElementById("dvrih");
             if (x.style.display === "none") {
-                x.style.display = "block";
+                x.style.display = "";
+                document.getElementById('dvnav2').style.width = '100%';
             } else {
                 x.style.display = "none";
+                document.getElementById('dvnav2').style.width = '70vh%';
             }
         }
     </script>

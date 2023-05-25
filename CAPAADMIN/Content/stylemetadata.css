@@ -1,0 +1,83 @@
+﻿
+.principalmeta {
+    width: 100%;
+    height: 30vh;
+    display:flex;
+    flex-direction:row; 
+    
+   
+}
+.fg_principal {
+    width: 100%;
+    height: 30vh;
+    background-color: black;
+    border-radius: 7px;
+    
+}
+#grafica {
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 200px;
+   
+}
+#grafica2 {
+    max-width: 350px;
+    max-height: 200px;
+}
+*#grafica3 {
+    max-width: 350px;
+    max-height: 200px;
+}
+.flex_div {
+    width: 97%%;
+    height: 40%;
+    display: flex;
+    border-radius: 7px;
+    padding:1em;
+    margin-bottom:1em;
+}
+.metadata1 {
+    background-color: #121212;
+    margin-right: 1em;
+    margin-left: 1em;
+    border-radius:7px;
+    
+}
+.metadata2 {
+    background-color: #121212;
+    border-radius: 7px;
+}
+.metadata4 {
+   
+}
+
+.gradientechange {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#resicler {
+    border-radius:7px;
+}
+#icon1 {
+    margin-left:4em;
+   
+}
+#text1 {
+    margin-left: 7em;
+}

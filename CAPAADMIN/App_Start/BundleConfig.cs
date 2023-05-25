@@ -22,12 +22,18 @@ namespace CAPAADMIN
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.bundle.js",
                      "~/Scripts/scripts.js"));
+            bundles.Add(new Bundle("~/bundles/metadata").Include(
+                     "~/Scripts/metadata.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/cataloguser.css",
                       "~/Content/site.css",
                      "~/Content/report.css"));
+
+            bundles.Add(new StyleBundle("~/Content/stylemetada").Include(
+                     "~/Content/stylemetadata.css"));
         }
+
     }
 }

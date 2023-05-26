@@ -21,15 +21,15 @@
    
 }
 #grafica2 {
-    max-width: 350px;
+    max-width: 320px;
     max-height: 200px;
 }
 *#grafica3 {
-    max-width: 350px;
+    max-width: 320px;
     max-height: 200px;
 }
 .flex_div {
-    width: 97%%;
+    width: 97%;
     height: 40%;
     display: flex;
     border-radius: 7px;
@@ -82,5 +82,19 @@
     margin-left: 7em;
 }
 hrclas {
-    color:white
+    color:white;
+}
+.ml-1 {
+    margin-left:1em;
+    padding-bottom:0.3em;
+    position:relative;
+    top:-23%;
+}
+.bg-clcss {
+    background-color:black;
+    border: solid 2px white;
+    border-radius: 50%;
+}
+.border-black {
+    border : solid white 2px;
 }

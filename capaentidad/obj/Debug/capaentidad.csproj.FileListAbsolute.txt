@@ -4,3 +4,9 @@ C:\Users\barak\IBH\capaentidad\obj\Debug\capaentidad.csproj.AssemblyReference.ca
 C:\Users\barak\IBH\capaentidad\obj\Debug\capaentidad.csproj.CoreCompileInputs.cache
 C:\Users\barak\IBH\capaentidad\obj\Debug\capaentidad.dll
 C:\Users\barak\IBH\capaentidad\obj\Debug\capaentidad.pdb
+C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaentidad\bin\Debug\capaentidad.dll
+C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaentidad\bin\Debug\capaentidad.pdb
+C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaentidad\obj\Debug\capaentidad.csproj.AssemblyReference.cache
+C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaentidad\obj\Debug\capaentidad.csproj.CoreCompileInputs.cache
+C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaentidad\obj\Debug\capaentidad.dll
+C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaentidad\obj\Debug\capaentidad.pdb

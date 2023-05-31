@@ -21,6 +21,8 @@ namespace CAPAADMIN
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.bundle.js",
+                      "~/Scripts/DataTables/jquery.dataTables.js",
+                     "~/Scripts/DataTables/dataTables.responsive.js",
                      "~/Scripts/scripts.js"));
             bundles.Add(new Bundle("~/bundles/metadata").Include(
                      "~/Scripts/metadata.js"));
@@ -28,11 +30,16 @@ namespace CAPAADMIN
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/cataloguser.css",
+                      "~/Content/DataTables/css/jquery.dataTables.css",
+                      "~/Content/DataTables/css/responsive.dataTables.css",
                       "~/Content/site.css",
                      "~/Content/report.css"));
 
             bundles.Add(new StyleBundle("~/Content/stylemetada").Include(
                      "~/Content/stylemetadata.css"));
+
+            bundles.Add(new StyleBundle("~/Content/login").Include(
+                    "~/Content/login.css"));
         }
 
     }

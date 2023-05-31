@@ -1,0 +1,9 @@
+C:\Users\barak\IBH\capaD\bin\Debug\capaD.dll
+C:\Users\barak\IBH\capaD\bin\Debug\capaD.pdb
+C:\Users\barak\IBH\capaD\bin\Debug\capaentidad.dll
+C:\Users\barak\IBH\capaD\bin\Debug\capaentidad.pdb
+C:\Users\barak\IBH\capaD\obj\Debug\capaD.csproj.AssemblyReference.cache
+C:\Users\barak\IBH\capaD\obj\Debug\capaD.csproj.CoreCompileInputs.cache
+C:\Users\barak\IBH\capaD\obj\Debug\capaD.csproj.CopyComplete
+C:\Users\barak\IBH\capaD\obj\Debug\capaD.dll
+C:\Users\barak\IBH\capaD\obj\Debug\capaD.pdb

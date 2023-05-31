@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using capaentidad;
+using capanegocio;
 namespace CAPAADMIN.Controllers
 {
     public class HomeController : Controller
@@ -48,6 +49,20 @@ namespace CAPAADMIN.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public JsonResult MIEMBROS() {
+        
+            List<Miembro> oLista = new List<Miembro>();
+            oLista = new CNMIEMBRO().Miembro();
+
+            return Json(oLista, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Evento()
+        {
+            List<EVENTO> olistaevent = new List<EVENTO>();
+            olistaevent = new CNEVENTO().Evento();
+            return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
     }
 }

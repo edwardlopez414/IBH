@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2023-05-27T23:42:50.7305407Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2023-05-27T23:42:16.1239092Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "c0e08c5b-c511-444d-b343-5c725caec77f"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "IBPRO"
+    }
+  }
+}

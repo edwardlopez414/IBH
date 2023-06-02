@@ -16,3 +16,12 @@ C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaD\obj\Debug\capaD.csproj.C
 C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaD\obj\Debug\capaD.csproj.CopyComplete
 C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaD\obj\Debug\capaD.dll
 C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capaD\obj\Debug\capaD.pdb
+C:\Users\barak\Desktop\IBH\capaD\bin\Debug\capaD.dll
+C:\Users\barak\Desktop\IBH\capaD\bin\Debug\capaD.pdb
+C:\Users\barak\Desktop\IBH\capaD\bin\Debug\capaentidad.dll
+C:\Users\barak\Desktop\IBH\capaD\bin\Debug\capaentidad.pdb
+C:\Users\barak\Desktop\IBH\capaD\obj\Debug\capaD.csproj.AssemblyReference.cache
+C:\Users\barak\Desktop\IBH\capaD\obj\Debug\capaD.csproj.CoreCompileInputs.cache
+C:\Users\barak\Desktop\IBH\capaD\obj\Debug\capaD.csproj.CopyComplete
+C:\Users\barak\Desktop\IBH\capaD\obj\Debug\capaD.dll
+C:\Users\barak\Desktop\IBH\capaD\obj\Debug\capaD.pdb

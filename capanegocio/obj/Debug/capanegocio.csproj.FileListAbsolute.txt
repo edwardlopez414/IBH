@@ -20,3 +20,14 @@ C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capanegocio\obj\Debug\capanego
 C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capanegocio\obj\Debug\capanegocio.csproj.CopyComplete
 C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capanegocio\obj\Debug\capanegocio.dll
 C:\Users\edward.lopez\Documents\Nueva carpeta\IBH\capanegocio\obj\Debug\capanegocio.pdb
+C:\Users\barak\Desktop\IBH\capanegocio\bin\Debug\capanegocio.dll
+C:\Users\barak\Desktop\IBH\capanegocio\bin\Debug\capanegocio.pdb
+C:\Users\barak\Desktop\IBH\capanegocio\bin\Debug\capaD.dll
+C:\Users\barak\Desktop\IBH\capanegocio\bin\Debug\capaentidad.dll
+C:\Users\barak\Desktop\IBH\capanegocio\bin\Debug\capaD.pdb
+C:\Users\barak\Desktop\IBH\capanegocio\bin\Debug\capaentidad.pdb
+C:\Users\barak\Desktop\IBH\capanegocio\obj\Debug\capanegocio.csproj.AssemblyReference.cache
+C:\Users\barak\Desktop\IBH\capanegocio\obj\Debug\capanegocio.csproj.CoreCompileInputs.cache
+C:\Users\barak\Desktop\IBH\capanegocio\obj\Debug\capanegocio.csproj.CopyComplete
+C:\Users\barak\Desktop\IBH\capanegocio\obj\Debug\capanegocio.dll
+C:\Users\barak\Desktop\IBH\capanegocio\obj\Debug\capanegocio.pdb

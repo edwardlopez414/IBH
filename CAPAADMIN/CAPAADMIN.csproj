@@ -133,8 +133,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -332,6 +334,8 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -441,6 +445,19 @@
     <Content Include="Views\Home\Cataloguser.cshtml" />
     <Content Include="Views\Home\deleteuser.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Adduser.cshtml" />
+    <Content Include="Views\Home\Moduser.cshtml" />
+    <Content Include="Views\Home\habuser.cshtml" />
+    <Content Include="Views\Event\Catalogevent.cshtml" />
+    <Content Include="Views\Event\Addevent.cshtml" />
+    <Content Include="Views\Event\ModEvent.cshtml" />
+    <Content Include="Views\Event\EventInv.cshtml" />
+    <Content Include="Views\Event\AprovateEvent.cshtml" />
+    <Content Include="Views\Report\RPEvent.cshtml" />
+    <Content Include="Views\Report\RPMiembro.cshtml" />
+    <Content Include="Views\Report\RPAsistencia.cshtml" />
+    <Content Include="Views\Report\RPProveedores.cshtml" />
+    <Content Include="Views\Report\RPPEfectuados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

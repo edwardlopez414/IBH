@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Catalogevent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="mainprincipal" class="principalMAIN">
+
+    <div class="p-3 text-bg-light" style="color:white;">
+        <table id="Catalogevent" class="table  table-striped">
+            <thead>
+                <tr>
+                    <th>Eventoid</th>
+                    <th>Evento</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
+@section scripts{
+    <script>
+          var url = "@Url.Action("Evento", "Home")";
+          var data = { header:"elo"};
+        var datatable;
+        datatable = $("#Catalogevent").DataTable({
+            responsive: true,
+            ordering: false,
+            "ajax": {
+                url,
+                data
+            },
+            "columns": [
+                { "data": "IdEvento" },
+                { "data": "Nombre" },
+                { "data": "Fecha" },
+                { "data": "LugarEvento" }
+            ]
+        })
+
+    </script>
+}

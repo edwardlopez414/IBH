@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,12 +27,24 @@ namespace CAPAADMIN.Controllers
         {
             return View();
         }
-
+        // vistas relacioadas a usuarios capa admin
         public ActionResult Cataloguser()
-        {
+        { 
             return View();
         }
         public ActionResult deleteuser()
+        {
+            return View();
+        }
+        public ActionResult Adduser()
+        {
+            return View();
+        }
+        public ActionResult Moduser()
+        {
+            return View();
+        }
+        public ActionResult habuser()
         {
             return View();
         }
@@ -57,12 +70,21 @@ namespace CAPAADMIN.Controllers
 
             return Json(oLista, JsonRequestBehavior.AllowGet);
         }
-
+        //metodos relacionados a eventos
         public JsonResult Evento()
         {
             List<EVENTO> olistaevent = new List<EVENTO>();
             olistaevent = new CNEVENTO().Evento();
             return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult EventoPendiente() {
+            List<EVENTO> olista = new List<EVENTO>();
+            olista = new CNEVENTO().EventPendin();
+            return Json(new { data = olista }, JsonRequestBehavior.AllowGet);
+        
+        }
+
+
     }
 }

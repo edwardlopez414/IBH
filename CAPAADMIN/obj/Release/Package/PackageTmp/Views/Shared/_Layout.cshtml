@@ -12,21 +12,20 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-
-    <main>
-        <div class="principal">
-            <div id="dvrih" class="dvrit">
-                <div id="dvcol" class="d-flex flex-column flex-shrink-0 p-3 bg-black vh-100" style="width: 240px;">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+<body >
+    <main class="container-fluid m-0 p-0">
+        <div class="d-flex">
+            <div id="dvrih" class="dvrit m-0 w-25">
+                <div id="dvcol" class="d-flex flex-column flex-shrink-0 m-0 bg-black w-100 vh-100">
+                    <a href="/" class="d-flex align-items-center m-0  link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                         <span class="fs-4 text-light">IBH</span>
                     </a>
                     <hr>
-                    <ul class="nav nav-pills flex-column mb-auto">
+                    <ul class="container-fluid nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
-                            <a href="/" class="nav-link active" aria-current="page">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                            <a href="/" class="nav-link active " aria-current="page">
+                                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-activity w-25 h-25" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
                                 </svg>
                                 Dashboard
@@ -194,15 +193,12 @@
                 <div class="nv2">
                     <nav class="">
                         <div class="container-fluid bg-black d-flex">
-                            <a onclick="ocultar()" id="aocultar">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-nested text-light" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z" />
-                                </svg>
-                            </a>
+               
                             <div class="dropdown" id="itenuser">
-                                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-
+                                <a onclick="ocultar()" id="aocultar"class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list-nested text-light" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
                                 </a>
                                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                                     <li><a class="dropdown-item" href="#">Nuevo evento...</a></li>

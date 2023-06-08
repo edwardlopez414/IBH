@@ -4,9 +4,7 @@
     height: 100vh;
     width: 100%;
 }
-main {
-    background-color:white;
-}
+
 html {
     color: white;
     font-family: 'Playfair Display', serif;
@@ -15,6 +13,7 @@ html {
 
 .dvrit {
     height: 100vh;
+    width: 20%;
 }
 
 .nv2 {
@@ -22,6 +21,8 @@ html {
   
    
 }
+
+
 
 .dvnav2 {
     width: 100%;
@@ -44,12 +45,17 @@ a {
 }
 #aocultar {
     position: relative;
-    left: 98%;
+    left: 90%;
     background-color: none;
    
 }
-    #aocultar:hover {
-        border: solid white 2px;
 
+
+
+
+@media only screen and (max-width: 600px) {
+    dvrit {
+        background-color: red;
+        width: 100%;
     }
-
+}

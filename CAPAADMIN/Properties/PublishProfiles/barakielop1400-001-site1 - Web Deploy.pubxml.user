@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
-    <History>True|2023-06-05T02:37:08.1938086Z;</History>
+    <History>True|2023-06-08T04:36:42.9802286Z;True|2023-06-07T21:28:37.0002810-07:00;True|2023-06-04T19:37:08.1938086-07:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

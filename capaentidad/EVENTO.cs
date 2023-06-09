@@ -13,5 +13,6 @@ namespace capaentidad
         public string Fecha { get; set; }
         public string LugarEvento { get; set; }
         public char Transporte { get; set; }
+        public string State { get; set; }
     }
 }

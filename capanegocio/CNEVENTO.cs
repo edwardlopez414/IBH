@@ -16,5 +16,10 @@ namespace capanegocio
             return ONJEVENTO.listar();
         }
 
+        public List<EVENTO> EventPendin()
+        {
+            return ONJEVENTO.listarP();
+        }
+
     }
 }

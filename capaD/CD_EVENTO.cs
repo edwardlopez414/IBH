@@ -18,7 +18,7 @@ namespace capaD
             try { 
                 using (SqlConnection conn = new SqlConnection(Conexion.cn)) {
 
-                    string sql = "SELECT * FROM IBPRO.dbo.EVENTO";
+                    string sql = "SELECT * FROM IBPRO.dbo.EVENTO order by 1 desc";
                     
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -44,6 +44,47 @@ namespace capaD
                     }
                     }
             }catch(Exception ex) { evento = new List<EVENTO>(); }
+
+            return evento;
+
+        }
+        public List<EVENTO> listarP()
+        {
+            List<EVENTO> evento = new List<EVENTO>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.cn))
+                {
+
+                    string sql = "select TOP 3 A.IdEvento,A.Nombre,A.Fecha,A.LugarEvento,A.Transporte,C.data_catalog AS States from IBPRO.DBO.EVENTO A INNER JOIN IBPRO.dbo.estado_evento B ON B.Id_evento_estado = A.IdEvento INNER JOIN IBPRO.dbo.Catalogo_estado C ON B.Id_Catalogo = C.Id_Catalogo_estado";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.CommandType = CommandType.Text;
+
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            evento.Add(new EVENTO()
+                            {
+                                IdEvento = Convert.ToInt32(reader["IdEvento"]),
+                                Nombre = reader["Nombre"].ToString(),
+                                Fecha = reader["Fecha"].ToString(),
+                                LugarEvento = reader["LugarEvento"].ToString(),
+                                Transporte = Convert.ToChar(reader["Transporte"]),
+                                State = reader["States"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { evento = new List<EVENTO>(); }
 
             return evento;
 

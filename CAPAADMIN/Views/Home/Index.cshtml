@@ -28,9 +28,9 @@
         </div>
     </div>
     <div class="bg-dark mb-3" id="resicler" style="width: 100%; height: auto;">
-        <div class="mx-auto">
-            <div class="row m-2">
-                <div class="col container-fluid">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
                     <div class="gradientechange border-dark w-75 h-auto m-1">
                         <div class="p-2 d-flex">
                             <div class="p-1 bg-clcss bg-dark">
@@ -40,30 +40,32 @@
                                 </svg>
                             </div>
                             <div class="p-2" id="icon1">
-                                <p class="card-text text-light">01-01-2023</p>
+                                <p class="card-text">01-01-2023</p>
                             </div>
                         </div>
                         <hr class="hrclas" />
                         <div class="d-flex">
-                            <a class=" text-light ml-1"data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                            <a class=" text-light ml-1" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>
                             </a>
                             <h6 id="text1" class="card-subtitle  text-light">Eventos Pendientes</h6>
-                            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+                            <!-- Modal -->
+                            <div class="modal fade text-black" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                    
+                                        <div class="modal-header text-black">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
+
                                             <div class="container-fluid">
                                                 <div class="d-flex container">
                                                     <label>Nombre:</label>
-                                                    <p id="Nombre1"></p>
+                                                    <p class="" id="Nombre1"></p>
                                                 </div>
                                             </div>
                                             <div class="container-fluid">
@@ -84,10 +86,11 @@
                                                     <p id="Estado">Sin Aprobar</p>
                                                 </div>
                                             </div>
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Understood</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +122,7 @@
                             </a>
                             <h6 id="text2" style="margin-left: 7em;" class="card-subtitle  text-light">Eventos Pendientes</h6>
                             <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog  text-black">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                          
@@ -184,9 +187,9 @@
                                 </svg>
                             </a>
                             <h6 id="text3" style="margin-left: 7em;" class="card-subtitle  text-light">Dominical</h6>
-                            <!-- Modal -->
+                              
                             <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog text-black">
                                     <div class="modal-content">
                                         <div class="modal-header">
 
@@ -196,7 +199,7 @@
                                             <div class="container-fluid">
                                                 <div class="d-flex container">
                                                     <label>Nombre:</label>
-                                                    <p id="Nombre3"></p>
+                                                    <p class="text-black" id="Nombre3"></p>
                                                 </div>
                                             </div>
                                             <div class="container-fluid">
@@ -280,6 +283,7 @@
                 })
                 .done(function (data) {
                     // variables modal
+                    console.log(data);
                     var sr = document.querySelector("#Nombre1");
                     var fc = document.querySelector("#pFecha");
                     var lg = document.querySelector("#Lugar");

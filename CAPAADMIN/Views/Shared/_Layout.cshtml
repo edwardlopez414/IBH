@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>*@
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    @*<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">
+    @*<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="bg-dark">
-    <main class="container-fluid m-0 p-0">
-        <div class="d-flex">
-            <div id="dvrih" class="dvrit m-0 w-25 vh-100">
-                <div id="dvcol" class="d-flex flex-column flex-shrink-0 m-0 bg-black w-100 h-100">
+<body class="bd-principal  bg-black">
+    <main class="ly-main">
+        <div class="divider_principal">
+            <div id="dvrih" class="dvrit">
+                <div id="dvcol" class="">
                     <a href="/" class="d-flex align-items-center m-0  link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                         <span class="fs-4 text-light">IBH</span>
@@ -189,9 +189,9 @@
 
                 </div>
             </div>
-            <div class="dvnav2">
+            <div class="dvnav2 bg-dark">
                 <div class="nv2">
-                    <nav class="">
+                    <nav style="display:none">
                         <div class="container-fluid bg-black d-flex">
 
                             <div class="dropdown" id="itenuser">
@@ -211,18 +211,13 @@
                         </div>
                     </nav>
                 </div>
-                <div class="nvren bg-white">
+                <div class="nvren bg-dark">
                     @RenderBody()
                 </div>
             </div>
         </div>
     </main>
 
-    <footer id="sticky-footer" class="w-100 flex-shrink-0 py-4 bg-black text-white-50">
-        <div class="text-center">
-            <small>Copyright © Your Website</small>
-        </div>
-    </footer>
 
     <script type="text/javascript">
         function ocultar() {

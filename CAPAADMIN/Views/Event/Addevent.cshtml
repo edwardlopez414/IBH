@@ -4,5 +4,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Addevent</h2>
+<form class="m-5 h-100">
+    <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="exampleInputDescrip" aria-describedby="Descrip">
+        <div id="Descrip" class="form-text">Describa el evento de forma sencilla y clara</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Nombre del evento</label>
+        <input type="Text" class="form-control" id="exampleInputNombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Ubicacion</label>
+        <input type="Text" class="form-control" id="exampleInputUbicacion">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="exampleInputUbicacion">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Transporte</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Aceptar</button>
+</form>
 

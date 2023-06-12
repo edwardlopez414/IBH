@@ -5,16 +5,21 @@
     width: 100%;
 }
 
-html {
-    color: black;
-    font-family: 'Playfair Display', serif;
-   height:100vh;
+.bd-principal {
+    background-color:red;
+    height:100vh;
 }
 
+.divider_principal {
+    display: flex;
+}
+.ly-main {
+    background-color: black;
+    height: 100vh;
+}
 body {
     color: white;
     font-family: 'Playfair Display', serif;
-    height: 100vh;
 }
 
 .dvrit {
@@ -32,16 +37,10 @@ body {
 
 .dvnav2 {
     width: 100%;
+    overflow-y:auto;
    
 }
-.nvren {
-    background-color:none;
-    background-color: #0a0216;
-}
-.mart {
-   margin:1em;
-   border :red 2px solid;
-}
+
 a {
     text-decoration: none;
 }
@@ -54,14 +53,4 @@ a {
     left: 90%;
     background-color: none;
    
-}
-
-
-
-
-@media only screen and (max-width: 600px) {
-    dvrit {
-        background-color: red;
-        width: 100%;
-    }
 }

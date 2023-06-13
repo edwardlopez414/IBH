@@ -6,16 +6,24 @@
 }
 
 .bd-principal {
-    background-color:red;
+    background-color:black;
     height:100vh;
 }
+.tamanodiv {
+    height:100vh;
+}
+.columns {
+    display:flex;
+    flex-direction:column;
+}
+
 
 .divider_principal {
     display: flex;
 }
 .ly-main {
-    background-color: black;
-    height: 100vh;
+    background-color: red;
+    height: 80vh;
 }
 body {
     color: white;
@@ -23,7 +31,7 @@ body {
 }
 
 .dvrit {
-    height: 100vh;
+ 
     width: 20%;
 }
 
@@ -50,7 +58,41 @@ a {
 }
 #aocultar {
     position: relative;
-    left: 90%;
+    left: 10%;
+
     background-color: none;
    
 }
+@media only screen and (max-width: 730px) {
+    .dvrit {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .dvrit {
+        width: 35%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .divider_principal {
+       flex-direction:column;
+    }
+    .dvrit {
+        width: 100%;
+        height:7em;
+    }
+    .tamanodiv {
+        height: 20vh;
+       
+    }
+    .columns {
+        flex-direction:row;
+    }
+    #icons1 {
+        display: none;
+    }
+
+}
+
+

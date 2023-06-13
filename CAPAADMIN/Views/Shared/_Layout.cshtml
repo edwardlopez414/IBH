@@ -12,20 +12,20 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="bd-principal  bg-black">
+<body class="bd-principal ">
     <main class="ly-main">
         <div class="divider_principal">
-            <div id="dvrih" class="dvrit">
-                <div id="dvcol" class="">
+            <div id="dvrih" class="dvrit bg-black">
+                <div id="dvcol" class="tamanodiv">
                     <a href="/" class="d-flex align-items-center m-0  link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                         <span class="fs-4 text-light">IBH</span>
                     </a>
                     <hr>
-                    <ul class="container-fluid nav nav-pills flex-column mb-auto">
+                    <ul class="container-fluid nav nav-pills columns">
                         <li class="nav-item">
                             <a href="/" class="nav-link active " aria-current="page">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
                                 </svg>
                                 Dashboard
@@ -185,29 +185,28 @@
 
                         </li>
                     </ul>
-                  
-
+                    <div id="icons1" class="dropdown m-0">
+                        <a id="aocultar" class="d-flex align-items-center  link-dark text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi text-light bi-person-check-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                            <li><a class="dropdown-item" href="#">Nuevo evento...</a></li>
+                            <li><a class="dropdown-item" href="#">Notificaciones</a></li>
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="dvnav2 bg-dark">
                 <div class="nv2">
                     <nav style="display:none">
                         <div class="container-fluid bg-black d-flex">
-
-                            <div class="dropdown" id="itenuser">
-                                <a onclick="ocultar()" id="aocultar" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="3.5em" fill="currentColor" class="bi bi-list-nested text-light" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z" />
-                                    </svg>
-                                </a>
-                                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                                    <li><a class="dropdown-item" href="#">Nuevo evento...</a></li>
-                                    <li><a class="dropdown-item" href="#">Notificaciones</a></li>
-                                    <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                                </ul>
-                            </div>
+                          
                         </div>
                     </nav>
                 </div>

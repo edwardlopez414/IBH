@@ -16,10 +16,13 @@
     <main class="ly-main">
         <div class="divider_principal">
             <div id="dvrih" class="dvrit bg-black">
+                <svg xmlns="http://www.w3.org/2000/svg" onclick="desplazar()" id="conmenu" width="2em" height="2em" fill="currentColor" class="bi bi-list text-light" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
                 <div id="dvcol" class="tamanodiv">
-                    <a href="/" class="d-flex align-items-center m-0  link-dark text-decoration-none">
+                    <a href="#" class=" mostrar d-flex align-items-center m-0  link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                        <span class="fs-4 text-light">IBH</span>
+                        <span class="fs-4 text-light mostrar">IBH</span>
                     </a>
                     <hr>
                     <ul class="container-fluid nav nav-pills row">
@@ -30,7 +33,9 @@
                                 </svg>
                                 Dashboard
                             </a>
+
                         </li>
+
                         <li class="nav-item text-light">
                             <a class="nav-link" data-bs-toggle="collapse" href="#colapse" role="button" aria-expanded="false" aria-controls="colapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-calendar3-event" viewBox="0 0 16 16">
@@ -196,7 +201,7 @@
                             </a>
                             <ul id="colapse3" class="collapse bg-black">
                                 <li>
-                                    <a class="dropdown-item text-info" href="@Url.Action("RPEvent","Report")">
+                                    <a class="dropdown-item text-info" href="#" )">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-node-plus" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M11 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM6.025 7.5a5 5 0 1 1 0 1H4A1.5 1.5 0 0 1 2.5 10h-1A1.5 1.5 0 0 1 0 8.5v-1A1.5 1.5 0 0 1 1.5 6h1A1.5 1.5 0 0 1 4 7.5h2.025zM11 5a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 11 5zM1.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
                                         </svg>
@@ -204,7 +209,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-info" href="@Url.Action("RPMiembro","Report")">
+                                    <a class="dropdown-item text-info" href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-node-plus" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M11 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM6.025 7.5a5 5 0 1 1 0 1H4A1.5 1.5 0 0 1 2.5 10h-1A1.5 1.5 0 0 1 0 8.5v-1A1.5 1.5 0 0 1 1.5 6h1A1.5 1.5 0 0 1 4 7.5h2.025zM11 5a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 11 5zM1.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
                                         </svg>
@@ -212,7 +217,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-info" href="@Url.Action("RPAsistencia","Report")">
+                                    <a class="dropdown-item text-info" href="#">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-node-plus" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M11 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM6.025 7.5a5 5 0 1 1 0 1H4A1.5 1.5 0 0 1 2.5 10h-1A1.5 1.5 0 0 1 0 8.5v-1A1.5 1.5 0 0 1 1.5 6h1A1.5 1.5 0 0 1 4 7.5h2.025zM11 5a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 11 5zM1.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" />
                                         </svg>Sign out
@@ -221,19 +226,12 @@
                             </ul>
 
                         </li>
-                     
+
                     </ul>
                 </div>
 
             </div>
-            <div class="dvnav2 bg-dark">
-                <div class="nv2">
-                    <nav style="display:none">
-                        <div class="container-fluid bg-black d-flex">
-                          
-                        </div>
-                    </nav>
-                </div>
+            <div class="dvnav2 bg-dark vh-100">
                 <div class="nvren bg-dark">
                     @RenderBody()
                 </div>
@@ -243,6 +241,7 @@
 
 
     <script type="text/javascript">
+       
         function ocultar() {
             var x = document.getElementById("dvrih");
             if (x.style.display === "none") {
@@ -254,6 +253,17 @@
             }
         }
 
+        function desplazar() {
+            var sr = document.getElementById("dvrih");
+            var dr1 = document.getElementById("dvcol")
+            if (sr.style.height <= "100vh") {
+                sr.style.height = "4vh";
+                dr1.style.display = "none";
+            } else {
+                sr.style.height = "100vh"; dr1.style.display = "block";
+            }
+        }
+      
     </script>
 
     @Scripts.Render("~/bundles/jquery")

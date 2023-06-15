@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="cadena-Web.config Connection String" description="cadena Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:appwebib.database.windows.net,1433;Initial Catalog=IBPRO;User Id=edw@appwebib;Password=Ileaa0404Perez" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\barak\\Desktop\\IBH\\CAPAADMIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cadena']/@connectionString" />
-  </parameter>
-</parameters>

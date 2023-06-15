@@ -22,7 +22,7 @@
     display: flex;
 }
 .ly-main {
-    background-color: red;
+    background-color: black;
     height: 80vh;
 }
 body {
@@ -91,6 +91,7 @@ a {
     }
     #icons1 {
         display: none;
+        margin-top: 100%;
     }
 
 }

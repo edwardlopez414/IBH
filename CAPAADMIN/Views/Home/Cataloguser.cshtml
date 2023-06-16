@@ -10,10 +10,11 @@
         <table id="adduser" class="table  table-striped">
             <thead>
                 <tr>
-                    <th>Eventoid</th>
-                    <th>Evento</th>
-                    <th>Fecha</th>
-                    <th>Lugar</th>
+                    <th>Nombre Completo</th>
+                    <th>Direccion</th>
+                    <th>Email</th>
+                    <th>Sexo</th>
+                    <th>Fecha_bautismo</th>
 
                 </tr>
             </thead>
@@ -24,7 +25,7 @@
 </main>
 @section scripts{
     <script>
-          var url = "@Url.Action("Evento", "Home")";
+          var url = "@Url.Action("MIEMBROS", "Home")";
           var data = { header:"elo"};
         var datatable;
         datatable = $("#adduser").DataTable({
@@ -35,10 +36,11 @@
                 data
             },
             "columns": [
-                { "data": "IdEvento" },
-                { "data": "Nombre" },
-                { "data": "Fecha" },
-                { "data": "LugarEvento" }
+                { "data": "Nombre_Completo" },
+                { "data": "Direccion" },
+                { "data": "Email" },
+                { "data": "Sexo" },
+                { "data": "Fecha_bautismo" }
             ]
         })
 

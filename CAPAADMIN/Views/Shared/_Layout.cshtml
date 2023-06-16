@@ -16,7 +16,7 @@
     <main class="ly-main">
         <div class="divider_principal">
             <div id="dvrih" class="dvrit bg-black">
-                <svg xmlns="http://www.w3.org/2000/svg" onclick="desplazar()" id="conmenu" width="2em" height="2em" fill="currentColor" class="bi bi-list text-light" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" onclick="desplazar()" id="conmenu" width="2em" height="2em" fill="currentColor" class="bi bi-list text-light" display="none" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                 </svg>
                 <div id="dvcol" class="tamanodiv">
@@ -231,8 +231,8 @@
                 </div>
 
             </div>
-            <div class="dvnav2 bg-dark vh-100">
-                <div class="nvren bg-dark">
+            <div id="render" class="dvnav2 bg-dark vh-100">
+                <div  class="nvren bg-dark">
                     @RenderBody()
                 </div>
             </div>
@@ -256,11 +256,14 @@
         function desplazar() {
             var sr = document.getElementById("dvrih");
             var dr1 = document.getElementById("dvcol")
+            var dasboard = document.getElementById('render')
             if (sr.style.height <= "100vh") {
                 sr.style.height = "4vh";
                 dr1.style.display = "none";
+               dasboard.style.display = 'block';
             } else {
                 sr.style.height = "100vh"; dr1.style.display = "block";
+                dasboard.style.display = 'none';
             }
         }
       

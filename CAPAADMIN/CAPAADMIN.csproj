@@ -337,6 +337,8 @@
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="Scripts\chart.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />

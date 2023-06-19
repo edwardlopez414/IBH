@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://win5040.site4now.net:21/ibh</_PublishTargetUrl>
-    <History>True|2023-06-15T21:15:13.1050948Z;False|2023-06-15T15:38:45.1585206-05:00;</History>
+    <History>True|2023-06-16T20:18:19.4863859Z;True|2023-06-15T16:15:13.1050948-05:00;False|2023-06-15T15:38:45.1585206-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -19,28 +19,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:28</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.dll">
-      <publishTime>06/15/2023 15:38:09</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.pdb">
-      <publishTime>06/15/2023 15:38:09</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/capaD.dll">
-      <publishTime>06/15/2023 15:38:09</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/capaD.pdb">
-      <publishTime>06/15/2023 15:38:09</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/capaentidad.dll">
-      <publishTime>06/15/2023 15:38:08</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/capaentidad.pdb">
-      <publishTime>06/15/2023 15:38:08</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/capanegocio.dll">
-      <publishTime>06/15/2023 15:38:09</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/capanegocio.pdb">
-      <publishTime>06/15/2023 15:38:09</publishTime>
+      <publishTime>06/16/2023 14:59:06</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/15/2023 14:42:28</publishTime>
@@ -826,7 +826,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>06/15/2023 15:33:49</publishTime>
+      <publishTime>06/16/2023 11:02:54</publishTime>
     </File>
     <File Include="Content/stylemetadata.css">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1165,7 +1165,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Views/Home/Cataloguser.cshtml">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>06/16/2023 14:57:49</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1210,7 +1210,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>06/15/2023 15:35:29</publishTime>
+      <publishTime>06/16/2023 11:02:06</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>06/15/2023 14:42:27</publishTime>

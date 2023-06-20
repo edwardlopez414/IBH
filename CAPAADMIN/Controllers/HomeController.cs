@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -68,7 +69,7 @@ namespace CAPAADMIN.Controllers
             List<Miembro> oLista = new List<Miembro>();
             oLista = new CNMIEMBRO().Miembro();
 
-            return Json(oLista, JsonRequestBehavior.AllowGet);
+            return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
         }
         //metodos relacionados a eventos
         public JsonResult Evento()

@@ -1,0 +1,9 @@
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\bin\Release\capaD.dll
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\bin\Release\capaD.pdb
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\bin\Release\capaentidad.dll
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\bin\Release\capaentidad.pdb
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\obj\Release\capaD.csproj.AssemblyReference.cache
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\obj\Release\capaD.csproj.CoreCompileInputs.cache
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\obj\Release\capaD.csproj.CopyComplete
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\obj\Release\capaD.dll
+C:\Users\edward.lopez\Desktop\ibh\IBH\capaD\obj\Release\capaD.pdb

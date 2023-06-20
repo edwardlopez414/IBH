@@ -27,7 +27,10 @@
 }
 body {
     color: white;
-    font-family: 'Playfair Display', serif;
+    /* font-family: 'Playfair Display', serif;*/
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight:500;
 }
 
 .dvrit {
@@ -105,12 +108,3 @@ a {
     }
 
 }
-
-
-.actionh {
-    color:white;
-}
-    .actionh:hover {
-        background-color: deepskyblue!important;
-        ;
-    }

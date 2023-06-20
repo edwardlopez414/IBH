@@ -18,7 +18,7 @@ namespace capaD
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
-                    string query = "select * from IBPRO.dbo.MIEMBRO";
+                    string query = "select * from IBPRO.dbo.Datos_usuario A inner join IBPRO.dbo.login_usuario B on A.Id_Usuario = B.Id_usuario";
 
                     SqlCommand cmd = new SqlCommand(query,oconexion);
 
@@ -31,16 +31,16 @@ namespace capaD
                         {
                             miembros.Add(new Miembro()
                             {
-                                IdMiembro = Convert.ToInt32(rdr["IdMiembro"]),
-                                PNombre = rdr["PNombre"].ToString(),
-                                SNombre = rdr["SNombre"].ToString(),
-                                Papellido = rdr["Papellido"].ToString(),
-                                Sapellido = rdr["Sapellido"].ToString(),
-                                Edad = Convert.ToInt32(rdr["Edad"]),
-                                Telefono = rdr["Telefono"].ToString(),
-                                Cargo = rdr["Cargo"].ToString(),
                                 Direccion = rdr["Direccion"].ToString(),
-                                Sexo = Convert.ToChar(rdr["Sexo"])
+                                Edad = Convert.ToInt32(rdr["Edad"]),
+                                Email = rdr["Email"].ToString(),
+                                Fecha_bautismo = rdr["Fecha_bautismo"].ToString(),
+                                Fecha_ingreso = rdr["Fecha_ingreso"].ToString(),
+                                Id_Usuario = Convert.ToInt32(rdr["Id_Usuario"]),
+                                Nombre_Completo = rdr["Nombre_Completo"].ToString(),
+                                Nro_contacto = rdr["Nro_contacto"].ToString(),
+                                Sexo = rdr["Sexo"].ToString(),
+                                activo = Convert.ToInt32(rdr["activo"])
                             });
                         }
                     }

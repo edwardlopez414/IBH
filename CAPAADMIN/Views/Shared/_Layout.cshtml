@@ -6,9 +6,12 @@
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>*@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">
+    @*<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -36,7 +39,7 @@
 
                         </li>
 
-                        <li class="nav-item actionh text-light">
+                        <li class="actionh text-light">
                             <a class="nav-link" data-bs-toggle="collapse" href="#colapse" role="button" aria-expanded="false" aria-controls="colapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-calendar3-event" viewBox="0 0 16 16">
                                     <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />

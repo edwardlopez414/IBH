@@ -4,23 +4,104 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<main class="principalMAIN">
-    <div class="insertuser main" id="datauser" style="display:;">
-        <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.3em;">ACTUALIZAR USUARIO</h2>
+}
+
+<form class="m-2 mt-5 h-100 border border-3 text-black border-dark rounded p-3 ">
+    <div class="row">
+        <div class="row">
+            <div class=" d-flex mb-3">
+                <label for="exampleInputEmail1" class=" me-2 form-label border-bottom border-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" onclick="search()" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </label>
+                <input type="text" class="pe-auto shadow form-control bg-secondary bg-gradient" id="buscar" required aria-describedby="Descrip">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                <label class="form-check-label" for="exampleCheck2">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
-</main>
+    <div class="row mt-3">
+        <div class="col">
+            <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label border-bottom border-info">Nombre Completo</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" id="nombrecompleto" required aria-describedby="Descrip">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Cedula</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="cedula">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Edad</label>
+                <input type="number" class=" shadow form-control bg-secondary bg-gradient" required id="edad">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Numero</label>
+                <input type="number" class=" shadow form-control bg-secondary bg-gradient" required id="numero">
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Usuario</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="usuario">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Email</label>
+                <input type="Text" class=" shadow form-control bg-secondary bg-gradient" required id="email">
+            </div>
+            <div class="row mb-3">
+                <div class="row ms-1 mb-3">
+                    <label for="exampleInputPassword1" class="form-label border-bottom border-info ">Fecha Bautismo</label>
+                    <input type="date" class=" shadow form-control bg-secondary bg-gradient" required id="Fbautismo">
+                </div>
+
+                <div class="row ms-1 mb-3">
+                    <label for="exampleInputPassword1" class="form-label border-bottom border-info">Fecha Ingreso</label>
+                    <input type="date" class=" shadow form-control bg-secondary bg-gradient" required id="Fingreso">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+
+        <div class="col">
+            <span>Sexo</span>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Masculino
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Femenino
+                </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <span>Rol</span>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Miembro
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Lider
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault3" checked>
+                <label class="form-check-label" for="flexRadioDefault3">
+                    Diacono
+                </label>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+</form>

@@ -64,10 +64,10 @@ namespace CAPAADMIN.Controllers
 
             return View();
         }
-        public JsonResult MIEMBROS() {
+        public JsonResult MIEMBROS( string cedula = "") {
         
             List<Miembro> oLista = new List<Miembro>();
-            oLista = new CNMIEMBRO().Miembro();
+            oLista = new CNMIEMBRO().Miembro(cedula);
 
             return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
         }

@@ -2,30 +2,51 @@
 @{
     ViewBag.Title = "Addevent";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">AÑADIR EVENTO</h2>
+
 }
 
-<form class="m-5 h-100">
-    <div class="mb-3 ">
-        <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-        <input type="text" class="form-control" id="exampleInputDescrip" aria-describedby="Descrip">
-        <div id="Descrip" class="form-text">Describa el evento de forma sencilla y clara</div>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Nombre del evento</label>
-        <input type="Text" class="form-control" id="exampleInputNombre">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Ubicacion</label>
-        <input type="Text" class="form-control" id="exampleInputUbicacion">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Fecha</label>
-        <input type="date" class="form-control" id="exampleInputUbicacion">
-    </div>
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Transporte</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Aceptar</button>
-</form>
+<form class="m-2 mt-5 h-100 border border-3 text-black border-dark rounded p-3 ">
+    <div class="row mt-2">
+        <div class="col">
+            <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label border-bottom border-info">Nombre del evento</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" id="nombreevento" required aria-describedby="Descrip">
+            </div>
 
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Ubicacion del evento</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="ubicacion">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Descripcion</label>
+                <input type="datetime" class=" shadow form-control bg-secondary bg-gradient" required id="desc">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row mb-5">
+
+        <div class="col">
+            <span>Transporte</span>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    SI
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    NO
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <button type="submit" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+</form>

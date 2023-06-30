@@ -25,5 +25,6 @@ namespace capaentidad
         public string contrasena { get; set; }
         public int Id_rol { get; set; }
         public int activo { get; set; }
+        public string Cedula { get; set; }
     }
 }

@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://win5040.site4now.net:21/ibh</_PublishTargetUrl>
-    <History>True|2023-06-16T20:18:19.4863859Z;True|2023-06-15T16:15:13.1050948-05:00;False|2023-06-15T15:38:45.1585206-05:00;</History>
+    <History>True|2023-06-21T23:59:21.6808996Z;True|2023-06-16T15:18:19.4863859-05:00;True|2023-06-15T16:15:13.1050948-05:00;False|2023-06-15T15:38:45.1585206-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -19,28 +19,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:28</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.dll">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:41</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.pdb">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:41</publishTime>
     </File>
     <File Include="bin/capaD.dll">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:40</publishTime>
     </File>
     <File Include="bin/capaD.pdb">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:40</publishTime>
     </File>
     <File Include="bin/capaentidad.dll">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:40</publishTime>
     </File>
     <File Include="bin/capaentidad.pdb">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:40</publishTime>
     </File>
     <File Include="bin/capanegocio.dll">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:40</publishTime>
     </File>
     <File Include="bin/capanegocio.pdb">
-      <publishTime>06/16/2023 14:59:06</publishTime>
+      <publishTime>06/21/2023 18:34:40</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/15/2023 14:42:28</publishTime>
@@ -813,8 +813,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/DataTables/swf/flashExport.swf">
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
+    <File Include="Content/font-awesome.css">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
     <File Include="Content/login.css">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>06/21/2023 16:18:08</publishTime>
     </File>
     <File Include="Content/report.css">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -826,13 +832,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>06/16/2023 11:02:54</publishTime>
+      <publishTime>06/20/2023 14:50:53</publishTime>
     </File>
     <File Include="Content/stylemetadata.css">
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>06/15/2023 14:42:27</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>06/21/2023 14:51:55</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>06/21/2023 14:51:55</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -872,6 +896,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/bootstrap.min.js.map">
       <publishTime>06/15/2023 14:42:27</publishTime>
+    </File>
+    <File Include="Scripts/chart.js">
+      <publishTime>06/19/2023 12:30:45</publishTime>
+    </File>
+    <File Include="Scripts/chart.min.js">
+      <publishTime>06/19/2023 12:30:45</publishTime>
     </File>
     <File Include="Scripts/DataTables/autoFill.bootstrap.js">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1147,7 +1177,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Views/Event/Catalogevent.cshtml">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>06/21/2023 15:22:34</publishTime>
     </File>
     <File Include="Views/Event/EventInv.cshtml">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1162,10 +1192,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Views/Home/Adduser.cshtml">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>06/20/2023 14:53:44</publishTime>
     </File>
     <File Include="Views/Home/Cataloguser.cshtml">
-      <publishTime>06/16/2023 14:57:49</publishTime>
+      <publishTime>06/21/2023 15:46:32</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1177,10 +1207,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>06/19/2023 12:38:35</publishTime>
     </File>
     <File Include="Views/Home/Moduser.cshtml">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>06/21/2023 18:33:01</publishTime>
     </File>
     <File Include="Views/Home/reporteevento.cshtml">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1210,7 +1240,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>06/16/2023 11:02:06</publishTime>
+      <publishTime>06/21/2023 18:34:39</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1219,7 +1249,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/15/2023 16:00:14</publishTime>
+      <publishTime>06/21/2023 18:41:13</publishTime>
     </File>
   </ItemGroup>
 </Project>

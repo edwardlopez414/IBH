@@ -6,46 +6,77 @@
 }
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Formmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title " id="exampleModalLabel">Usuario</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre Completo</label>
+                    <input type="text" class=" shadow form-control bg-secondary" id="nombrecompleto" required aria-describedby="Descrip">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label text-black" for="flexCheckChecked">
+                        Activo
+                    </label>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" onclick="Activar()" class="btn btn-primary">Aplicar</button>
             </div>
         </div>
     </div>
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="Formmodal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title " id="exampleModalLabel">Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre Completo</label>
+                    <input type="text" class=" shadow form-control bg-secondary" id="nombrecompleto1" required aria-describedby="Descrip">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" onclick="Reset()" class="btn btn-primary">Aplicar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <main id="mainprincipal" class="principalMAIN">
 
     <div class="p-3 text-bg-light" style="color:white;">
         <table id="adduser" class="table  table-striped">
             <thead>
                 <tr>
-                    <th>Nombre Completo</th>
+                    <th>NombreCompleto</th>
                     <th>Direccion</th>
                     <th>Email</th>
                     <th>Sexo</th>
                     <th>Fecha_bautismo</th>
                     <th>Activo</th>
+                    <th><i class="bi bi-pencil-square"></i></th>
                 </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
     </div>
+
+
 </main>
 @section scripts{
     <script>
-
 
           var url = "@Url.Action("MIEMBROS", "Home")";
           var data = { header:"elo"};
@@ -67,25 +98,76 @@
                     "data": "activo", "render": function (valor) {
                         if (valor == 0) {
 
-                            return '<span class="badge bg-success">NO</span>'
+                            return '<button type="button" class="btn me-2 btn-editar btn-danger">NO</button>'
                         }
-                        else return '<span class="badge bg-success">SI</span>'
+                        else {
+                            return '<button type="button" class="btn btn-editar me-2 btn-success">SI</button>'
+                        }
                     }
+                },
+                {
+                    "defaultContent": '<button type="button" class="btn btn-warning btn-reset">Reset</button>',
+                    "orderable": false,
+                    "searchable": false
+
                 }
-            ]
-        })
-/*        data - bs - toggle="modal" data - bs - target="#exampleModal"*/
-        function active() {
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+            }
+        });
 
-          /*  document.getElementsByClassName("form-check-input").addEventListener("click", alert("hello"));*/
-            document.querySelectorAll(".form-check-input").forEach(el => {
-                el.addEventListener("click", e => {
-                    const id = e.target.getAttribute("id");
-                    console.log("Se ha clickeado el id " + id);
-                });
-            });
 
+        function abrirModal(json) {
+
+            if (json != null) {
+
+                $("#nombrecompleto").val(json.Nombre_Completo)
+
+            }
+            $('#Formmodal').modal('show');
+        }
+        function abrirModalreset(json) {
+
+            if (json != null) {
+
+                $("#nombrecompleto1").val(json.Nombre_Completo)
+
+            }
+            $('#Formmodal1').modal('show');
         }
 
+        $("#adduser tbody").on("click", '.btn-editar', function () {
+            var filaselccionada = $(this).closest("tr");
+
+            var data = datatable.row(filaselccionada).data();
+
+            console.log(data)
+
+            abrirModal(data);
+
+        });
+
+        $("#adduser tbody").on("click", '.btn-reset', function () {
+            var filaselccionada = $(this).closest("tr");
+
+            var data = datatable.row(filaselccionada).data();
+
+            console.log(data)
+
+            abrirModalreset(data);
+
+        });
+
+
+        function Activar() {
+
+            alert("say hello")
+        }
+
+        function Reset() {
+
+            alert("say hello")
+        }
     </script>
 }

@@ -11,8 +11,13 @@ namespace capanegocio
     {
         private CD_Miembros objmiebro = new CD_Miembros();
 
-        public List<Miembro> Miembro()
+        public List<Miembro> Miembro(string cedula)
         {
+            if (cedula != "") {
+
+                return objmiebro.listar_por_parametro(cedula);
+            }
+            else 
             return objmiebro.listar();
         }
 

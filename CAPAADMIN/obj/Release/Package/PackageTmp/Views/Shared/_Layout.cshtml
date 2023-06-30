@@ -6,9 +6,12 @@
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>*@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     @*<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -20,13 +23,13 @@
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                 </svg>
                 <div id="dvcol" class="tamanodiv">
-                    <a href="#" class=" mostrar d-flex align-items-center m-0  link-dark text-decoration-none">
+                    <a href="#" class="mostrar actionh d-flex align-items-center m-0  link-dark text-decoration-none">
                         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
                         <span class="fs-4 text-light mostrar">IBH</span>
                     </a>
-                    <hr>
-                    <ul class="container-fluid nav nav-pills row">
-                        <li class="nav-item">
+                 
+                    <ul class="mt-5 container-fluid nav nav-pills row">
+                        <li class="nav-item actionh">
                             <a href="/" class="nav-link active " aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
@@ -36,7 +39,7 @@
 
                         </li>
 
-                        <li class="nav-item text-light">
+                        <li class="actionh text-light">
                             <a class="nav-link" data-bs-toggle="collapse" href="#colapse" role="button" aria-expanded="false" aria-controls="colapse">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-calendar3-event" viewBox="0 0 16 16">
                                     <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
@@ -120,25 +123,7 @@
                                         </svg>
                                         Modificar Usuario
                                     </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-info" href="@Url.Action("habuser","home")">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-                                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                            <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
-                                        </svg>
-                                        Habilitar Usuario
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item text-info" href="@Url.Action("deleteuser","home")">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-                                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                            <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
-                                        </svg>
-                                        Deshabilitar Usuario
-                                    </a>
-                                </li>
+                                </li>                               
                             </ul>
                         </li>
                         <li class="dropdown text-light">
@@ -231,8 +216,8 @@
                 </div>
 
             </div>
-            <div id="render" class="dvnav2 bg-dark vh-100">
-                <div  class="nvren bg-dark">
+            <div id="render" class="dvnav2 vh-100" style="background-color:white;" >
+                <div  class="nvren" style="background-color:white;">
                     @RenderBody()
                 </div>
             </div>
@@ -241,7 +226,7 @@
 
 
     <script type="text/javascript">
-       
+
         function ocultar() {
             var x = document.getElementById("dvrih");
             if (x.style.display === "none") {
@@ -266,7 +251,35 @@
                 dasboard.style.display = 'none';
             }
         }
-      
+
+        function search() {
+            var inputValue = document.getElementById('buscar');
+            var url = "@Url.Action("MIEMBROS", "Home")";
+            var data = { cedula: inputValue.value};
+            $.post({
+                url, data, beforeSend: function () {}
+            })
+                .fail(function () {
+                    alert("error");
+                })
+                .done(function (data) {
+                    var Nombre = document.getElementById('nombrecompleto');
+                    var cedula = document.getElementById('cedula');
+                    var edad = document.getElementById('edad');
+                    var numero = document.getElementById('numero');
+                    var usuario = document.getElementById('usuario');
+                    var email = document.getElementById('email');   
+                    console.log(data.data[0].Fecha_ingreso);
+                    Nombre.value = data.data[0].Nombre_Completo;
+                    cedula.value = data.data[0].Cedula;
+                    edad.value = data.data[0].Edad;
+                    numero.value = data.data[0].Nro_contacto;
+                    usuario.value = data.data[0].usuario;
+                    email.value = data.data[0].Email;
+
+                });
+        }
+
     </script>
 
     @Scripts.Render("~/bundles/jquery")

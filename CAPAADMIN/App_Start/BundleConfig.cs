@@ -30,6 +30,7 @@ namespace CAPAADMIN
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/cataloguser.css",
+                       "~/Content/font-awesome.css",
                       "~/Content/DataTables/css/jquery.dataTables.css",
                       "~/Content/DataTables/css/responsive.dataTables.css",
                       "~/Content/site.css",

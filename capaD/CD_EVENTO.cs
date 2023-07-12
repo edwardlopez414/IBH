@@ -37,7 +37,8 @@ namespace capaD
                                     Nombre = reader["Nombre"].ToString(),
                                     Fecha = reader["Fecha"].ToString(),
                                     LugarEvento = reader["LugarEvento"].ToString(),
-                                    Transporte = Convert.ToChar(reader["Transporte"])
+                                    Transporte = Convert.ToChar(reader["Transporte"]),
+                                    Descripcion = reader["Descripcion"].ToString(),
 
                             });
                         }
@@ -78,7 +79,8 @@ namespace capaD
                                 Fecha = reader["Fecha"].ToString(),
                                 LugarEvento = reader["LugarEvento"].ToString(),
                                 Transporte = Convert.ToChar(reader["Transporte"]),
-                                State = reader["States"].ToString()
+                                State = reader["States"].ToString(),
+                                
                             });
                         }
                     }
@@ -89,5 +91,43 @@ namespace capaD
             return evento;
 
         }
+
+        public int AddEvent(EVENTO obj, out string mensaje)
+        {
+            int intreturn = 0;
+            mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("SP_INSERTAR_EVENTO", oconexion);
+                    
+                    cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
+                    cmd.Parameters.AddWithValue("Fecha", obj.Fecha);
+                    cmd.Parameters.AddWithValue("LugarEvento", obj.LugarEvento);
+                    cmd.Parameters.AddWithValue("Trasnporte", obj.Transporte);
+                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("Id_estado", obj.Id_estado);
+                    cmd.Parameters.AddWithValue("Id_evento_estado", obj.Id_evento_estado);
+                    cmd.Parameters.AddWithValue("Id_catalogo", obj.Id_catalogo);
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    intreturn = Convert.ToInt32(cmd.Parameters["resultado"].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                intreturn = 0;
+                mensaje = ex.Message;
+            }
+
+            return intreturn;
+        }
+
     }
 }

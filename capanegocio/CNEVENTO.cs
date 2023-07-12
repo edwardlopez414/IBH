@@ -20,6 +20,12 @@ namespace capanegocio
         {
             return ONJEVENTO.listarP();
         }
-
+        public int ADDEVENT(EVENTO obj, out string mensaje)
+        {
+            obj.Id_catalogo = 0;
+            obj.Id_estado = 0;
+            obj.Id_evento_estado = 0;
+            return ONJEVENTO.AddEvent(obj, out mensaje);
+        }
     }
 }

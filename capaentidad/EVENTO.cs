@@ -14,5 +14,11 @@ namespace capaentidad
         public string LugarEvento { get; set; }
         public char Transporte { get; set; }
         public string State { get; set; }
+        public string Descripcion { get; set; }
+
+        public int Id_estado { get; set; }
+        public int Id_evento_estado { get; set; }
+        public int Id_catalogo { get; set; }
+
     }
 }

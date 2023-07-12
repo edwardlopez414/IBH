@@ -18,10 +18,14 @@
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">Ubicacion del evento</label>
                 <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="ubicacion">
             </div>
-
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">Descripcion</label>
-                <input type="datetime" class=" shadow form-control bg-secondary bg-gradient" required id="desc">
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="desc">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Fecha</label>
+                <input type="date" class=" shadow form-control bg-secondary bg-gradient" required id="Fecha">
             </div>
         </div>
     </div>
@@ -48,5 +52,49 @@
         </div>
 
     </div>
-    <button type="submit" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+    <button type="submit" onclick="addevent()" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+    <span onclick="eventomostrar()">-----clieckme------xxx--------</span>
 </form>
+<script>
+
+    function obtenertransporte() {
+        let datasdf;
+        if (datasdf = document.getElementById("flexRadioDefault1").checked) {
+            return "C"
+        } else if (datasdf = document.getElementById("flexRadioDefault2").checked) {
+            return "c"
+        } else return "C"
+    }
+    function eventomostrar() {
+        var EVENTO = {
+
+            Nombre: $("#nombreevento").val(),
+            Fecha: $("#Fecha").val(),
+            LugarEvento: $("#ubicacion").val(),
+            Transporte: obtenertransporte(),
+            Descripcion: $("#desc").val()
+        }
+        console.log(EVENTO)
+    }
+
+    function addevent()
+    { 
+        var EVENTO = {
+
+            Nombre : $("#nombreevento").val(),
+            Fecha :  $("#Fecha").val(),
+            LugarEvento : $("#ubicacion").val(),
+            Transporte : obtenertransporte(),
+            Descripcion : $("#desc").val()
+        }
+          var url2 = "@Url.Action("AddingEvent", "Home")";
+
+            data = { obj: EVENTO }
+            $.post(url2, data).done(function (data) {
+                console.log(data);
+            });
+             
+        }
+    
+
+</script>

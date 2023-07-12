@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace CAPAADMIN.Controllers
 {
+    [Authorize]
     public class ReportController : Controller
     {
         // GET: Report

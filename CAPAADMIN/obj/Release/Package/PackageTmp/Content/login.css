@@ -1,12 +1,18 @@
-﻿.gradient-custom-2 {
+﻿* {
+    margin:0;
+}
+.gradient-custom-2 {
     /* fallback for old browsers */
     background: #fccb90;
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: rgb(115,245,255);
+    background: linear-gradient(28deg, rgba(115,245,255,1) 0%, rgba(0,84,215,1) 25%, rgba(20,0,180,1) 50%, rgba(103,0,154,1) 75%, rgba(25,0,56,1) 100%);
 }
-
+.gradiente-custom-header {
+    background: #fccb90;
+    background: rgb(115,245,255);
+    background: linear-gradient(270deg, rgba(115,245,255,1) 0%, rgba(0,84,215,1) 25%, rgba(20,0,180,1) 50%, rgba(103,0,154,1) 75%, rgba(25,0,56,1) 100%);
+}
 @media (min-width: 768px) {
     .gradient-form {
         height: 100vh !important;
@@ -19,3 +25,85 @@
         border-bottom-right-radius: .3rem;
     }
     }
+
+/*viewpass css*/
+
+.div-principal-viewpass {
+    height:100vh;
+    width:100%;
+}
+.centeritems {
+
+    position:relative;
+    top:11%;
+    margin-left:8em;
+    margin-right:8em;
+    padding:2rem;
+}
+
+@media (max-width: 582px) {
+    .div-principal-viewpass {
+        height: 100vh;
+        width: 600px;
+    }
+    .centeritems {
+        height:100vh;
+    }
+    body {
+        background-size :c;
+    }
+
+
+}
+
+.btho {
+    border: solid 1px black;
+    background-color: #67009a;
+    color: white;
+    border-radius: 5px;
+    height: 2em;
+}
+    .btho:hover {
+        background-color: #ab00ff;
+    }
+.texture {
+    background-image:url(/Content/Res/cart.svg);
+    background-repeat:repeat;
+    background-size:contain;
+    height:100vh;
+    width:100%;
+   
+
+}
+
+
+.error-view-background{
+    height:100vh;
+    width:100%;
+    background-color: #556;
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445), linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445), linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445), linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445), linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+.center-mesage{
+    background-color: rgba(0,0,0,0.8);
+    height: 100vh;
+    width: 100%;
+}
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60vh;
+    height: auto;
+    background-color: wheat;
+   
+}
+.card-body {
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}

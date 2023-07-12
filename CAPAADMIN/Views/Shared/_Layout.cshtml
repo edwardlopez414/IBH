@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&display=swap" rel="stylesheet">
+    <!-- use version 0.20.0 -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -30,7 +32,7 @@
                  
                     <ul class="mt-5 container-fluid nav nav-pills row">
                         <li class="nav-item actionh">
-                            <a href="/" class="nav-link active " aria-current="page">
+                            <a href="@Url.Action("Index","Home")" class="nav-link active " aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
                                 </svg>
@@ -207,7 +209,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item text-info" href="#">
+                                    <a class="dropdown-item text-info" href="@Url.Action("Index","Login")">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-fill-dash" viewBox="0 0 16 16">
                                             <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
@@ -223,7 +225,7 @@
 
             </div>
             <div id="render" class="dvnav2 vh-100" style="background-color:white;" >
-                <div  class="nvren" style="background-color:white;">
+                <div id="render2" class="nvren" style="background-color:white;">
                     @RenderBody()
                 </div>
             </div>
@@ -269,20 +271,24 @@
                     alert("error");
                 })
                 .done(function (data) {
-                    var Nombre = document.getElementById('nombrecompleto');
-                    var cedula = document.getElementById('cedula');
-                    var edad = document.getElementById('edad');
-                    var numero = document.getElementById('numero');
-                    var usuario = document.getElementById('usuario');
-                    var email = document.getElementById('email');   
-                    console.log(data.data[0].Fecha_ingreso);
-                    Nombre.value = data.data[0].Nombre_Completo;
-                    cedula.value = data.data[0].Cedula;
-                    edad.value = data.data[0].Edad;
-                    numero.value = data.data[0].Nro_contacto;
-                    usuario.value = data.data[0].usuario;
-                    email.value = data.data[0].Email;
-
+                        var Nombre = document.getElementById('nombrecompleto');
+                        var cedula = document.getElementById('cedula');
+                        var edad = document.getElementById('edad');
+                        var numero = document.getElementById('numero');
+                        var usuario = document.getElementById('usuario');
+                        var email = document.getElementById('email');
+                        var direccion = document.getElementById("direccion");
+                        var Iduser = document.getElementById("IduserBD");
+                        console.log(data.data);
+                        Nombre.value = data.data[0].Nombre_Completo;
+                        cedula.value = data.data[0].Cedula;
+                        edad.value = data.data[0].Edad;
+                        direccion.value = data.data[0].Direccion;
+                        numero.value = parseInt(data.data[0].Nro_contacto);
+                        usuario.value = data.data[0].usuario;
+                       email.value = data.data[0].Email;
+                    Iduser.value = data.data[0].Id_Usuario;
+                    
                 });
         }
 

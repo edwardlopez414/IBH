@@ -23,13 +23,17 @@
     <div class="row mt-3">
         <div class="col">
             <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label border-bottom border-info">ID del usuario</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" disabled id="IduserBD" required aria-describedby="Descrip">
+            </div>
+            <div class="mb-3 ">
                 <label for="exampleInputEmail1" class="form-label border-bottom border-info">Nombre Completo</label>
                 <input type="text" class=" shadow form-control bg-secondary bg-gradient" id="nombrecompleto" required aria-describedby="Descrip">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">Cedula</label>
                 <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="cedula">
-            </div>
+            </div>           
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">Edad</label>
                 <input type="number" class=" shadow form-control bg-secondary bg-gradient" required id="edad">
@@ -48,6 +52,10 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">Email</label>
                 <input type="Text" class=" shadow form-control bg-secondary bg-gradient" required id="email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Direccion</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="direccion">
             </div>
             <div class="row mb-3">
                 <div class="row ms-1 mb-3">
@@ -68,13 +76,13 @@
         <div class="col">
             <span>Sexo</span>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaults1">
                 <label class="form-check-label" for="flexRadioDefault1">
                     Masculino
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefaults2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                     Femenino
                 </label>
@@ -103,5 +111,56 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+    <button onclick="adduser()" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+
 </form>
+
+
+<script>
+
+    function restablecer() {
+        let datasdf;
+        if (datasdf = document.getElementById("flexRadioDefault1").checked) {
+         return  1
+        } else if (datasdf = document.getElementById("flexRadioDefault2").checked) {
+           return  2
+        }else return  3
+    }
+
+
+    function define_sexo() {
+        let datasdf;
+        let response;
+        if (datasdf = document.getElementById("flexRadioDefaults1").checked) {
+            return response = "M"
+        } else return response = "F"
+    }
+     function adduser() {
+
+            var Miembro = {
+                usuario:    $("#usuario").val(),
+                Edad:       $("#edad").val(),
+                Direccion:  $("#direccion").val(),
+                Id_rol: restablecer(),
+                Email: $("#email").val(),
+                Fecha_bautismo: $("#Fbautismo").val(),
+                Fecha_ingreso: $("#Fingreso").val(),
+                Nombre_Completo: $("#nombrecompleto").val(),
+                Nro_contacto: $("#numero").val(),
+                Sexo: define_sexo(),
+                Cedula: $("#cedula").val(),
+                Id_Usuario: $("#IduserBD").val()
+              }
+              
+          
+             var url2 = "@Url.Action("ModuserBD", "Home")";
+
+            data = { obj : Miembro }
+            $.post(url2, data).done(function (data) {
+                console.log(data);
+            });
+
+
+        }
+
+</script>

@@ -9,6 +9,7 @@ using capaentidad;
 using capanegocio;
 namespace CAPAADMIN.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -30,7 +31,7 @@ namespace CAPAADMIN.Controllers
         }
         // vistas relacioadas a usuarios capa admin
         public ActionResult Cataloguser()
-        { 
+        {
             return View();
         }
         public ActionResult deleteuser()
@@ -49,7 +50,10 @@ namespace CAPAADMIN.Controllers
         {
             return View();
         }
-
+        public ActionResult error()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {
@@ -64,12 +68,35 @@ namespace CAPAADMIN.Controllers
 
             return View();
         }
-        public JsonResult MIEMBROS( string cedula = "") {
-        
+        public JsonResult MIEMBROS(string cedula = "") {
+
             List<Miembro> oLista = new List<Miembro>();
             oLista = new CNMIEMBRO().Miembro(cedula);
 
             return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult AddMiembro(Miembro obj)
+        {
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNMIEMBRO().AddUser(obj, out mensaje);
+
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult ModuserBD(Miembro obj)
+        {
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNMIEMBRO().Moduser(obj, out mensaje);
+
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+
         }
         //metodos relacionados a eventos
         public JsonResult Evento()
@@ -83,9 +110,30 @@ namespace CAPAADMIN.Controllers
             List<EVENTO> olista = new List<EVENTO>();
             olista = new CNEVENTO().EventPendin();
             return Json(new { data = olista }, JsonRequestBehavior.AllowGet);
-        
+
+        }
+        public JsonResult AddingEvent(EVENTO obj)
+        {
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNEVENTO().ADDEVENT(obj, out mensaje);
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+
         }
 
+        public JsonResult CambiarAactivo(Miembro obj)
+        {
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNMIEMBRO().Cambiar_estado_activo(obj, out mensaje);
+
+          
+            return Json(new { resultado = resultado, mensaje = mensaje}, JsonRequestBehavior.AllowGet);
+
+        }
 
     }
 }

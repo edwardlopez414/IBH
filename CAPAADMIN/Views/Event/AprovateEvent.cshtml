@@ -5,16 +5,64 @@
     <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.3em;">APROBAR EVENTO</h2>
 }
 
-<div class="card text-center">
-    <div class="card-header">
-        Featured
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-    <div class="card-footer text-muted">
-        2 days ago
-    </div>
-</div>
+<button id="mostrarevent" onclick="mostrar()" style="display:none">click</button>
+<script>
+
+    
+    var data = { data: 1 };
+  
+
+    function clickButton() {
+        document.querySelector('#mostrarevent').click();
+    }
+
+    setTimeout(clickButton, 1000);
+                
+        function mostrar() {
+            let url = "@Url.Action("EventoPendiente", "Home")";
+            
+            $.post({
+                url, data})
+                .fail(function () {
+                    alert("error");
+                })
+                .done(function (data) {
+                    // variables modal
+                    console.log(data);
+                    for (var i in data.data) {
+                        console.log(data.data[0])
+                        if (data.data[0].Transporte == "C") {
+                            var tr = "Si";
+                        } else  tr = "No";
+                        const list = document.getElementById("render2");
+                        list.innerHTML += `<div id="cardtext" class=" container bg-light text-center shadow-lg">
+                                                <div class="card-header bg-secondary bg-gradient">
+                                                    <h3 class="text-black">
+                                                        Evento:
+                                                    </h3>
+                                                </div>
+                                                <div class="card-body row">
+                                                    <div class="row">
+                                                        <img class="img-fluid" style="max-width: 100%;max-height:15em" src="https://img.freepik.com/foto-gratis/empresario-corporativo-dando-presentacion-gran-audiencia_53876-101865.jpg" alt="Alternate Text" />
+                                                    </div>
+                                                    <div class="row mt-2">
+                                                        <div class="d-flex" style="flex-flow: wrap row;>
+                    }
+                                                            <p class="card-text text-black me-2">Nombre:${data.data[0].Nombre}</p>
+                                                            <p class="card-text text-black me-2">Fecha:${data.data[0].Fecha}</p>
+                                                            <p class="card-text text-black me-2">Lugar:${data.data[0].LugarEvento }</p>
+                                                             <p class="card-text text-black me-2">Transporte:${tr}</p>
+                                                            <a href="#" class=" me-2 btn btn-primary">Aprobar</a>
+                                                            <a href="#" class="me-2 btn btn-danger">Descartar</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                    2 days ago
+                                                </div>
+                                            </div>`;
+                    }
+                });
+    }
+
+</script>

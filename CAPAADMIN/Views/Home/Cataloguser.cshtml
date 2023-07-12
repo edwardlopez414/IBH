@@ -15,6 +15,10 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">UsuarioID</label>
+                    <input type="text" class=" shadow form-control bg-secondary" id="userID" required aria-describedby="Descrip">
+                </div>
+                <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre Completo</label>
                     <input type="text" class=" shadow form-control bg-secondary" id="nombrecompleto" required aria-describedby="Descrip">
                 </div>
@@ -42,6 +46,10 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">UsuarioID</label>
+                    <input type="text" class=" shadow form-control bg-secondary" id="userIDreset" required aria-describedby="Descrip">
+                </div>
+                <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre Completo</label>
                     <input type="text" class=" shadow form-control bg-secondary" id="nombrecompleto1" required aria-describedby="Descrip">
                 </div>
@@ -59,6 +67,7 @@
         <table id="adduser" class="table  table-striped">
             <thead>
                 <tr>
+                    <th>UserID</th>
                     <th>NombreCompleto</th>
                     <th>Direccion</th>
                     <th>Email</th>
@@ -89,6 +98,7 @@
                 data
             },
             "columns": [
+                { "data": "Id_Usuario" },
                 { "data": "Nombre_Completo" },
                 { "data": "Direccion" },
                 { "data": "Email" },
@@ -123,6 +133,7 @@
             if (json != null) {
 
                 $("#nombrecompleto").val(json.Nombre_Completo)
+                $("#userID").val(json.Id_Usuario)
 
             }
             $('#Formmodal').modal('show');
@@ -132,7 +143,7 @@
             if (json != null) {
 
                 $("#nombrecompleto1").val(json.Nombre_Completo)
-
+                $("#userIDreset").val(json.Id_Usuario)
             }
             $('#Formmodal1').modal('show');
         }
@@ -162,7 +173,19 @@
 
         function Activar() {
 
-            alert("say hello")
+            var Miembro = {
+                Id_Usuario: $("#userID").val()
+                }
+
+            var url2 = "@Url.Action("CambiarAactivo", "Home")";
+
+            data = { obj : Miembro }
+            $.post(url2, data).done(function (data) {
+                console.log(data);
+            });
+
+
+            window.location.reload()
         }
 
         function Reset() {

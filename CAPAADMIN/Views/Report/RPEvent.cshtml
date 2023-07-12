@@ -4,5 +4,119 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RPEvent</h2>
+@Styles.Render("~/Content/css")
+<main class="maincl">
+    <div class="principal1">
+        <div class="card">
+            <form action="">
+                <div class="dv1 mr-1">
+                    <div class="input-group mb-3 mr-2">
+                        <span class="input-group-text" id="basic-addon1">Desde</span>
+                        <input type="date" class="form-control pr-2" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Hasta</span>
+                        <input type="date" class="form-control metrica" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="divider"></div>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Abre este menú select</option>
+                        <option value="1">Dominical</option>
+                        <option value="2">Oracion</option>
+                        <option value="3">Reunion de Jovenes</option>
+                    </select>
+                </div>
+                <div class="dv2">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">usuario</span>
+                        <input type="text" class="form-control mr-2" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="basic-addon1">
+                        <div class="dividerb"></div>
+                        <button type="button" class="btn btn-danger">Buscar</button>
+                    </div>
 
+                </div>
+            </form>
+
+        </div>
+        <div class="table" style="display:none">
+            <div class="p-3 text-bg-light" style="color:white;">
+                <table id="Catalogevent" class="table  table-striped">
+                    <thead>
+                        <tr>
+                            <th>Eventoid</th>
+                            <th>Evento</th>
+                            <th>Fecha</th>
+                            <th>Lugar</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+
+
+<script>
+
+
+        //// Obtener la referencia del elemento body
+        //var body = document.getElementById("table")[0];
+
+        //// Crea un elemento <table> y un elemento <tbody>
+        //var tabla = document.createElement("table");
+        //var tblBody = document.createElement("tbody");
+
+        //// Crea las celdas
+        //for (var i = 0; i < 2; i++) {
+        //    // Crea las hileras de la tabla
+        //    var hilera = document.createElement("tr");
+
+        //    for (var j = 0; j < 2; j++) {
+        //        // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+        //        // texto sea el contenido de <td>, ubica el elemento <td> al final
+        //        // de la hilera de la tabla
+        //        var celda = document.createElement("td");
+        //        var textoCelda = document.createTextNode("celda en la hilera " + i + ", columna " + j);
+        //        celda.appendChild(textoCelda);
+        //        hilera.appendChild(celda);
+        //    }
+
+        //    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+        //    tblBody.appendChild(hilera);
+        //}
+
+        //// posiciona el <tbody> debajo del elemento <table>
+        //tabla.appendChild(tblBody);
+        //// appends <table> into <body>
+        //body.appendChild(tabla);
+        //// modifica el atributo "border" de la tabla y lo fija a "2";
+        //tabla.setAttribute("border", "2");
+    
+
+
+    function addevent()
+    {
+        var EVENTO = {
+
+            Nombre : $("#nombreevento").val(),
+            Fecha :  $("#Fecha").val(),
+            LugarEvento : $("#ubicacion").val(),
+            Transporte : obtenertransporte(),
+            Descripcion : $("#desc").val()
+        }
+          var url2 = "@Url.Action("Evento", "Home")";
+
+            data = { obj: EVENTO }
+            $.post(url2, data).done(function (data) {
+                console.log(data);
+            });
+
+        }
+</script>

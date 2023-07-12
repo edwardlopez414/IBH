@@ -321,9 +321,12 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\report.css" />
+    <Content Include="Content\Res\404.png" />
+    <Content Include="Content\Res\cart.svg" />
     <Content Include="Content\Res\ICON.jpg" />
     <Content Include="Content\Res\icon2-removebg-preview.png" />
     <Content Include="Content\stylemetadata.css" />
+    <Content Include="Content\error.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -468,6 +471,9 @@
     <Content Include="Views\Report\RPAsistencia.cshtml" />
     <Content Include="Views\Report\RPProveedores.cshtml" />
     <Content Include="Views\Report\RPPEfectuados.cshtml" />
+    <Content Include="Views\Login\Viewpass.cshtml" />
+    <Content Include="Views\Login\restablecerpass.cshtml" />
+    <Content Include="Views\Home\error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,7 +3,74 @@
     ViewBag.Title = "Catalogevent";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<!-- Modal -->
+<div class="modal fade" id="Formmodaldeleteevent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title " id="exampleModalLabel">Eliminar evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 ">
+                    <input type="hidden" class=" shadow form-control bg-secondary" id="IdEvento" required aria-describedby="Descrip">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre del evento</label>
+                    <input type="text" class=" shadow form-control bg-secondary" id="Nombre" required aria-describedby="Descrip">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" onclick="Reset()" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal asistencias -->
+<div class="modal fade" id="Formmodalasistencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title " id="exampleModalLabel">Eliminar evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 ">
+                    <input type="hidden" class=" shadow form-control bg-secondary" id="IdEvento" required aria-describedby="Descrip">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre del evento</label>
+                    <input type="text" class=" shadow form-control bg-secondary" id="NombreA" required aria-describedby="Descrip">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Hombres</label>
+                        <input type="text" class=" shadow form-control bg-secondary" id="Nombre" required aria-describedby="Descrip">
+                    </div><div class="mb-3 col">
+                        <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Mujeres</label>
+                        <input type="text" class=" shadow form-control bg-secondary" id="Nombre" required aria-describedby="Descrip">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Niños</label>
+                        <input type="text" class=" shadow form-control bg-secondary" id="Nombre" required aria-describedby="Descrip">
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Niñas</label>
+                        <input type="text" class=" shadow form-control bg-secondary" id="Nombre" required aria-describedby="Descrip">
+                    </div>
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" onclick="Reset()" class="btn btn-success">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <main id="mainprincipal" class="principalMAIN">
 
     <div class="p-3 text-bg-light" style="color:white;">
@@ -15,6 +82,8 @@
                     <th>Fecha</th>
                     <th>Lugar</th>
                     <th>Descripcion</th>
+                    <th>Eliminar evento</th>
+                    <th>Registrar Asistencia</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,12 +108,64 @@
                 { "data": "Nombre" },
                 { "data": "Fecha" },
                 { "data": "LugarEvento" },
-                { "data": "Descripcion" }
+                { "data": "Descripcion" },
+                {
+                    "defaultContent": '<button type="button" class="btn btn-danger btn-delete">Eliminar</button>',
+                    "orderable": false,
+                    "searchable": false
+
+                }, {
+                    "defaultContent": '<button type="button" class="btn btn-success btn-asistencia">Asistencias</button>',
+                    "orderable": false,
+                    "searchable": false
+
+                }
             ],
             "language": {
                 "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
             }
-        })
+        });
 
+        function abrirModalreset(json) {
+            console.log(json);
+            if (json != null) {
+
+                $("#IdEvento").val(json.IdEvento)
+                $("#Nombre").val(json.Descripcion)
+            }
+            $('#Formmodaldeleteevent').modal('show');
+        }
+        $("#Catalogevent tbody").on("click", '.btn-delete', function () {
+            
+            var filaselccionada = $(this).closest("tr");
+
+            var data = datatable.row(filaselccionada).data();
+
+            console.log(data)
+
+            abrirModalreset(data);
+
+        });
+
+        function abrirModalasistencia(json) {
+            console.log(json);
+            if (json != null) {
+
+                $("#IdEvento").val(json.IdEvento)
+                $("#NombreA").val(json.Descripcion)
+            }
+            $('#Formmodalasistencia').modal('show');
+        }
+        $("#Catalogevent tbody").on("click", '.btn-asistencia', function () {
+            
+            var filaselccionada = $(this).closest("tr");
+
+            var data = datatable.row(filaselccionada).data();
+
+            console.log(data)
+
+            abrirModalasistencia(data);
+
+        });
     </script>
 }

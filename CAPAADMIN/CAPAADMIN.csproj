@@ -474,6 +474,7 @@
     <Content Include="Views\Login\Viewpass.cshtml" />
     <Content Include="Views\Login\restablecerpass.cshtml" />
     <Content Include="Views\Home\error.cshtml" />
+    <Content Include="Views\Event\asistencia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

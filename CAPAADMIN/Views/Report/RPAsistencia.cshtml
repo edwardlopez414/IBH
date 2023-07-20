@@ -4,5 +4,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RPAsistencia</h2>
 
+<div class="bdreport">
+    <button onclick="generarXLS()">Generar XLS</button>
+</div>
+
+<link href="~/Content/report.css" rel="stylesheet" />
+
+<script>
+    function generarXLS() {
+        // Tu JSON de ejemplo
+        var data = [
+            { Nombre: 'Juan', Edad: 25, Ciudad: 'México' },
+            { Nombre: 'María', Edad: 30, Ciudad: 'Madrid' },
+            { Nombre: 'Carlos', Edad: 40, Ciudad: 'Lima' }
+        ];
+
+        // Crear una hoja de cálculo
+        var hojaCalculo = XLSX.utils.json_to_sheet(data);
+
+        // Establecer el estilo para el encabezado de las columnas
+        var estiloEncabezado = { font: { color: { rgb: "00FF00" } } };
+        var encabezados = Object.keys(data[0]);
+        for (var i = 0; i < encabezados.length; i++) {
+            var encabezado = XLSX.utils.encode_cell({ c: i, r: 0 });
+            hojaCalculo[encabezado].s = estiloEncabezado;
+        }
+
+        // Crear un libro de trabajo
+        var libro = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(libro, hojaCalculo, 'Datos');
+
+        // Guardar el archivo XLS
+        var nombreArchivo = 'datos.xls';
+        var libroExcel = XLSX.write(libro, { bookType: 'xls', type: 'binary' });
+        var archivoBinario = s2ab(libroExcel);
+
+        var enlaceDescarga = document.createElement('a');
+        enlaceDescarga.href = window.URL.createObjectURL(new Blob([archivoBinario], { type: 'application/octet-stream' }));
+        enlaceDescarga.download = nombreArchivo;
+        enlaceDescarga.style.display = 'none';
+        document.body.appendChild(enlaceDescarga);
+
+        enlaceDescarga.click();
+
+        document.body.removeChild(enlaceDescarga);
+    }
+
+    function s2ab(s) {
+        var buf = new ArrayBuffer(s.length);
+        var view = new Uint8Array(buf);
+        for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+        return buf;
+    }
+
+</script>

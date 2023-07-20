@@ -27,5 +27,33 @@ namespace capanegocio
             obj.Id_evento_estado = 0;
             return ONJEVENTO.AddEvent(obj, out mensaje);
         }
+
+
+        public int eliminarevento(EVENTO obj, out string mensaje)
+        {
+            return ONJEVENTO.deleteEvent(obj, out mensaje);
+        }
+
+        public int agregarasis(Asistente OBJ, out string mensaje)
+        {
+            return ONJEVENTO.Caddasistencia(OBJ, out mensaje);
+        }
+
+        public List<Asistente> catalogA(int Idevento, out string mensaje)
+        {
+            return ONJEVENTO.Ccatalogasis(Idevento, out mensaje);
+        }
+
+        public int Dltasis(string Nombre,int eventoid, out string mensaje)
+        {
+            return ONJEVENTO.Deleteasis(Nombre, eventoid, out mensaje);
+        }
+
+        public int MODevent(EVENTO OBJ, out string mensaje)
+        {
+            return ONJEVENTO.modEVENT(OBJ, out mensaje);
+        }
+        
+
     }
 }

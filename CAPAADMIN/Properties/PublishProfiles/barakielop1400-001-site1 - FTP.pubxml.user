@@ -8,7 +8,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://win5040.site4now.net:21/ibh</_PublishTargetUrl>
-    <History>False|2023-07-12T03:53:03.7295226Z;True|2023-07-06T18:37:14.1629182-05:00;True|2023-06-21T18:59:21.6808996-05:00;True|2023-06-16T15:18:19.4863859-05:00;True|2023-06-15T16:15:13.1050948-05:00;False|2023-06-15T15:38:45.1585206-05:00;</History>
+    <History>False|2023-07-15T07:55:52.5194336Z;False|2023-07-11T22:53:03.7295226-05:00;True|2023-07-06T18:37:14.1629182-05:00;True|2023-06-21T18:59:21.6808996-05:00;True|2023-06-16T15:18:19.4863859-05:00;True|2023-06-15T16:15:13.1050948-05:00;False|2023-06-15T15:38:45.1585206-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -19,28 +19,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:28</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.dll">
-      <publishTime>07/11/2023 22:12:40</publishTime>
+      <publishTime>07/14/2023 22:20:43</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.pdb">
-      <publishTime>07/11/2023 22:12:40</publishTime>
+      <publishTime>07/14/2023 22:20:43</publishTime>
     </File>
     <File Include="bin/capaD.dll">
-      <publishTime>07/10/2023 18:54:23</publishTime>
+      <publishTime>07/14/2023 22:20:42</publishTime>
     </File>
     <File Include="bin/capaD.pdb">
-      <publishTime>07/10/2023 18:54:23</publishTime>
+      <publishTime>07/14/2023 22:20:42</publishTime>
     </File>
     <File Include="bin/capaentidad.dll">
-      <publishTime>05/07/2023 19:12:45</publishTime>
+      <publishTime>07/14/2023 22:20:42</publishTime>
     </File>
     <File Include="bin/capaentidad.pdb">
-      <publishTime>05/07/2023 19:12:45</publishTime>
+      <publishTime>07/14/2023 22:20:42</publishTime>
     </File>
     <File Include="bin/capanegocio.dll">
-      <publishTime>07/11/2023 14:11:02</publishTime>
+      <publishTime>07/14/2023 22:20:43</publishTime>
     </File>
     <File Include="bin/capanegocio.pdb">
-      <publishTime>07/11/2023 14:11:02</publishTime>
+      <publishTime>07/14/2023 22:20:43</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/15/2023 14:42:28</publishTime>
@@ -813,6 +813,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/DataTables/swf/flashExport.swf">
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
+    <File Include="Content/error.css">
+      <publishTime>07/11/2023 23:02:18</publishTime>
+    </File>
     <File Include="Content/font-awesome.css">
       <publishTime>06/21/2023 14:51:55</publishTime>
     </File>
@@ -820,10 +823,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/21/2023 14:51:55</publishTime>
     </File>
     <File Include="Content/login.css">
-      <publishTime>07/11/2023 21:12:19</publishTime>
+      <publishTime>07/12/2023 10:20:45</publishTime>
     </File>
     <File Include="Content/report.css">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>07/13/2023 16:19:07</publishTime>
     </File>
     <File Include="Content/Res/404.png">
       <publishTime>07/11/2023 20:52:26</publishTime>
@@ -838,10 +841,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>07/14/2023 17:32:16</publishTime>
     </File>
     <File Include="Content/stylemetadata.css">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>07/12/2023 10:36:47</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1066,76 +1069,76 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2023 14:42:27</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.rowGroup.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.rowGroup.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.rowReorder.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.rowReorder.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.scroller.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.scroller.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.select.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.select.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.semanticui.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.semanticui.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.uikit.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/dataTables.uikit.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/jquery.dataTables.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/jquery.dataTables.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.bootstrap.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.bootstrap.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.bootstrap4.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.bootstrap4.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.foundation.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.foundation.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.jqueryui.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.jqueryui.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.semanticui.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/DataTables/responsive.semanticui.min.js">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/jquery-3.4.1.js">
       <publishTime>06/15/2023 14:42:27</publishTime>
@@ -1258,10 +1261,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/11/2023 18:38:34</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>06/15/2023 14:42:27</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>07/11/2023 21:18:50</publishTime>

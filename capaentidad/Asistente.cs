@@ -9,13 +9,12 @@ namespace capaentidad
     public class Asistente
     {
         public int IdAsistente { get; set; }
-        public string PNombre { get; set; }
-        public string SNombre { get; set; }
-        public string PApellido { get; set; }
-        public string SApellido { get; set; }
+        public string Nombre_Completo { get; set; }
+
+        public int IdUsuario { get; set; }
         public int IdEvento { get; set; }
-        public char Sexo { get; set; }
         public char TipoAsistente { get; set; }
+        public string Nombre { get; set; }
 
     }
 }

@@ -75,6 +75,7 @@ namespace CAPAADMIN.Controllers
 
             return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
         }
+       
 
         public JsonResult AddMiembro(Miembro obj)
         {
@@ -132,6 +133,17 @@ namespace CAPAADMIN.Controllers
 
           
             return Json(new { resultado = resultado, mensaje = mensaje}, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult deleteevent(EVENTO obj)
+        {
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNEVENTO().eliminarevento(obj, out mensaje);
+
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
 
         }
 

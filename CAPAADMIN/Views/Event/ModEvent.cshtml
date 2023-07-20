@@ -2,64 +2,130 @@
 @{
     ViewBag.Title = "ModEvent";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">MODIFICAR EVENTO</h2>
+    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">ASISTENCIAS EN EVENTOS</h2>
 }
 
-
-<form class="m-2 mt-5 h-100 border border-3 text-black border-dark rounded p-3 ">
-    <div class="row">
-        <div class="row">
-            <div class=" d-flex mb-3">
-                <label for="exampleInputEmail1" class=" me-2 form-label border-bottom border-info">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" onclick="search()" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
-                </label>
-                <input type="text" class="pe-auto shadow form-control bg-secondary bg-gradient" id="buscar" required aria-describedby="Descrip">
+<div class="modal fade" id="Forasis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title " id="exampleModalLabel">Eliminar evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <form action="@Url.Action("ModEvent","Event")" method="post">
+                <div class="modal-body">
+
+                    <div class="mb-3 ">
+                        <input type="hidden" class=" shadow form-control bg-secondary" name="IdEvento" id="IdEvento" required aria-describedby="Descrip">
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre del evento</label>
+                        <input type="text" class=" shadow form-control bg-secondary" name="Nombre" id="Nombre" required aria-describedby="Descrip">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">add</button>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="row mt-2">
-        <div class="col">
-            <div class="mb-3 ">
-                <label for="exampleInputEmail1" class="form-label border-bottom border-info">Nombre del evento</label>
-                <input type="text" class=" shadow form-control bg-secondary bg-gradient" id="nombreevento" required aria-describedby="Descrip">
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Ubicacion del evento</label>
-                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="ubicacion">
-            </div>
-
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Descripcion</label>
-                <input type="datetime" class=" shadow form-control bg-secondary bg-gradient" required id="desc">
-            </div>
-        </div>
-    </div>
+</div>
 
 
+<div class="p-3  text-bg-light" style="color:white;">
+    <table id="asistencia" class="table  table-striped">
+        <thead>
+            <tr>
+                <th>Eventoid</th>
+                <th>Evento</th>
+                <th>Fecha</th>
+                <th>Lugar</th>
+                <th>Descripcion</th>
+                <th>Registrar Asistencia</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 
 
-    <div class="row mb-5">
+@section scripts{
+    <script>
+          var url = "@Url.Action("Evento", "Home")";
+          var data = { header:"elo"};
+        var datatable;
+        datatable = $("#asistencia").DataTable({
+            responsive: true,
+            ordering: false,
+            "ajax": {
+                url,
+                data
+            },
+            "columns": [
+                { "data": "IdEvento" },
+                { "data": "Nombre" },
+                { "data": "Fecha" },
+                { "data": "LugarEvento" },
+                { "data": "Descripcion" },
+                {
+                    "defaultContent": `<button type="button"  class="btn btn-success text-light btn-asis">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill text-light " viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                </svg>
+                                Asistencia
+                               </button> `,
+                    "orderable": false,
+                    "searchable": false
 
-        <div class="col">
-            <span>Transporte</span>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    SI
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                    NO
-                </label>
-            </div>
-        </div>
+                },
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+            }
+        });
 
-    </div>
-    <button type="submit" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
-</form>
+        $("#asistencia tbody").on("click", '.btn-asis', function () {
 
+            var filaselccionada = $(this).closest("tr");
+
+            var data = datatable.row(filaselccionada).data();
+
+            console.log(data)
+
+            abrirModalasis(data)
+
+        });
+
+           function asistencias(json) {
+
+            var EVENTO = {
+                Nombre: json.Nombre
+                }
+
+            var url2 = "@Url.Action("ModEvent", "Event")";
+
+            data = { obj : EVENTO }
+            $.post(url2, data).done(function (data) {
+                console.log(data);
+            });
+
+           
+        }
+
+        function abrirModalasis(json) {
+            console.log(json);
+            if (json != null) {
+
+                $("#IdEvento").val(json.IdEvento)
+                $("#Nombre").val(json.Nombre)
+            }
+            $('#Forasis').modal('show');
+
+
+        }
+
+    </script>
+    }

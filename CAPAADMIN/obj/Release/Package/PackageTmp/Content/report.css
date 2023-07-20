@@ -45,6 +45,7 @@ form {
 }
 
 .dv2 {
+    border: 2px black solid;
     border-radius: 8px;
     width: 90%;
     margin: 0 auto;
@@ -83,4 +84,19 @@ select {
 
 .dividerb {
     width: 10em;
+}
+/***********************************************************/
+
+css
+.bdreport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:rebeccapurple;
 }

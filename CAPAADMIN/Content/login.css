@@ -42,12 +42,10 @@
 }
 
 @media (max-width: 582px) {
-    .div-principal-viewpass {
-        height: 100vh;
-        width: 600px;
-    }
+  
     .centeritems {
         height:100vh;
+        margin:0;
     }
     body {
         background-size :c;

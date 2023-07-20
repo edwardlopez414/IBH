@@ -15,17 +15,9 @@
         <div class="col">
             <canvas id="grafica" class="container-fluid"></canvas>
         </div>
+
         <div class="col">
-            <div class="row h-50">
-                <div class="container ">
-                    <canvas id="grafica2" class="container w-100"></canvas>
-                </div>
-            </div>
-            <div class="row h-50">
-                <div class="container ">
-                    <canvas id="grafica3" class="container w-100"></canvas>
-                </div>
-            </div>
+            <canvas id="grafica2" class="container-fluid"></canvas>
         </div>
     </div>
     <div class="bg-dark mb-3" id="resicler" style="width: 100%; height: auto;">
@@ -101,7 +93,7 @@
                 </div>
 
                 <div class="container">
-                    <div class="gradientechange border border-dark  container h-auto m-1" >
+                    <div class="gradientechange border border-dark  container h-auto m-1">
                         <div class="p-2 d-flex">
                             <div class="p-1 bg-clcss bg-dark">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar4-event text-light" viewBox="0 0 16 16">
@@ -126,7 +118,7 @@
                                 <div class="modal-dialog  text-black">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                         
+
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -188,7 +180,7 @@
                                 </svg>
                             </a>
                             <h6 id="text3" style="margin-left: 7em;" class="card-subtitle  text-light">Dominical</h6>
-                              
+
                             <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog text-black">
                                     <div class="modal-content">
@@ -236,17 +228,32 @@
             </div>
         </div>
     </div>
-  
 
-    <div class="p-3 bg-dark text-bg-light " style="color:white;">
+
+    <!--<div class="p-3 bg-dark" style="color:white;">
         <table id="datas" class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Eventoid</th>
+                    <th>Fecha</th>-->
+    @*<th>Nombre</th>
+        <th>Lugar</th>*@
+    <!--</tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>-->
+
+    <div class="p-3 bg-dark" style="color:white;">
+        <table id="datas" class="table  table-dark">
             <thead>
                 <tr>
                     <th>Eventoid</th>
                     <th>Evento</th>
                     <th>Fecha</th>
                     <th>Lugar</th>
-
+                    <th>Descripcion</th>
                 </tr>
             </thead>
             <tbody>
@@ -257,6 +264,7 @@
 </main>
 @section scripts{
     <script>
+
         mostrar();
           var url = "@Url.Action("Evento", "Home")";
           var data = { header:"elo"};
@@ -272,9 +280,16 @@
                 { "data": "IdEvento" },
                 { "data": "Nombre" },
                 { "data": "Fecha" },
-                { "data": "LugarEvento" }
-            ]
-        })
+                { "data": "LugarEvento" },
+                { "data": "Descripcion" }
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+            }
+        });
+
+        var fother = document.getElementById("datas_info");
+        fother.style.color = "white"
         function mostrar() {
             let url = "@Url.Action("EventoPendiente", "Home")";
             $.post({
@@ -314,7 +329,7 @@
                     fc2.innerText = data.data["2"].Fecha;
                     lg2.innerText = data.data["2"].LugarEvento;
 
-            
+
                 });
         }
 

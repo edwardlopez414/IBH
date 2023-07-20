@@ -3,15 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @*<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>*@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
-    @*<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">*@
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/xlsx-style/dist/xlsx.core.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.min.js"></script>
     <!-- use version 0.20.0 -->
     <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
     @Styles.Render("~/Content/css")
@@ -245,20 +249,33 @@
 
             }
         }
-
         function desplazar() {
             var sr = document.getElementById("dvrih");
-            var dr1 = document.getElementById("dvcol")
-            var dasboard = document.getElementById('render')
-            if (sr.style.height <= "100vh") {
-                sr.style.height = "4vh";
+            var dr1 = document.getElementById("dvcol");
+            var dasboard = document.getElementById('render');
+            if (sr.style.height === "100vh") {
+                sr.style.height = "5vh";
                 dr1.style.display = "none";
-               dasboard.style.display = 'block';
+                dasboard.style.display = 'block';
             } else {
-                sr.style.height = "100vh"; dr1.style.display = "block";
+                sr.style.height = "100vh";
+                dr1.style.display = "block";
                 dasboard.style.display = 'none';
             }
         }
+        //function desplazar() {
+        //    var sr = document.getElementById("dvrih");
+        //    var dr1 = document.getElementById("dvcol")
+        //    var dasboard = document.getElementById('render')
+        //    if (sr.style.height <= "100vh") {
+        //        sr.style.height = "5vh";
+        //        dr1.style.display = "none";
+        //       dasboard.style.display = 'block';
+        //    } else {
+        //        sr.style.height = "100vh"; dr1.style.display = "block";
+        //        dasboard.style.display = 'none';
+        //    }
+        //}
 
         function search() {
             var inputValue = document.getElementById('buscar');

@@ -19,6 +19,7 @@ namespace capaentidad
         public int Id_estado { get; set; }
         public int Id_evento_estado { get; set; }
         public int Id_catalogo { get; set; }
+        public int estado { get; set; }
 
     }
 }

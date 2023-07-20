@@ -66,6 +66,7 @@ a {
     background-color: none;
    
 }
+
 @media only screen and (max-width: 730px) {
     .dvrit {
         width: 30%;
@@ -87,7 +88,7 @@ a {
     }
     .dvrit {
         width: 100%;
-        height: 4vh;
+        height: 5vh;
     }
     .mostrar {
         display:none;

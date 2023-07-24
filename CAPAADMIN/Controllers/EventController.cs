@@ -66,6 +66,29 @@ namespace CAPAADMIN.Controllers
 
             return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult AprobarEvent(int eventoid)
+        {
+
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNEVENTO().Aevent(eventoid, out mensaje);
+
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult DesCevent(int eventoid)
+        {
+
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNEVENTO().DescartarE(eventoid, out mensaje);
+
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult Modificarevento(EVENTO OBJ)
         {
 
@@ -102,6 +125,12 @@ namespace CAPAADMIN.Controllers
         public ActionResult asistencia()
         {
             return View();
+        }
+        public JsonResult Reportvento(string FI, string FF, string USER)
+        {
+            List<ReportEvent> olistaevent = new List<ReportEvent>();
+            olistaevent = new CNEVENTO().Repvento(FI,FF,USER);
+            return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
     }
 }

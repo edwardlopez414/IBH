@@ -45,7 +45,7 @@ form {
 }
 
 .dv2 {
-    border: 2px black solid;
+  
     border-radius: 8px;
     width: 90%;
     margin: 0 auto;
@@ -101,19 +101,3 @@ button {
     background-color:rebeccapurple;
 }
 
-.contenedor_P {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 500px;
-    height: 300px;
-    margin: 0 auto;
-    padding: 0px;
-}
-
-.elemento_S {
-    margin: 0;
-    width: 500px;
-    height: 300px;
-
-}

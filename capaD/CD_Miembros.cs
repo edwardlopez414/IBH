@@ -43,7 +43,8 @@ namespace capaD
                                 activo = Convert.ToInt32(rdr["activo"]),
                                 Cedula = rdr["Cedula"].ToString(),
                                 clave = rdr["clave"].ToString(),
-                                restablecer =Convert.ToInt32(rdr["restablecer"])
+                                restablecer =Convert.ToInt32(rdr["restablecer"]),
+                                Id_rol = Convert.ToInt32(rdr["Id_rol"])
                             });
                         }
                     }
@@ -127,6 +128,34 @@ namespace capaD
 
                 return intreturn;
             }
+        public int Cambiar_estado_inactivo(Miembro obj, out string mensaje)
+        {
+            int intreturn = 0;
+            mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_actualizar_estatus_inactivo", oconexion);
+                    cmd.Parameters.AddWithValue("id_usuario", obj.Id_Usuario);
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    intreturn = Convert.ToInt32(cmd.Parameters["resultado"].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                intreturn = 0;
+                mensaje = ex.Message;
+            }
+
+            return intreturn;
+        }
 
 
         public int agregar_Miembro(Miembro obj, out string mensaje)

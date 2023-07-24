@@ -11,5 +11,7 @@ namespace capaentidad
         public int IdMiembroP { get; set; }
         public string Cargo { get; set; }
         public int IdEventoP { get; set; }
+
+        public int IdMiembro { get; set; }
     }
 }

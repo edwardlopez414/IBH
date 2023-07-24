@@ -113,12 +113,16 @@ namespace CAPAADMIN.Controllers
             return Json(new { data = olista }, JsonRequestBehavior.AllowGet);
 
         }
-        public JsonResult AddingEvent(EVENTO obj)
+        public JsonResult AddingEvent(EVENTO obj )
         {
+            
+            Miembro miembro = new Miembro();
+
+            miembro = new CNMIEMBRO().Miembro().Where(u => u.Email.TrimEnd() == obj.PARAN1.TrimEnd()).FirstOrDefault();
             object resultado;
             string mensaje = String.Empty;
 
-            resultado = new CNEVENTO().ADDEVENT(obj, out mensaje);
+            resultado = new CNEVENTO().ADDEVENT(obj, miembro, out mensaje);
 
             return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
 
@@ -133,6 +137,17 @@ namespace CAPAADMIN.Controllers
 
           
             return Json(new { resultado = resultado, mensaje = mensaje}, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult CambiarAinactivo(Miembro obj)
+        {
+            object resultado;
+            string mensaje = String.Empty;
+
+            resultado = new CNMIEMBRO().Cambiar_estado_inactivo(obj, out mensaje);
+
+
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
 
         }
         public JsonResult deleteevent(EVENTO obj)

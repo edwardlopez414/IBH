@@ -21,10 +21,7 @@
 #grafica2 {
     max-height: 100%;
 }
-*#grafica3 {
-    max-width: 320px;
-    max-height: 200px;
-}
+
 .flex_div {
     width: 97%;
     height: 40%;

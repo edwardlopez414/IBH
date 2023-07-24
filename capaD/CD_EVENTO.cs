@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using capaentidad;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Claims;
 
 namespace capaD
 {
@@ -93,10 +94,78 @@ namespace capaD
             return evento;
 
         }
-
-        public int AddEvent(EVENTO obj, out string mensaje)
+        
+        public List<ReportEvent> ReportEvent(string fechai, string fechaf,string user)
         {
+            List<ReportEvent> evento = new List<ReportEvent>();
+            fechai += " 00:00:00.000";
+            fechaf += " 00:00:00.000";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.cn))
+                {
+
+                    string sql = "select * from IBPRO.dbo.EVENTO A INNER JOIN IBPRO.dbo.PLANIFICA B ON A.IdEvento = B.IdEventoP INNER JOIN IBPRO.dbo.estado_evento C ON A.IdEvento = C.Id_evento_estado INNER JOIN IBPRO.dbo.login_usuario D ON B.IdMiembro = D.Id_usuario WHERE  A.Fecha between '"+fechai+"' and '"+fechaf+"' AND D.usuario like '%"+user+"%' and A.Nombre like '%%'";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.CommandType = CommandType.Text;
+
+
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            string readestado = reader["Id_catalogo"].ToString();
+                            if (readestado == "4") {
+                             readestado="SIN APROBAR";
+                            }else if (readestado == "2") {
+                                readestado = "APROBADO";
+                            }else if(readestado == "3") { readestado = "RECHAZADO";
+                            }else { readestado = "COMPLETADO"; }
+                                evento.Add(new ReportEvent()
+                            {
+                                IdEvento = Convert.ToInt32(reader["IdEvento"]),
+                                Nombre = reader["Nombre"].ToString(),
+                                Fecha = reader["Fecha"].ToString(),
+                                LugarEvento = reader["LugarEvento"].ToString(),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                estado = readestado,
+                                Usuario = reader["usuario"].ToString(),
+                                Cargo = reader["Cargo"].ToString(),
+                                });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { evento = new List<ReportEvent>(); }
+
+            return evento;
+
+        }
+
+        public int AddEvent(EVENTO obj,Miembro obj1, out string mensaje)
+        {
+            string rol ;
+
+            if (obj1.Id_rol == 1)
+            {
+                rol = "ADMINISTRADOR";
+            }
+            else if (obj1.Id_rol == 2)
+            {
+                rol = "MIEMBRO";
+            }
+            else {
+                rol = "LIDER DE JOVENES";
+            }
+
             int intreturn = 0;
+
             mensaje = string.Empty;
             try
             {
@@ -112,6 +181,9 @@ namespace capaD
                     cmd.Parameters.AddWithValue("Id_estado", obj.Id_estado);
                     cmd.Parameters.AddWithValue("Id_evento_estado", obj.Id_evento_estado);
                     cmd.Parameters.AddWithValue("Id_catalogo", obj.Id_catalogo);
+                    cmd.Parameters.AddWithValue("IdMiembroP", obj1.Id_rol);
+                    cmd.Parameters.AddWithValue("Cargo", rol);
+                    cmd.Parameters.AddWithValue("IdMiembro", obj1.Id_Usuario);
                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -297,6 +369,65 @@ namespace capaD
 
             return intreturn;
         }
+
         
+               public int APevent(int eventoid, out string mensaje)
+        {
+            int intreturn = 0;
+            mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_aprovatedEvent", oconexion);
+                    cmd.Parameters.AddWithValue("IdEvento", eventoid);
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    intreturn = Convert.ToInt32(cmd.Parameters["resultado"].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                intreturn = 0;
+                mensaje = ex.Message;
+            }
+
+            return intreturn;
+        }
+        public int Desevent(int eventoid, out string mensaje)
+        {
+            int intreturn = 0;
+            mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_CancelarEvent", oconexion);
+                    cmd.Parameters.AddWithValue("IdEvento", eventoid);
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    intreturn = Convert.ToInt32(cmd.Parameters["resultado"].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                intreturn = 0;
+                mensaje = ex.Message;
+            }
+
+            return intreturn;
+        }
+
+
     }
 }

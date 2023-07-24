@@ -4,7 +4,10 @@
     height: 100vh;
     width: 100%;
 }
-
+.declareuser {
+    font-size: 0.5em;
+    color:black;
+}
 .bd-principal {
     background-color:black;
     height:100vh;
@@ -38,10 +41,18 @@ body {
     width: 20%;
 }
 
+.dataTables_length label {
+    color: white;
+}
+#datas_filter label {
+    color: white;
+}
+#datas_info {
+    color: white;
+}
+
 .nv2 {
     width: 100%;
-  
-   
 }
 
 

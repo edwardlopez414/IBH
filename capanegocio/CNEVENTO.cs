@@ -15,17 +15,21 @@ namespace capanegocio
         {
             return ONJEVENTO.listar();
         }
+        public List<ReportEvent> Repvento(string FI, string FF, string USER)
+        {
+            return ONJEVENTO.ReportEvent(FI,FF,USER);
+        }
 
         public List<EVENTO> EventPendin()
         {
             return ONJEVENTO.listarP();
         }
-        public int ADDEVENT(EVENTO obj, out string mensaje)
+        public int ADDEVENT(EVENTO obj, Miembro obj1, out string mensaje)
         {
             obj.Id_catalogo = 0;
             obj.Id_estado = 0;
             obj.Id_evento_estado = 0;
-            return ONJEVENTO.AddEvent(obj, out mensaje);
+            return ONJEVENTO.AddEvent(obj,obj1, out mensaje);
         }
 
 
@@ -53,7 +57,14 @@ namespace capanegocio
         {
             return ONJEVENTO.modEVENT(OBJ, out mensaje);
         }
+        public int Aevent(int eventoid, out string mensaje)
+        {
+            return ONJEVENTO.APevent(eventoid, out mensaje);
+        }
+        public int DescartarE(int eventoid, out string mensaje)
+        {
+            return ONJEVENTO.Desevent(eventoid, out mensaje);
+        }
         
-
     }
 }

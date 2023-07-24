@@ -24,6 +24,10 @@ namespace capanegocio
         {        
             return objmiebro.Cambiar_estado_activo(obj, out mensaje);
         }
+        public int Cambiar_estado_inactivo(Miembro obj, out string mensaje)
+        {
+            return objmiebro.Cambiar_estado_inactivo(obj, out mensaje);
+        }
 
         public int AddUser(Miembro obj, out string mensaje)
         {

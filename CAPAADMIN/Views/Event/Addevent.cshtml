@@ -78,23 +78,30 @@
     }
 
     function addevent()
-    { 
+    {
+        var sd = document.getElementById("identityuser").innerHTML
         var EVENTO = {
 
             Nombre : $("#nombreevento").val(),
             Fecha :  $("#Fecha").val(),
             LugarEvento : $("#ubicacion").val(),
             Transporte : obtenertransporte(),
-            Descripcion : $("#desc").val()
+            Descripcion: $("#desc").val(),
+            PARAN1: sd
         }
+
+        console.log(EVENTO)
+
           var url2 = "@Url.Action("AddingEvent", "Home")";
 
-            data = { obj: EVENTO }
+        data = {
+            obj: EVENTO
+        }
             $.post(url2, data).done(function (data) {
                 console.log(data);
             });
-             
+
         }
-    
+
 
 </script>

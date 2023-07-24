@@ -67,7 +67,9 @@ namespace CAPAADMIN.Controllers
 
             miembro = new CNMIEMBRO().Miembro().Where(u => u.Email.TrimEnd() == correo && u.clave == clave).FirstOrDefault();
 
-            if (miembro == null)
+
+
+            if (miembro == null || miembro.activo == 0)
             {
                 ViewBag.error = "Credenciales Incorrectas";
                 return View();
@@ -79,9 +81,8 @@ namespace CAPAADMIN.Controllers
                     return RedirectToAction("Viewpass", "Login");
                 }
                 FormsAuthentication.SetAuthCookie(miembro.Email, false);
-                return RedirectToAction("Index", "Home");
-                
-               
+                Session["Miembro"] = miembro;
+                return RedirectToAction("Index", "Home");               
             }
 
             

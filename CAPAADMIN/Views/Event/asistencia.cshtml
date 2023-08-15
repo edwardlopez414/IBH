@@ -9,7 +9,7 @@
         <div class="col">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label border-bottom border-info">Id del evento</label>
-                <input type="text" class="pe-auto shadow form-control bg-light" disabled id="buscar" value="@TempData["Id_Usuario"]" required aria-describedby="Descrip">
+                <input type="text" class="pe-auto shadow form-control bg-light" disabled id="buscar" value="@TempData["Id_Usuario"]" required aria-describedby="Descrip" >
             </div>
         </div>
         <div class="col">
@@ -29,7 +29,7 @@
         <div class="col">
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">tipo asistente</label>
-                <select class="form-select" id="tipo" aria-label="Default select example">
+                <select class="form-select" id="tipo" aria-label="Default select example" required>
                     <option value="H">Hombre</option>
                     <option value="M">Mujer</option>
                     <option value="V">Niño</option>
@@ -48,24 +48,24 @@
    
 
 </div>
-<div class="p-3 text-bg-light" style="color:white;">
-    <table id="Catalogasistencias" class="table  table-striped">
-        <thead>
-            <tr>
-                <th>Eventoid</th>
-                <th>Evento</th>
-                <th>Tipo asistente</th>
-                <th>Nombre completp</th>
-                <th>
-                  eliminar
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-</div>
-<script>
+<main id="mainprincipal" class="principalMAIN">
+    <div class="p-2 text-bg-light" style="color:white;">
+        <table id="Catalogasistencias" class="table  table-striped">
+            <thead>
+                <tr>
+                    <th>Eventoid</th>
+                    <th>Evento</th>
+                    <th>Tipo asistente</th>
+                    <th>Nombre completp</th>
+                    <th>eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    </main>
+    <script>
     const tabla = document.getElementById("Catalogasistencias");
 
     addEventListener("DOMContentLoaded", (event) => {
@@ -107,7 +107,7 @@
 
                         Deleteasis(nombreCompleto,eventoid);
                         $(this).closest("tr").remove();
-                        
+
                     });
                 }
 
@@ -145,7 +145,7 @@
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
             </svg>
         </button>`;
-        
+
         $(nuevaFila).find(".btn-deleteasistente").click(function () {
             var row = $(this).closest("tr");
             var eventoid = row.find("td:eq(0)").text();
@@ -178,7 +178,7 @@
 
     function Deleteasis(nombre, eventoid) {
 
-        
+
 
             var url2 = "@Url.Action("deleteasis", "Event")";
 
@@ -191,4 +191,4 @@
             });
     }
 
-</script>
+    </script>

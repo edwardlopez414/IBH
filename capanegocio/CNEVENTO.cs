@@ -19,6 +19,14 @@ namespace capanegocio
         {
             return ONJEVENTO.ReportEvent(FI,FF,USER);
         }
+        public List<ReportAsistent> RepAsis(string FI, string FF, string USER)
+        {
+            return ONJEVENTO.ReportAsistant(FI, FF, USER);
+        }
+        public List<ReportMiembro> REPMIEM(string FI, string FF, string USER, int edad, string sexo)
+        {
+            return ONJEVENTO.ReporteMiembro(FI, FF, USER, edad,sexo);
+        }
 
         public List<EVENTO> EventPendin()
         {

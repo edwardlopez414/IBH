@@ -7,6 +7,7 @@ using capaentidad;
 using System.Data.SqlClient;
 using System.Data;
 using System.Security.Claims;
+using System.Reflection;
 
 namespace capaD
 {
@@ -146,6 +147,100 @@ namespace capaD
 
             return evento;
 
+        }
+
+        public List<ReportAsistent> ReportAsistant(string fechai, string fechaf, string user)
+        {
+            List<ReportAsistent> evento = new List<ReportAsistent>();
+            fechai += " 00:00:00.000";
+            fechaf += " 00:00:00.000";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.cn))
+                {
+
+                    string sql = "select * from IBPRO.dbo.ASISTENTE A INNER JOIN IBPRO.dbo.EVENTO B ON A.IdEvento = B.IdEvento WHERE  B.Fecha between '" + fechai + "'and'" + fechaf + "'AND A.Nombre_completo like '%" + user + "%' and B.Nombre like '%%'";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.CommandType = CommandType.Text;
+
+
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+
+                            evento.Add(new ReportAsistent()
+                            {
+                                IdAsistente = Convert.ToInt32(reader["IdAsistente"]),
+                                IdEvento = Convert.ToInt32(reader["IdEvento"]),
+                                Nombre_completo = reader["Nombre_completo"].ToString(),
+                                Nombre = reader["Nombre"].ToString(),
+                                Fecha = reader["Fecha"].ToString(),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                TipoAsistente = reader["TipoAsistente"].ToString()
+                                
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { evento = new List<ReportAsistent>(); }
+
+            return evento;
+        }
+
+        public List<ReportMiembro> ReporteMiembro(string fechai, string fechaf, string user,int edad = 1,string sexo = "F")
+        {
+            List<ReportMiembro> evento = new List<ReportMiembro>();
+            fechai += " 00:00:00.000";
+            fechaf += " 00:00:00.000";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.cn))
+                {
+
+                    string sql = "select * from Login_usuario A inner join Datos_usuario B on A.id_usuario = B.Id_Usuario where B.Fecha_bautismo between '"+fechai+"' and '"+fechaf+"' and A.usuario like '%"+user+"%' and B.edad = "+edad+" and B.Sexo like '"+sexo+"'";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.CommandType = CommandType.Text;
+
+
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+
+                            evento.Add(new ReportMiembro()
+                            {
+                                Id_Usuario = Convert.ToInt32(reader["Id_Usuario"]),
+                                usuario = reader["usuario"].ToString(),
+                                Nombre_Completo = reader["Nombre_Completo"].ToString(),
+                                restablecer = Convert.ToInt32(reader["restablecer"]),
+                                Edad = Convert.ToInt32(reader["Edad"]),
+                                Direccion = reader["Direccion"].ToString(),
+                                Nro_contacto = reader["Nro_contacto"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                Fecha_bautismo = reader["Fecha_bautismo"].ToString(),
+                                Fecha_ingreso = reader["Fecha_ingreso"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { evento = new List<ReportMiembro>(); }
+
+            return evento;
         }
 
         public int AddEvent(EVENTO obj,Miembro obj1, out string mensaje)

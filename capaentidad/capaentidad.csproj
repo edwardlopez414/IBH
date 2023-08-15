@@ -47,7 +47,9 @@
     <Compile Include="Miembro.cs" />
     <Compile Include="PLANIFICA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportAsistent.cs" />
     <Compile Include="ReportEvent.cs" />
+    <Compile Include="ReportMiembro.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,11 +2,12 @@
 @{
     ViewBag.Title = "RPEvent";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">REPORTE DE EVENTOS</h2>
 }
 
 @Styles.Render("~/Content/css")
 <main class="maincl">
-    <div class="principal1">
+    <div class="principal1 shadow-lg">
         <div class="card">
             <div>
                 <div class="dv1 mr-1">
@@ -43,31 +44,19 @@
             </div>
 
         </div>
-        <div Id="Revent" style="display:none">
-            <div class="p-3 text-bg-light" style="color:white;">
-                <table id="Catalogevent" class="table  table-striped">
-                    <thead>
-                        <tr>
-                            <th>Eventoid</th>
-                            <th>Evento</th>
-                            <th>Fecha</th>
-                            <th>Lugar</th>
-                            <th>Descripcion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
+
+
+        <div id="Reportrecicler" class="contenedor_P bg-light" style="text-align:center; display:none;">
+            <button type="button" onclick="dowxls()" class="btn btn-success  m-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-filetype-xls" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM6.472 15.29a1.176 1.176 0 0 1-.111-.449h.765a.578.578 0 0 0 .254.384c.07.049.154.087.25.114.095.028.202.041.319.041.164 0 .302-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.255-.144-.462-.193l-.619-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.527-.422.225-.1.484-.149.777-.149.305 0 .564.05.78.152.216.102.383.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.625.625 0 0 0-.247-.181.923.923 0 0 0-.369-.068c-.217 0-.388.05-.513.152a.472.472 0 0 0-.184.384c0 .121.048.22.143.3a.97.97 0 0 0 .405.175l.62.143c.217.05.406.12.566.211a1 1 0 0 1 .375.358c.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-2.945-3.358h-.893L1.81 13.37h-.036l-.832-1.438h-.93l1.227 1.983L0 15.931h.861l.853-1.415h.035l.85 1.415h.908L2.253 13.94l1.274-2.007Zm2.727 3.325H4.557v-3.325h-.79v4h2.487v-.675Z" />
+                </svg>
+                Exportar XLS
+            </button>
+            <div class="elemento_S" id="hot"></div>
 
         </div>
     </div>
-  
-
-    <div  class="contenedor_P bg-light" style="text-align:center">
-        <div class="elemento_S" id="hot"></div>
-    </div>
-
 
 </main>
 
@@ -76,7 +65,9 @@
 <script>
 
     function buscar() {
-        
+
+        var sr = document.getElementById("Reportrecicler");
+        sr.style.display = "";
                var url2 = "@Url.Action("Reportvento", "Event")";
         data = {
             FI: $("#Desde").val(),
@@ -88,13 +79,9 @@
                    console.log(data);
                    Mostrarxls(data.data)
                });
-      
-        
     }
 
     function Mostrarxls(data){
-         
-
         // Configuración de Handsontable
         var container = document.getElementById('hot');
         var hot = new Handsontable(container, {
@@ -110,13 +97,63 @@
                 { data: 'estado' },
                 { data: 'Usuario' },
                 { data: 'Cargo' },
-                
             ]
         });
     }
-    function Mostrarevent()
-    {
-        document.getElementById("Revent").style.display =""
 
+    function dowxls() {
+             var url2 = "@Url.Action("Reportvento", "Event")";
+        data = {
+            FI: $("#Desde").val(),
+            FF: $("#Hasta").val(),
+            USER: $("#user").val(),
+        }
+        console.log(data);
+               $.post(url2, data).done(function (data) {
+                   console.log(data);
+                   generarXLS(data.data)
+               });
     }
+    function generarXLS(data) {
+        // Tu JSON de ejemplo
+
+
+        // Crear una hoja de cálculo
+        var hojaCalculo = XLSX.utils.json_to_sheet(data);
+
+        // Establecer el estilo para el encabezado de las columnas
+        var estiloEncabezado = { font: { color: { rgb: "00FF00" } } };
+        var encabezados = Object.keys(data[0]);
+        for (var i = 0; i < encabezados.length; i++) {
+            var encabezado = XLSX.utils.encode_cell({ c: i, r: 0 });
+            hojaCalculo[encabezado].s = estiloEncabezado;
+        }
+
+        // Crear un libro de trabajo
+        var libro = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(libro, hojaCalculo, 'Datos');
+
+        // Guardar el archivo XLS
+        var nombreArchivo = 'datos.xls';
+        var libroExcel = XLSX.write(libro, { bookType: 'xls', type: 'binary' });
+        var archivoBinario = s2ab(libroExcel);
+
+        var enlaceDescarga = document.createElement('a');
+        enlaceDescarga.href = window.URL.createObjectURL(new Blob([archivoBinario], { type: 'application/octet-stream' }));
+        enlaceDescarga.download = nombreArchivo;
+        enlaceDescarga.style.display = 'none';
+        document.body.appendChild(enlaceDescarga);
+
+        enlaceDescarga.click();
+
+        document.body.removeChild(enlaceDescarga);
+    }
+
+    function s2ab(s) {
+        var buf = new ArrayBuffer(s.length);
+        var view = new Uint8Array(buf);
+        for (var i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+        return buf;
+    }
+
 </script>

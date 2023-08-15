@@ -16,11 +16,11 @@
                 <div class="modal-body">
 
                     <div class="mb-3 ">
-                        <input type="hidden" class=" shadow form-control bg-secondary" name="IdEvento" id="IdEvento" required aria-describedby="Descrip">
+                        <input hidden class=" shadow form-control bg-secondary" name="Idevento" id="IdEvento" required aria-describedby="Descrip" >
                     </div>
                     <div class="mb-3 ">
                         <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre del evento</label>
-                        <input type="text" class=" shadow form-control bg-secondary" name="Nombre" id="Nombre" required aria-describedby="Descrip">
+                        <input type="text" class=" shadow form-control bg-secondary" name="Nombre" id="Nombre" required aria-describedby="Descrip" disabled > 
                     </div>
 
                 </div>
@@ -33,27 +33,27 @@
     </div>
 </div>
 
+<main id="mainprincipal" class="principalMAIN">
+    <div class="p-3  text-bg-light" style="color:white;">
+        <table id="asistencia" class="table  table-striped">
+            <thead>
+                <tr>
+                    <th>Eventoid</th>
+                    <th>Evento</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                    <th>Descripcion</th>
+                    <th>Registrar Asistencia</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
 
-<div class="p-3  text-bg-light" style="color:white;">
-    <table id="asistencia" class="table  table-striped">
-        <thead>
-            <tr>
-                <th>Eventoid</th>
-                <th>Evento</th>
-                <th>Fecha</th>
-                <th>Lugar</th>
-                <th>Descripcion</th>
-                <th>Registrar Asistencia</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-</div>
-
-
-@section scripts{
-    <script>
+    @section scripts{
+        <script>
           var url = "@Url.Action("Evento", "Home")";
           var data = { header:"elo"};
         var datatable;
@@ -112,7 +112,7 @@
                 console.log(data);
             });
 
-           
+
         }
 
         function abrirModalasis(json) {
@@ -127,5 +127,5 @@
 
         }
 
-    </script>
+        </script>
     }

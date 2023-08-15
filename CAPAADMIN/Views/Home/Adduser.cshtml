@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <button type="submit" onclick=" adduser()" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+    <button type="submit" onclick=" adduser()" class="mb-3 shadow w-50 m-auto btn btn-primary" style="position:relative;left:25%;">Aceptar</button>
 </form>
 
 <script>
@@ -140,15 +140,15 @@
                 Sexo: define_sexo(),
                 Cedula:       $("#Cedula").val()
               }
-              
+
+         console.log(Miembro);
              var url2 = "@Url.Action("AddMiembro", "Home")";
 
             data = { obj : Miembro }
             $.post(url2, data).done(function (data) {
                 console.log(data);
             });
-
-
-        }
+         window.location.reload()
+     }
 
 </script>

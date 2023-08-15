@@ -31,7 +31,7 @@ namespace CAPAADMIN.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ModEvent( int Idevento,string Nombre, string Tipo_asistente)
+        public ActionResult ModEvent( int Idevento,string Nombre )
         {
             
             if(Nombre!= "")
@@ -130,6 +130,20 @@ namespace CAPAADMIN.Controllers
         {
             List<ReportEvent> olistaevent = new List<ReportEvent>();
             olistaevent = new CNEVENTO().Repvento(FI,FF,USER);
+            return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Reportasistente(string FI, string FF, string USER)
+        {
+            List<ReportAsistent> olistaevent = new List<ReportAsistent>();
+            olistaevent = new CNEVENTO().RepAsis(FI, FF, USER);
+            return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ReMiembro(string FI, string FF, string USER,int edad, string sexo)
+        {
+            List<ReportMiembro> olistaevent = new List<ReportMiembro>();
+            olistaevent = new CNEVENTO().REPMIEM(FI, FF, USER,edad,sexo);
             return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
     }

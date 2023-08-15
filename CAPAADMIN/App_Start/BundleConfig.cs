@@ -36,6 +36,9 @@ namespace CAPAADMIN
                       "~/Content/site.css",
                      "~/Content/report.css"));
 
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                     "~/Content/bootstrap.css"));
+
             bundles.Add(new StyleBundle("~/Content/stylemetada").Include(
                      "~/Content/stylemetadata.css"));
 

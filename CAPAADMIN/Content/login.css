@@ -1,5 +1,8 @@
 ﻿* {
-    margin:0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
 }
 .gradient-custom-2 {
     /* fallback for old browsers */

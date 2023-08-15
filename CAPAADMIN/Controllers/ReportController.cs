@@ -26,14 +26,6 @@ namespace CAPAADMIN.Controllers
         public ActionResult RPAsistencia()
         {
             return View();
-        }
-        public ActionResult RPProveedores()
-        {
-            return View();
-        }
-        public ActionResult RPPEfectuados()
-        {
-            return View();
-        }
+        }   
     }
 }

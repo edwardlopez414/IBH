@@ -16,25 +16,12 @@ namespace CAPAADMIN.Controllers
         {
             return View();
         }
-        public ActionResult reportes()
-        {
-            return View();
-        }
-
         public ActionResult reporteevento()
-        {
-            return View();
-        }
-        public ActionResult Activity()
         {
             return View();
         }
         // vistas relacioadas a usuarios capa admin
         public ActionResult Cataloguser()
-        {
-            return View();
-        }
-        public ActionResult deleteuser()
         {
             return View();
         }
@@ -46,26 +33,8 @@ namespace CAPAADMIN.Controllers
         {
             return View();
         }
-        public ActionResult habuser()
-        {
-            return View();
-        }
         public ActionResult error()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
         public JsonResult MIEMBROS(string cedula = "") {

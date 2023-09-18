@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Cataloguser";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">BUSCAR USUARIO</h2>
+    <h2 class="text-black border-bottom border-info shadow-lg mt-05">BUSCAR USUARIO</h2>
 }
 
 <!-- Modal -->
@@ -71,7 +71,6 @@
 
 
 <main id="mainprincipal" class="principalMAIN">
-
     <div class="p-3 text-bg-light" style="color:white;">
         <table id="adduser" class="table  table-striped">
             <thead>
@@ -83,15 +82,12 @@
                     <th>Sexo</th>
                     <th>Fecha_bautismo</th>
                     <th>Activo</th>
-
                 </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
     </div>
-
-
 </main>
 @section scripts{
     <script>
@@ -162,9 +158,20 @@
 
             var data = datatable.row(filaselccionada).data();
 
-            console.log(data)
+            if (data != undefined) {
+                abrirModal(data);
+            } else {
+                var filaSeleccionada = $("tr.parent"); // Selecciona la fila específica por su clase o cualquier otro selector
 
-            abrirModal(data);
+                console.log("fila")
+                var data = {
+                    Id_Usuario: filaSeleccionada.find("td:eq(0)").text(), // Obtiene el texto de la primera celda (td)
+                    Nombre_Completo: filaSeleccionada.find("td:eq(1)").text(), // Obtiene el texto de la segunda celda (td)
+                };
+                console.log(data)
+                abrirModal(data);
+                //abrirModalasis(data)
+            }
 
         });
 
@@ -173,10 +180,20 @@
 
             var data = datatable.row(filaselccionada).data();
 
-            console.log(data)
+            if (data != undefined) {
+                abrirModalreset(data);
+            } else {
+                var filaSeleccionada = $("tr.parent"); // Selecciona la fila específica por su clase o cualquier otro selector
 
-            abrirModalreset(data);
+                console.log("fila")
+                var data = {
+                    Id_Usuario: filaSeleccionada.find("td:eq(0)").text(), // Obtiene el texto de la primera celda (td)
+                    Nombre_Completo: filaSeleccionada.find("td:eq(1)").text(), // Obtiene el texto de la segunda celda (td)
 
+                };
+                console.log(data)
+                abrirModalreset(data)
+            }
         });
 
 

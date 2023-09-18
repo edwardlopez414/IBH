@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Addevent";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">AÑADIR EVENTO</h2>
+    <h2 class="text-black border-bottom border-info shadow-lg mt-05" >AÑADIR EVENTO</h2>
 
 }
 
@@ -53,7 +53,7 @@
 
     </div>
     <button type="submit" onclick="addevent()" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
-    <span onclick="eventomostrar()">-----clieckme------xxx--------</span>
+  
 </form>
 <script>
 
@@ -78,23 +78,30 @@
     }
 
     function addevent()
-    { 
+    {
+        var sd = document.getElementById("identityuser").innerHTML
         var EVENTO = {
 
             Nombre : $("#nombreevento").val(),
             Fecha :  $("#Fecha").val(),
             LugarEvento : $("#ubicacion").val(),
             Transporte : obtenertransporte(),
-            Descripcion : $("#desc").val()
+            Descripcion: $("#desc").val(),
+            PARAN1: sd
         }
+
+        console.log(EVENTO)
+
           var url2 = "@Url.Action("AddingEvent", "Home")";
 
-            data = { obj: EVENTO }
+        data = {
+            obj: EVENTO
+        }
             $.post(url2, data).done(function (data) {
                 console.log(data);
             });
-             
+
         }
-    
+
 
 </script>

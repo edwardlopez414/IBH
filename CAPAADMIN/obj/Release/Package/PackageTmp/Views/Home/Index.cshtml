@@ -11,15 +11,15 @@
 </head>
 
 <main class="principalMAIN bg-dark">
-    <div class="row mb-2">
+    <div class=" row mb-2" style="display:flex; flex-wrap:nowrap">
         <div class="col">
             <canvas id="grafica" class="container-fluid"></canvas>
         </div>
 
         <div class="col">
-             <canvas id="grafica2" class="container-fluid"></canvas>
-            </div>
+            <canvas id="grafica2" class="container"></canvas>
         </div>
+    </div>
     <div class="bg-dark mb-3" id="resicler" style="width: 100%; height: auto;">
         <div class="container text-center" style="overflow-x:auto">
             <div class="d-flex container ">
@@ -32,8 +32,8 @@
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
                                 </svg>
                             </div>
-                            <div class="p-2" id="icon1">
-                                <p class="card-text">01-01-2023</p>
+                            <div id="icon1">
+                                <p id="fd" class=" pad-2 card-text">01-01-2023</p>
                             </div>
                         </div>
                         <hr class="hrclas" />
@@ -44,7 +44,7 @@
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>
                             </a>
-                            <h6 id="text1" class="card-subtitle  text-light">Eventos Pendientes</h6>
+                  
 
                             <!-- Modal -->
                             <div class="modal fade text-black" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="container">
-                    <div class="gradientechange border border-dark  container h-auto m-1" >
+                    <div class="gradientechange border border-dark  container h-auto m-1">
                         <div class="p-2 d-flex">
                             <div class="p-1 bg-clcss bg-dark">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar4-event text-light" viewBox="0 0 16 16">
@@ -101,8 +101,8 @@
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
                                 </svg>
                             </div>
-                            <div class="p-2" id="icon1">
-                                <p class="card-text text-light">01-01-2023</p>
+                            <div id="icon1">
+                                <p id="fd1" class="pad-2 card-text text-light">01-01-2023</p>
                             </div>
                         </div>
                         <hr class="hrclas" />
@@ -113,12 +113,12 @@
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>
                             </a>
-                            <h6 id="text2" style="margin-left: 7em;" class="card-subtitle  text-light">Eventos Pendientes</h6>
+                           
                             <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog  text-black">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                         
+
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -162,13 +162,13 @@
                     <div class="gradientechange border border-dark container h-auto m-1">
                         <div class="p-2 d-flex">
                             <div class="p-1 bg-clcss bg-dark">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar4-event text-light" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar4-event text-light" viewBox="0 0 16 16">
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z" />
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
                                 </svg>
                             </div>
-                            <div class="p-2" id="icon1">
-                                <p class="card-text text-light">01-01-2023</p>
+                            <div  id="icon1">
+                               <p id="fd2" class="pad-2 card-text text-light">01-01-2023</p>
                             </div>
                         </div>
                         <hr class="hrclas" />
@@ -179,8 +179,8 @@
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>
                             </a>
-                            <h6 id="text3" style="margin-left: 7em;" class="card-subtitle  text-light">Dominical</h6>
-                              
+                          
+
                             <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog text-black">
                                     <div class="modal-content">
@@ -228,17 +228,16 @@
             </div>
         </div>
     </div>
-  
-
-    <div class="p-3 bg-dark text-bg-light " style="color:white;">
-        <table id="datas" class="table table-dark table-striped">
+    
+    <div class="p-3 bg-dark" style="color:white;">
+        <table id="datas" class="table  table-dark">
             <thead>
                 <tr>
                     <th>Eventoid</th>
                     <th>Evento</th>
                     <th>Fecha</th>
                     <th>Lugar</th>
-
+                    <th>Descripcion</th>
                 </tr>
             </thead>
             <tbody>
@@ -249,6 +248,7 @@
 </main>
 @section scripts{
     <script>
+
         mostrar();
           var url = "@Url.Action("Evento", "Home")";
           var data = { header:"elo"};
@@ -264,9 +264,16 @@
                 { "data": "IdEvento" },
                 { "data": "Nombre" },
                 { "data": "Fecha" },
-                { "data": "LugarEvento" }
-            ]
-        })
+                { "data": "LugarEvento" },
+                { "data": "Descripcion" }
+            ],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+            }
+        });
+
+        //var fother = document.getElementById("datas_info");
+        //fother.style.color = "white"
         function mostrar() {
             let url = "@Url.Action("EventoPendiente", "Home")";
             $.post({
@@ -280,33 +287,33 @@
                     var sr = document.querySelector("#Nombre1");
                     var fc = document.querySelector("#pFecha");
                     var lg = document.querySelector("#Lugar");
-                    var tx1 = document.querySelector("#text1");
+                    var tx1 = document.querySelector("#fd");
                     var sr1 = document.querySelector("#Nombre2");
                     var fc1 = document.querySelector("#pFecha2");
                     var lg1 = document.querySelector("#Lugar2");
-                    var tx2 = document.querySelector("#text2");
+                    var tx2 = document.querySelector("#fd1");
                     var sr2 = document.querySelector("#Nombre3");
                     var fc2 = document.querySelector("#pFecha3");
                     var lg2 = document.querySelector("#Lugar3");
-                    var tx3 = document.querySelector("#text3");
+                    var tx3 = document.querySelector("#fd2");
                     //insercion de valores a modal
                     sr.innerText = data.data["0"].Nombre;
-                    tx1.innerText = data.data["0"].Nombre;
+                    tx1.innerText = data.data["0"].Fecha;
                     fc.innerText = data.data["0"].Fecha;
                     lg.innerText = data.data["0"].LugarEvento;
                     console.log(data.data["0"].Nombre);
 
                     sr1.innerText = data.data["1"].Nombre;
-                    tx2.innerText = data.data["1"].Nombre;
+                    tx2.innerText = data.data["1"].Fecha;
                     fc1.innerText = data.data["1"].Fecha;
                     lg1.innerText = data.data["1"].LugarEvento;
 
                     sr2.innerText = data.data["2"].Nombre;
-                    tx3.innerText = data.data["2"].Nombre;
+                    tx3.innerText = data.data["2"].Fecha;
                     fc2.innerText = data.data["2"].Fecha;
                     lg2.innerText = data.data["2"].LugarEvento;
 
-            
+
                 });
         }
 

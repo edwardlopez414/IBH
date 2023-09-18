@@ -87,7 +87,7 @@ a {
 }
 .finalelement {
     position: absolute;
-    bottom: 1%;
+    bottom: 0%;
     left: 1%;
     padding-bottom: 0.8em;
 }
@@ -144,4 +144,16 @@ a {
         display:block;
     }
 
+}
+
+.mt-05 {
+    margin-top: 0.9rem;
+}
+
+
+.txt-infor {
+    color:rgb(13 103 253);
+}
+.txt-infor:hover {
+    color: rgb(255, 127,39);
 }

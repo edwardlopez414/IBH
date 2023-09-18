@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Addevent";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">AÑADIR EVENTO</h2>
+    <h2 class="text-black border-bottom border-info shadow-lg mt-05" >AÑADIR EVENTO</h2>
 
 }
 
@@ -52,7 +52,7 @@
         </div>
 
     </div>
-    <button type="submit" onclick="addevent()" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
+    <button type="" onclick="addevent()" class="mb-3 shadow w-50 m-auto btn btn-primary">Aceptar</button>
   
 </form>
 <script>
@@ -77,8 +77,15 @@
         console.log(EVENTO)
     }
 
-    function addevent()
-    {
+    function addevent() {
+    
+            let hoy = new Date();
+            let DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
+            let ayer = new Date(hoy.getTime() - DIA_EN_MILISEGUNDOS);
+             
+        
+
+       
         var sd = document.getElementById("identityuser").innerHTML
         var EVENTO = {
 
@@ -90,6 +97,7 @@
             PARAN1: sd
         }
 
+
         console.log(EVENTO)
 
           var url2 = "@Url.Action("AddingEvent", "Home")";
@@ -97,11 +105,17 @@
         data = {
             obj: EVENTO
         }
+        const fecha = new Date(EVENTO.Fecha + "T12:00:00");
+        console.log(fecha);
+        if (fecha > ayer ) {        
             $.post(url2, data).done(function (data) {
                 console.log(data);
             });
-
+           
+        } else {
+            alert("La fecha no deve ser menor al del dia de hoy: " + ayer);
         }
+       }
 
 
 </script>

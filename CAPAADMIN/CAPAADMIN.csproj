@@ -325,6 +325,7 @@
     <Content Include="Content\Res\cart.svg" />
     <Content Include="Content\Res\ICON.jpg" />
     <Content Include="Content\Res\icon2-removebg-preview.png" />
+    <Content Include="Content\Res\icons8-church-96.png" />
     <Content Include="Content\stylemetadata.css" />
     <Content Include="Content\error.css" />
     <Content Include="favicon.ico" />
@@ -348,6 +349,8 @@
     <Content Include="Content\Res\plantillaxls.xlsx" />
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ibhcore-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ibhcore-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chart.js" />
     <Content Include="Scripts\chart.min.js" />

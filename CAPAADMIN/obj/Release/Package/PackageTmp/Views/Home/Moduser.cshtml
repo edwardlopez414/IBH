@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.3em;">ACTUALIZAR USUARIO</h2>
+<h2 class="text-black border-bottom border-info shadow-lg mt-05">ACTUALIZAR USUARIO</h2>
 }
 
 <form class="m-2 mt-5 h-100 border border-3 text-black border-dark rounded p-3 ">
@@ -151,7 +151,7 @@
                 Cedula: $("#cedula").val(),
                 Id_Usuario: $("#IduserBD").val()
               }
-              
+             console.log(Miembro);
           
              var url2 = "@Url.Action("ModuserBD", "Home")";
 
@@ -160,7 +160,7 @@
                 console.log(data);
             });
 
-
+         window.location.reload()
         }
 
 </script>

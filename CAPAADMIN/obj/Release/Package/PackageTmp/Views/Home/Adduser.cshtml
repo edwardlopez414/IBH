@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Adduser";
     Layout = "~/Views/Shared/_Layout.cshtml";
-<h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">AÑADIR USUARIO</h2>
+<h2 class="text-black border-bottom border-info shadow-lg mt-05">AÑADIR USUARIO</h2>
 }
 
 <form  class="m-2 mt-5 h-100 border border-3 text-black border-dark rounded p-3 ">
@@ -140,15 +140,15 @@
                 Sexo: define_sexo(),
                 Cedula:       $("#Cedula").val()
               }
-              
+
+         console.log(Miembro);
              var url2 = "@Url.Action("AddMiembro", "Home")";
 
             data = { obj : Miembro }
             $.post(url2, data).done(function (data) {
                 console.log(data);
             });
-
-
-        }
+         window.location.reload()
+     }
 
 </script>

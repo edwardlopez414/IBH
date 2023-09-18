@@ -277,3 +277,9 @@ C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\obj\Release\CAPA
 C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\obj\Release\CAPAADMIN.csproj.CopyComplete
 C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\obj\Release\CAPAADMIN.dll
 C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\obj\Release\CAPAADMIN.pdb
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\bin\es\System.Web.Helpers.resources.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\bin\es\System.Web.Mvc.resources.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\bin\es\System.Web.Razor.resources.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\bin\es\System.Web.WebPages.resources.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAADMIN\bin\es\System.Web.WebPages.Razor.resources.dll

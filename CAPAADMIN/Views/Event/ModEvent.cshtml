@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "ModEvent";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <h2 class="text-black border-bottom border-info shadow-lg" style="margin-top:0.1em;">ASISTENCIAS EN EVENTOS</h2>
+    <h2 class="text-black border-bottom border-info shadow-lg mt-05">ASISTENCIAS EN EVENTOS</h2>
 }
 
 <div class="modal fade" id="Forasis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="mb-3 ">
                         <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Nombre del evento</label>
-                        <input type="text" class=" shadow form-control bg-secondary" name="Nombre" id="Nombre" required aria-describedby="Descrip" disabled > 
+                        <input type="text" class=" shadow form-control bg-secondary" name="Nombre" id="Nombre" required aria-describedby="Descrip" > 
                     </div>
 
                 </div>
@@ -40,10 +40,10 @@
                 <tr>
                     <th>Eventoid</th>
                     <th>Evento</th>
+                    <th>Registrar Asistencia</th>
                     <th>Fecha</th>
                     <th>Lugar</th>
                     <th>Descripcion</th>
-                    <th>Registrar Asistencia</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,10 +67,7 @@
             "columns": [
                 { "data": "IdEvento" },
                 { "data": "Nombre" },
-                { "data": "Fecha" },
-                { "data": "LugarEvento" },
-                { "data": "Descripcion" },
-                {
+                 {
                     "defaultContent": `<button type="button"  class="btn btn-success text-light btn-asis">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill text-light " viewBox="0 0 16 16">
                     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
@@ -81,6 +78,10 @@
                     "searchable": false
 
                 },
+                { "data": "Fecha" },
+                { "data": "LugarEvento" },
+                { "data": "Descripcion" },
+               
             ],
             "language": {
                 "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
@@ -99,8 +100,8 @@
 
         });
 
-           function asistencias(json) {
-
+           @*function asistencias(json) {
+            console.log(json)
             var EVENTO = {
                 Nombre: json.Nombre
                 }
@@ -113,7 +114,7 @@
             });
 
 
-        }
+        }*@
 
         function abrirModalasis(json) {
             console.log(json);

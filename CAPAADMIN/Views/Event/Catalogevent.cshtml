@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Catalogevent";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <h2 class="text-black border-bottom border-info shadow-lg mt-05">BUSCAR EVENTO</h2>
 }
 <!-- Modal -->
 <div class="modal fade" id="Formmodaldeleteevent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
@@ -44,7 +45,7 @@
                     <input type="text" class=" shadow form-control bg-secondary" id="NombreE" required aria-describedby="Descrip">
                 </div>
                 <div class="row">
-                   <div class="mb-3 col">
+                    <div class="mb-3 col">
                         <label for="exampleInputEmail1" class="form-label text-black border-bottom border-info">Ubicacion</label>
                         <input type="text" class=" shadow form-control bg-secondary" id="UB" required aria-describedby="Descrip">
                     </div>
@@ -62,10 +63,10 @@
                         </select>
                     </div>
                 </div>
-               
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary" id="cancelupdate" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" onclick="Modevent()" class="btn btn-success">Aceptar</button>
             </div>
         </div>
@@ -153,7 +154,7 @@
             if (json != null) {
 
                 $("#IdEvento").val(json.IdEvento)
-                $("#Nombre").val(json.Descripcion)
+                $("#Nombre").val(json.Nombre)
             }
             $('#Formmodaldeleteevent').modal('show');
         }
@@ -176,11 +177,27 @@
                 $("#IdEventoM").val(json.IdEvento)
                 $("#NombreE").val(json.Nombre)
                 $("#UB").val(json.LugarEvento)
-                $("#DESc").val(json.Descripcion)
 
+
+                if (json.Descripcion.length > 50) {
+
+                    $("#DESc").val(json.Descripcion.substring(0, 50) + "...")
+                } else {
+                    $("#DESc").val(json.Descripcion)
+                }
             }
             $('#Formmodalasistencia').modal('show');
         }
+        $("#cancelupdate").on("click", function () {
+
+
+                $("#IdEventoM").empty()
+                $("#NombreE").empty()
+                $("#UB").empty()
+                $("#DESc").empty()
+
+
+        });
         $("#Catalogevent tbody").on("click", '.btn-asistencia', function () {
 
             var filaselccionada = $(this).closest("tr");
@@ -189,7 +206,23 @@
 
             console.log(data)
 
-            abrirModalasistencia(data);
+
+            if (data != undefined) {
+                abrirModalasistencia(data)
+            } else {
+                var filaSeleccionada = $("tr.parent"); // Selecciona la fila específica por su clase o cualquier otro selector
+
+                console.log("fila")
+                var data = {
+                    IdEvento: filaSeleccionada.find("td:eq(0)").text(), // Obtiene el texto de la primera celda (td)
+                    Nombre: filaSeleccionada.find("td:eq(1)").text(), // Obtiene el texto de la segunda celda (td)
+                    Descripcion: filaSeleccionada.find("td:eq(4)").text(), // Obtiene el texto de la tercera celda (td)
+                    LugarEvento: filaSeleccionada.find("td:eq(3)").text() // Obtiene el texto de la cuarta celda (td)
+
+                };
+                abrirModalasistencia(data)
+                //abrirModalasis(data)
+            }
 
         });
 
@@ -231,7 +264,7 @@
                   Transporte: $("#transp").val(),
 
                 }
-           
+
             let urlmod = "@Url.Action("Modificarevento", "Event")";
 
             data = { obj : EVENTO }
@@ -245,5 +278,5 @@
         }
     </script>
 
-    
+
 }

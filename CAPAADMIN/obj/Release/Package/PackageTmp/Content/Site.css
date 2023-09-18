@@ -4,7 +4,10 @@
     height: 100vh;
     width: 100%;
 }
-
+.declareuser {
+    font-size: 0.8em;
+    color:black;
+}
 .bd-principal {
     background-color:black;
     height:100vh;
@@ -17,7 +20,9 @@
     flex-direction:column;
 }
 
-
+.pad-2 {
+    padding:2px;
+}
 .divider_principal {
     display: flex;
 }
@@ -38,10 +43,18 @@ body {
     width: 20%;
 }
 
+.dataTables_length label {
+    color: white;
+}
+#datas_filter label {
+    color: white;
+}
+#datas_info {
+    color: white;
+}
+
 .nv2 {
     width: 100%;
-  
-   
 }
 
 
@@ -66,6 +79,29 @@ a {
     background-color: none;
    
 }
+.finalelement1 {
+    position: absolute;
+    width: 16.5%;
+    padding: 1px;
+    bottom: 4%;
+}
+.finalelement {
+    position: absolute;
+    bottom: 0%;
+    left: 1%;
+    padding-bottom: 0.8em;
+}
+
+.cnleter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    width: 9em;
+    margin: 0 auto;
+}
+
 
 @media only screen and (max-width: 730px) {
     .dvrit {
@@ -108,4 +144,16 @@ a {
         display:block;
     }
 
+}
+
+.mt-05 {
+    margin-top: 0.9rem;
+}
+
+
+.txt-infor {
+    color:rgb(13 103 253);
+}
+.txt-infor:hover {
+    color: rgb(255, 127,39);
 }

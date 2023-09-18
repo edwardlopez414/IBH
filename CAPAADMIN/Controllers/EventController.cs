@@ -31,10 +31,10 @@ namespace CAPAADMIN.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ModEvent( int Idevento,string Nombre )
+        public ActionResult ModEvent( int Idevento,string Nombre)
         {
             
-            if(Nombre!= "")
+            if(!string.IsNullOrEmpty(Nombre))
             {
                 TempData["Id_Usuario"] = Idevento;
                 TempData["Nevento"] = Nombre;
@@ -140,7 +140,7 @@ namespace CAPAADMIN.Controllers
             return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ReMiembro(string FI, string FF, string USER,int edad, string sexo)
+        public JsonResult ReMiembro(string FI, string FF, string USER = "",int edad =1 , string sexo = "F")
         {
             List<ReportMiembro> olistaevent = new List<ReportMiembro>();
             olistaevent = new CNEVENTO().REPMIEM(FI, FF, USER,edad,sexo);

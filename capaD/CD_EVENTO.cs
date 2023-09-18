@@ -205,7 +205,7 @@ namespace capaD
                 using (SqlConnection conn = new SqlConnection(Conexion.cn))
                 {
 
-                    string sql = "select * from Login_usuario A inner join Datos_usuario B on A.id_usuario = B.Id_Usuario where B.Fecha_bautismo between '"+fechai+"' and '"+fechaf+"' and A.usuario like '%"+user+"%' and B.edad = "+edad+" and B.Sexo like '"+sexo+"'";
+                    string sql = "select * from Login_usuario A inner join Datos_usuario B on A.id_usuario = B.Id_Usuario where B.Fecha_bautismo between '"+fechai+"' and '"+fechaf+"' and A.usuario like '%"+user+"%' and B.edad >= "+edad+" and B.Sexo like '%"+sexo+"%'";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
 

@@ -4,3 +4,9 @@ C:\Users\edward.lopez\Desktop\ibh\IBH\capaentidad\obj\Release\capaentidad.csproj
 C:\Users\edward.lopez\Desktop\ibh\IBH\capaentidad\obj\Release\capaentidad.csproj.CoreCompileInputs.cache
 C:\Users\edward.lopez\Desktop\ibh\IBH\capaentidad\obj\Release\capaentidad.dll
 C:\Users\edward.lopez\Desktop\ibh\IBH\capaentidad\obj\Release\capaentidad.pdb
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capaentidad\bin\Release\capaentidad.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capaentidad\bin\Release\capaentidad.pdb
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capaentidad\obj\Release\capaentidad.csproj.AssemblyReference.cache
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capaentidad\obj\Release\capaentidad.csproj.CoreCompileInputs.cache
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capaentidad\obj\Release\capaentidad.dll
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capaentidad\obj\Release\capaentidad.pdb

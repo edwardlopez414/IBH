@@ -11,28 +11,54 @@
     <div class="principal1  shadow-lg">
         <div class="card">
             <div>
-                <div class="dv1 mr-1">
-                    <div class="input-group mb-3 mr-2">
+                <div class="container d-flex mb-2 mt-2 ">
+                    <div class="input-group mr-2">
                         <span class="input-group-text" id="basic-addon1">Desde</span>
                         <input type="date" class="form-control pr-2" id="Desde" aria-label="Nombre de usuario" aria-describedby="basic-addon1" required>
                     </div>
-                    <div class="divider"></div>
-                    <div class="input-group mb-3">
+        
+                    <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">Hasta</span>
                         <input type="date" class="form-control metrica" id="Hasta" aria-label="Nombre de usuario" aria-describedby="basic-addon1" required>
                     </div>
-                    <div class="divider"></div>
-                    <select id="tipo" class="form-select" aria-label="Default select example">
-                        <option selected>Abre este menú select</option>
-                        <option value="1">Dominical</option>
-                        <option value="2">Oracion</option>
-                        <option value="3">Reunion de Jovenes</option>
+                  
+                    <select id="tipo" class="form-select h-auto ms-1" aria-label="Default select example">
+                        <option selected>Tipo asistencia</option>
+                        <option value="1">Miembros</option>
+                        <option value="2">Visitas</option>
+                        <option value="3">Encargados</option>
                     </select>
                 </div>
-                <div class="dv2">
+                <div class="container">
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Asistente</span>
-                        <input type="text" class="form-control " id="user" placeholder="Nombre de Asistente" aria-label="Nombre de usuario" aria-describedby="basic-addon1" required>
+                        <span class="input-group-text" id="basic-addon1">Nombre del asistente</span>
+                        <input type="text" class="form-control " id="user" placeholder="Nombre del Asistente" aria-label="Nombre de usuario" aria-describedby="basic-addon1" required>
+                      
+                        <select id="tipo" class="form-select h-auto ms-1" aria-label="Default select example">
+                            <option selected>Tareas de encargados</option>
+                            <option value="1">Limpieza y arreglo</option>
+                            <option value="2">Control sonido y visuales</option>
+                            <option value="3">Encargados de canto</option>
+                            <option value="4">Encargados de Recepcion</option>
+                            <option value="5">Encargados de Mensaje</option>
+                            <option value="6">Encargados de Transporte</option>
+                            <option value="7">Encargados de ofrendas</option>
+                            <option value="8">Encargados de Comida</option>
+                            <option value="9">Encargados de visitas</option>
+                            <option value="10">Encargados de registro de asistentes</option>
+                            <option value="11">Encargados de limpieza y arreglo post evento</option>
+                            <option value="12">Encargados de niños</option>
+                            <option value="13">Encargados de dinamicas</option>
+                            <option value="14">Encargados de entrega de paquetes</option>
+                            <option value="15">Encargados de entrega de comida</option>
+                            <option value="16">Encargados de evento</option>
+                            <option value="17">Encargados de canto</option>
+                            <option value="18">Encargados de Mujeres</option>
+                            <option value="19">Encargados de Varones</option>
+                            <option value="20">Encargados de Ancianos</option>
+                            <option value="21">Encargados de adolecentes</option>
+                            <option value="22">ninguno</option>
+                        </select>
                         <button type="button" onclick="buscar()" class="btn btn-success mr-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />

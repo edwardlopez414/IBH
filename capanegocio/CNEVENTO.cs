@@ -51,6 +51,11 @@ namespace capanegocio
             return ONJEVENTO.Caddasistencia(OBJ, out mensaje);
         }
 
+        public int agregarasis2(Asistente OBJ, out string mensaje, Preregistro preregistro)
+        {
+            return ONJEVENTO.Caddasistencia2(OBJ, out mensaje,preregistro);
+        }
+
         public List<Asistente> catalogA(int Idevento, out string mensaje)
         {
             return ONJEVENTO.Ccatalogasis(Idevento, out mensaje);

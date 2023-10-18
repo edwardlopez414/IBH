@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title IBH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/cardStyle")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="bg-dark paralel">
+
+    <div class="dv_detaillf" @*style="display:none"*@>
+        <section class="st_detaillf">
+            @RenderSection("DetailPreg", required: false)
+        </section>
+    </div>
+
+    <div class="nav_principal">
+        <nav class="nav_container">
+            <ul class="ul_descript" id="ul_container">
+                <li class="li_items active">
+                    <img src="~/Content/RES/house-heart-fill.svg" alt="Alternate Text" />
+                </li>
+                <li class="li_items">
+                    <img src="~/Content/RES/calendar-week-fill.svg" alt="Alternate Text" />
+                </li>
+                <li class="li_items">
+                    <img src="~/Content/RES/calendar2-check-fill.svg" alt="Alternate Text" />
+                </li>
+                <li class="li_items">
+                    <img src="~/Content/RES/gear-fill.svg" alt="Alternate Text" />
+                </li>
+            </ul>
+        </nav>
+        <hr />
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <div class="dv_detailrg">
+        <section class="st_detailrg">
+            @RenderSection("DetailEvent", required: false)
+        </section>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

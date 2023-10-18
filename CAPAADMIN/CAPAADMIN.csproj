@@ -135,7 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginuserController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -349,8 +349,11 @@
     <Content Include="Content\Res\plantillaxls.xlsx" />
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcore-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ibhcore-001-site1 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcore-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ibhcore-001-site1 - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chart.js" />
     <Content Include="Scripts\chart.min.js" />
@@ -511,6 +514,13 @@
       <Project>{8c0465ff-ebe0-4d81-b967-ca0f73147189}</Project>
       <Name>capanegocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CAPAUSER\CAPAUSER.csproj">
+      <Project>{65f5c957-0201-4c8a-9aaf-617231dff6fa}</Project>
+      <Name>CAPAUSER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

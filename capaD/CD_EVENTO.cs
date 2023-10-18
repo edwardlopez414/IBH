@@ -20,7 +20,7 @@ namespace capaD
             try { 
                 using (SqlConnection conn = new SqlConnection(Conexion.cn)) {
 
-                    string sql = "SELECT * FROM IBPRO.dbo.EVENTO A INNER JOIN IBPRO.dbo.estado_evento B on A.IdEvento = B.Id_evento_estado order by 1 desc";
+                    string sql = "SELECT * FROM IBHPROC.dbo.EVENTO A INNER JOIN IBHPROC.dbo.estado_evento B on A.IdEvento = B.Id_evento_estado order by 1 desc";
                     
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -62,7 +62,7 @@ namespace capaD
                 using (SqlConnection conn = new SqlConnection(Conexion.cn))
                 {
 
-                    string sql = "select TOP 3 A.IdEvento,A.Nombre,A.Fecha,A.LugarEvento,A.Transporte,C.data_catalog AS States from IBPRO.DBO.EVENTO A INNER JOIN IBPRO.dbo.estado_evento B ON B.Id_evento_estado = A.IdEvento INNER JOIN IBPRO.dbo.Catalogo_estado C ON B.Id_Catalogo = C.Id_Catalogo_estado";
+                    string sql = "select TOP 3 A.IdEvento,A.Nombre,A.Fecha,A.LugarEvento,A.Transporte,C.data_catalog AS States from IBHPROC.DBO.EVENTO A INNER JOIN IBHPROC.dbo.estado_evento B ON B.Id_evento_estado = A.IdEvento INNER JOIN IBHPROC.dbo.Catalogo_estado C ON B.Id_Catalogo = C.Id_Catalogo_estado";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -106,7 +106,7 @@ namespace capaD
                 using (SqlConnection conn = new SqlConnection(Conexion.cn))
                 {
 
-                    string sql = "select * from IBPRO.dbo.EVENTO A INNER JOIN IBPRO.dbo.PLANIFICA B ON A.IdEvento = B.IdEventoP INNER JOIN IBPRO.dbo.estado_evento C ON A.IdEvento = C.Id_evento_estado INNER JOIN IBPRO.dbo.login_usuario D ON B.IdMiembro = D.Id_usuario WHERE  A.Fecha between '"+fechai+"' and '"+fechaf+"' AND D.usuario like '%"+user+"%' and A.Nombre like '%%'";
+                    string sql = "select * from IBHPROC.dbo.EVENTO A INNER JOIN IBHPROC.dbo.PLANIFICA B ON A.IdEvento = B.IdEventoP INNER JOIN IBHPROC.dbo.estado_evento C ON A.IdEvento = C.Id_evento_estado INNER JOIN IBHPROC.dbo.login_usuario D ON B.IdMiembro = D.Id_usuario WHERE  A.Fecha between '" + fechai+"' and '"+fechaf+"' AND D.usuario like '%"+user+"%' and A.Nombre like '%%'";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -159,7 +159,7 @@ namespace capaD
                 using (SqlConnection conn = new SqlConnection(Conexion.cn))
                 {
 
-                    string sql = "select * from IBPRO.dbo.ASISTENTE A INNER JOIN IBPRO.dbo.EVENTO B ON A.IdEvento = B.IdEvento WHERE  B.Fecha between '" + fechai + "'and'" + fechaf + "'AND A.Nombre_completo like '%" + user + "%' and B.Nombre like '%%'";
+                    string sql = "select * from IBHPROC.dbo.ASISTENTE A INNER JOIN IBHPROC.dbo.EVENTO B ON A.IdEvento = B.IdEvento WHERE  B.Fecha between '" + fechai + "'and'" + fechaf + "'AND A.Nombre_completo like '%" + user + "%' and B.Nombre like '%%'";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -276,10 +276,8 @@ namespace capaD
                     cmd.Parameters.AddWithValue("Id_estado", obj.Id_estado);
                     cmd.Parameters.AddWithValue("Id_evento_estado", obj.Id_evento_estado);
                     cmd.Parameters.AddWithValue("Id_catalogo", obj.Id_catalogo);
-                    cmd.Parameters.AddWithValue("IdMiembroP", obj1.Id_rol);
-                    cmd.Parameters.AddWithValue("Cargo", rol);
-                    cmd.Parameters.AddWithValue("IdMiembro", obj1.Id_Usuario);
-                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("IdMiembro", obj1.Id_rol);
+                    cmd.Parameters.Add("mesaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
@@ -360,6 +358,47 @@ namespace capaD
 
             return intreturn;
         }
+        //addasis capa user 
+        public int Caddasistencia2(Asistente obj, out string mensaje,  Preregistro preregistro)
+        {
+            int intreturn = 0;
+            mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("Asistentadd2", oconexion);
+                    obj.IdAsistente = 0;
+                    cmd.Parameters.AddWithValue("IdEvento", obj.IdEvento);
+                    cmd.Parameters.AddWithValue("TipoAsistente", obj.TipoAsistente);
+                    cmd.Parameters.AddWithValue("Nombre_Completo", obj.Nombre_Completo);
+                    cmd.Parameters.AddWithValue("IdAsistente", obj.IdAsistente);
+                    //preregistros
+                    cmd.Parameters.AddWithValue("Descripcion", preregistro.Descripcion);
+                    cmd.Parameters.AddWithValue("medicamentos", preregistro.Descripcion);
+                    cmd.Parameters.AddWithValue("dosis", preregistro.dosis);
+                    cmd.Parameters.AddWithValue("contacto_emergencias", preregistro.contacto_emergencias);
+                    cmd.Parameters.AddWithValue("telefono", preregistro.telefono);
+                    cmd.Parameters.AddWithValue("id_user", preregistro.id_user);
+                    cmd.Parameters.AddWithValue("id_evento", preregistro.id_evento);
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    intreturn = Convert.ToInt32(cmd.Parameters["resultado"].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                intreturn = 0;
+                mensaje = ex.Message;
+            }
+
+            return intreturn;
+        }
 
         public List<Asistente> Ccatalogasis (int Idevento, out string mensaje)
         {
@@ -370,7 +409,7 @@ namespace capaD
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
-                    string query = "SELECT * FROM IBPRO.dbo.ASISTENTE A inner join IBPRO.dbo.EVENTO B ON A.IdEvento= B.IdEvento where A.Idevento =" + Idevento;
+                    string query = "SELECT * FROM IBHPROC.dbo.ASISTENTE A inner join IBHPROC.dbo.EVENTO B ON A.IdEvento= B.IdEvento where A.Idevento =" + Idevento;
 
                     SqlCommand cmd = new SqlCommand(query, oconexion);
 

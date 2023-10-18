@@ -13,17 +13,17 @@ tr td svg {
         color: red;
     }
 
-
 .card {
-   
     border-radius: 5px;
     display: flex;
-    margin: 0 auto;
+    margin: auto;
     margin-bottom: 3em;
     margin-top: 2.5em;
-    width: 98%;
+    width: 100%;
     height: 35vh;
-    overflow:auto;
+    overflow: auto;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
 form {

@@ -10,13 +10,13 @@
         <div class="col">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label border-bottom border-info">Id del evento</label>
-                <input type="text" class="pe-auto shadow form-control bg-light" disabled id="buscar" value="@TempData["Id_Usuario"]" required aria-describedby="Descrip">
+                <input type="text" class="pe-auto shadow form-control " disabled id="buscar" value="@TempData["Id_Usuario"]" required aria-describedby="Descrip">
             </div>
         </div>
         <div class="col">
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label border-bottom border-info">Nombre del evento</label>
-                <input type="text" class=" shadow form-control bg-light" disabled required value="@TempData["Nevento"]" id="Nevento">
+                <input type="text" class=" shadow form-control" disabled required value="@TempData["Nevento"]" id="Nevento">
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
         <div class="col">
             <div class="mb-3 ">
                 <label for="exampleInputEmail1" class="form-label border-bottom border-info">Nombre Completo</label>
-                <input type="text" class=" shadow form-control bg-secondary bg-gradient" id="nombreC" required aria-describedby="Descrip">
+                <input type="text" class=" shadow form-control " id="nombreC" required aria-describedby="Descrip">
             </div>
         </div>
         <div class="col">
@@ -212,8 +212,6 @@
                   TipoAsistente: tipo,
                   Nombre_Completo: nombre
                 }
-
-           debugger;
             var url2 = "@Url.Action("addasistencia", "Event")";
               data = { obj : EVENTO }
              $.post(url2, data).done(function (data) {

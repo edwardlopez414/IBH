@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model List<capaentidad.EVENTO>
+
+
+<div class="articles">
+    @foreach (var evento in Model)
+    {
+        <section class="sectionEvent">
+            <div>
+                <article>
+                    <div>
+                        <figure>
+                            <img src="https://img.freepik.com/foto-gratis/empresario-corporativo-dando-presentacion-gran-audiencia_53876-101865.jpg" alt="Alternate Text" />
+                        </figure>
+                        <div class="article-body">
+                            <h2 id="IdEvent" style="display:none">
+                                @evento.IdEvento
+                            </h2>
+                            <h2>
+                                @evento.Nombre
+                            </h2>
+                            <p>
+                                @evento.Descripcion
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <div class="registrar_asis ">
+                    <button type="button" onclick="getparameter()" class="btn_send_detaill ubicatebtn2">
+                        Preregistrarce
+                    </button>
+                    <p class="btn_heart_detaill">
+                        <span class="spanpointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="red" class="bi bi-chat-square-heart" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z" />
+                                <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                            </svg>
+                        </span>
+                        Me gusta
+                    </p>
+                    <p class="btn_heart_detaill">
+                        <span class="spanpointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="black" class="bi bi-chat-square-heart" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12ZM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Z" />
+                                <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                            </svg>
+                        </span>
+                        No me gusta
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    }
+
+
+    @section DetailPreg{
+
+        <div class="Inf_send_Event text-light">
+            <h3 class="descript_right">Complete los datos para su preregistro</h3>
+            <form action="/" method="post">
+                <div class="container">
+                    <div class="ct_style">
+                        <input class="input_detail" type="text" id="Idevento" value="10" style="display:none;" />
+                    </div>
+                    <div class="ct_style">
+                        <label class="label_detail">Descripcion Medica Actual</label>
+                        <input class="input_detail" type="text" id="Descripcion" value="" />
+                    </div>
+                    <div class="ct_style">
+                        <label class="label_detail">Medicamentos que usa</label>
+                        <input class="input_detail" type="text" id="Medicamentos" value="" />
+                    </div>
+                    <div class="ct_style">
+                        <label class="label_detail">Descripcion de la dosis</label>
+                        <input class="input_detail" type="text" id="dosis" value="" />
+                    </div>
+                    <div class="ct_style">
+                        <label class="label_detail">En caso de emergencia llamar a </label>
+                        <input class="input_detail" type="text" id="nroemergencia" value="" />
+                    </div>
+                    <div class="ct_style">
+                        <label class="label_detail">Telefono</label>
+                        <input class="input_detail" type="text" id="Telefono" value="" />
+                    </div>
+                </div>
+                <button class="btn_send_detaill ubicatebtn">
+                    ACEPTAR
+                </button>
+            </form>
+        </div>
+
+    }
+
+
+    @section DetailEvent{
+        <div class="card_detail_E text-light">
+            <h3 class="descript_right">Datos del Evento</h3>
+            <div class="container_detail">
+                <div class="descript_content">
+                    <h4>Nombre Evento</h4>
+                    <span>@Model[0].Nombre</span>
+                </div>
+                <div class="descript_content">
+                    <h4>Lugar del evento</h4>
+                    <span>@Model[0].LugarEvento</span>
+                </div>
+                <div class="descript_content">
+                    <h4>Transporte para el Evento</h4>
+
+                    @if (@Model[0].Transporte == 'C')
+                    {
+                        <span>Para este evento habra transporte</span>
+                    }
+                    else
+                    {
+                        <span>Para este evento no habra transporte</span>
+                    }
+
+                </div>
+                <div class="descript_content">
+                    <h4>Fecha del evento</h4>
+                    <span>@Model[0].Fecha</span>
+                </div>
+                <div class="descript_content">
+                    <h4>Descripcion</h4>
+                    <span>@Model[0].Descripcion</span>
+                </div>
+
+                <div class="commet-style">
+                    <div class="navegation-options">
+                        <div class="opstions">
+
+                        </div>
+                    </div>
+                    <div class="ct_style">
+                        <label class="label_detail">Comentarios</label>
+                        <input class="input_detail" type="text" name="name" value="" />
+                    </div>
+                    <div class="ct_style_coment">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+    <script>
+        function getparameter() {
+      var correo = "desune002@gmail.com";
+        var preregistro = {
+              Descripcion: $("#Descripcion").val(),
+              medicamento: $("#Medicamentos").val(),
+              dosis: $("#dosis").val(),
+              contacto_emergencias: $("#nroemergencia").val(),
+              telefono: $("#Telefono").val(),
+              id_user: "1",
+              id_evento: $("#Idevento").val()
+         };
+              registro(correo, preregistro);
+        }
+
+    function registro(correo, preregistro) {
+        var url2 = "@Url.Action("addasistencia2", "Home")";
+        console.log(correo)
+        console.log(preregistro)
+        data = {
+            correo: correo,
+            preregistro : preregistro
+        }
+    $.post(url2,data).done(function(data) {
+        console.log(data);
+    });
+}
+    </script>
+</div>
+

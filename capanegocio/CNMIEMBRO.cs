@@ -20,6 +20,16 @@ namespace capanegocio
             else 
             return objmiebro.listar();
         }
+        public List<Miembro> Miembrocorreo(string correo = "")
+        {
+            if (correo != "")
+            {
+
+                return objmiebro.listar_por_parametro_correo(correo);
+            }
+            else
+                return objmiebro.listar();
+        }
         public int Cambiar_estado_activo(Miembro obj, out string mensaje)
         {        
             return objmiebro.Cambiar_estado_activo(obj, out mensaje);

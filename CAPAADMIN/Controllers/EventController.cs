@@ -126,24 +126,24 @@ namespace CAPAADMIN.Controllers
         {
             return View();
         }
-        public JsonResult Reportvento(string FI, string FF, string USER)
+        public JsonResult Reportvento(string FI, string FF, string evento, int selectedValue)
         {
             List<ReportEvent> olistaevent = new List<ReportEvent>();
-            olistaevent = new CNEVENTO().Repvento(FI,FF,USER);
+            olistaevent = new CNEVENTO().Repvento(FI,FF,evento,selectedValue);
             return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Reportasistente(string FI, string FF, string USER)
+        public JsonResult Reportasistente(string FI, string FF, string USER, int rol)
         {
             List<ReportAsistent> olistaevent = new List<ReportAsistent>();
-            olistaevent = new CNEVENTO().RepAsis(FI, FF, USER);
+            olistaevent = new CNEVENTO().RepAsis(FI, FF, USER, rol);
             return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ReMiembro(string FI, string FF, string USER = "",int edad =1 , string sexo = "F")
+        public JsonResult ReMiembro(string FI, string FF, string USER = "",int edad =1 , string sexo = "F" ,int rol = 1)
         {
             List<ReportMiembro> olistaevent = new List<ReportMiembro>();
-            olistaevent = new CNEVENTO().REPMIEM(FI, FF, USER,edad,sexo);
+            olistaevent = new CNEVENTO().REPMIEM(FI, FF, USER,edad,sexo, rol);
             return Json(new { data = olistaevent }, JsonRequestBehavior.AllowGet);
         }
     }

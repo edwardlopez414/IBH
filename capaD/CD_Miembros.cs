@@ -102,7 +102,7 @@ namespace capaD
             return miembros;
         }
 
-        public List<Miembro> listar_por_parametro_correo(string cedula)
+        public List<Miembro> listar_por_parametro_correo(string correo)
         {
             List<Miembro> miembros = new List<Miembro>();
 
@@ -110,7 +110,7 @@ namespace capaD
             {
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
-                    string query = "select * from IBHPROC.dbo.Datos_usuario A inner join IBHPROC.dbo.login_usuario B on A.Id_Usuario = B.Id_usuario where  A.Email = '"+cedula +"'";
+                    string query = "select * from IBHPROC.dbo.Datos_usuario A inner join IBHPROC.dbo.login_usuario B on A.Id_Usuario = B.Id_usuario where  A.Email = '"+correo +"'";
 
                     SqlCommand cmd = new SqlCommand(query, oconexion);
 
@@ -264,8 +264,8 @@ namespace capaD
                     cmd.Parameters.AddWithValue("direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("Id_rol", obj.Id_rol);
                     cmd.Parameters.AddWithValue("email", obj.Email);
-                    cmd.Parameters.AddWithValue("Fecha_bautismo", obj.Fecha_bautismo);
-                    cmd.Parameters.AddWithValue("Fecha_ingreso", obj.Fecha_ingreso);
+                    cmd.Parameters.AddWithValue("Fecha_bautismo", Convert.ToDateTime(obj.Fecha_bautismo));
+                    cmd.Parameters.AddWithValue("Fecha_ingreso", Convert.ToDateTime(obj.Fecha_ingreso));
                     cmd.Parameters.AddWithValue("Nombre_Completo", obj.Nombre_Completo);
                     cmd.Parameters.AddWithValue("Nro_contacto", obj.Nro_contacto.ToString());
                     cmd.Parameters.AddWithValue("sexo", obj.Sexo);

@@ -101,6 +101,15 @@ a {
     width: 9em;
     margin: 0 auto;
 }
+.cnleteruser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    width: 12em;
+    margin: 0 auto;
+}
 
 
 @media only screen and (max-width: 730px) {
@@ -156,4 +165,111 @@ a {
 }
 .txt-infor:hover {
     color: rgb(255, 127,39);
+}
+
+/*************************************************area user *******************************************/
+
+.paralel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+.dv_detaillf {
+    order: 1;
+    width: 33.3%;
+    height: 100vh;
+    border-right: 1px solid #6E6E6E;
+    margin: 0;
+}
+
+.dv_detailrg {
+    order: 3;
+    width: 33.3%;
+    height: 100vh;
+    border-left: 1px solid #6E6E6E;
+}
+
+
+.nav_principal {
+    order: 2;
+    color: #fff;
+    width: 33.3%;
+}
+
+.image_detail {
+    color: #fff;
+}
+
+.nav_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.ul_descript {
+    display: flex;
+}
+
+    .ul_descript .li_items {
+        text-decoration: none;
+        margin: 0.5em;
+        margin-right: 1.7em;
+        padding: 3px;
+        list-style-type: none;
+    }
+
+.active {
+    transition-property: initial;
+    transition-duration: 2s;
+    background-color: cornflowerblue;
+    width: 6em;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 730px) {
+    .nav_principal {
+        order: 1;
+        width: 100%;
+    }
+
+    .dv_detaillf {
+        order: 2;
+        width: 100%;
+        border: none;
+    }
+
+    .dv_detailrg {
+        order: 3;
+        width: 100%;
+        border: none;
+    }
+
+
+ 
+
+    .paralel {
+        flex-direction: column;
+    }
+
+    .ul_descript .li_items {
+        margin: 0.5em;
+    }
+
+    .ul_descript {
+        padding: 0em;
+    }
+}
+.modificate-report {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#hot {
+    width: 100%;
+    background-color: #d9d9d9;
 }

@@ -22,5 +22,13 @@ namespace capaentidad
         public int estado { get; set; }
         public string PARAN1 { get; set; }
 
+        /**catalog asistencia**/
+
+        public string edad { get; set; }
+        public string direcccion { get; set; }
+        public string contacto { get; set; }
+        public string cedula { get; set; }
+        //edad,direccion,contacto,cedula
+
     }
 }

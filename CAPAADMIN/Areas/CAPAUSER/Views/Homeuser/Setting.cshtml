@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Setting";
+    Layout = "~/Areas/CAPAUSER/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-2 h-auto border border-3 text-white border-dark rounded p-3 ">
+    <div class="row mt-3">
+        <div class="col">
+            <div class="mb-3 " style="display:none;">
+                <label for="exampleInputEmail1" class="form-label border-bottom border-info">ID del usuario</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" disabled id="IduserBD" required aria-describedby="Descrip">
+            </div>
+            <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label border-bottom border-info">Nombre Completo</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" id="nombrecompleto" required aria-describedby="Descrip">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Cedula</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="cedula">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Numero</label>
+                <input type="number" class=" shadow form-control bg-secondary bg-gradient" required id="numero">
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Usuario</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" disabled required id="usuario">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Email</label>
+                <input type="Text" class=" shadow form-control bg-secondary bg-gradient" required id="email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label border-bottom border-info">Direccion</label>
+                <input type="text" class=" shadow form-control bg-secondary bg-gradient" required id="direccion">
+            </div>
+        </div>
+    </div>
+    <div class="text-center ">
+        <button onclick="adduser()" class="shadow w-50 m-auto btn btn-primary">Aceptar</button>
+    </div>
+    <div class="dropdown  rounded-pill cnleteruser mt-3 border border-info">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+            <span id="identityuser" class="declareuser text-light">@User.Identity.Name</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li>
+                <a class="dropdown-item txt-infor" href="#" onclick="redirectToHome()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-fill-dash" viewBox="0 0 16 16">
+                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
+                    </svg>Sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<script>
+
+    window.onload = function () {
+        search();
+    };
+
+     function redirectToHome() {
+        window.location.href = '@Url.Action("Index", "Login", new { area = "" })';
+    }
+    function search()
+    {
+            var correo = document.getElementById("usercorreo").innerText;;
+            var url = "@Url.Action("MIEMBROSemail", "Homeuser")";
+            var data = { correo: correo};
+            console.log(data);
+            $.post({
+                url, data, beforeSend: function () {}
+             })
+            .fail(function () {
+                    alert("error");
+            })
+            .done(function (data) {
+                        var Nombre = document.getElementById('nombrecompleto');
+                        var cedula = document.getElementById('cedula');
+                        var numero = document.getElementById('numero');
+                        var usuario = document.getElementById('usuario');
+                        var email = document.getElementById('email');
+                        var direccion = document.getElementById("direccion");
+
+
+                        Nombre.value = data.data[0].Nombre_Completo;
+                        cedula.value = data.data[0].Cedula;
+                        direccion.value = data.data[0].Direccion;
+                        numero.value = parseInt(data.data[0].Nro_contacto);
+                        usuario.value = data.data[0].usuario;
+                        email.value = data.data[0].Email;
+                        usuario.value = data.data[0].Id_Usuario;
+
+            });
+
+    }
+
+    function adduser()
+    {
+
+          var correo = document.getElementById("usercorreo").innerText;;
+            var url = "@Url.Action("MIEMBROSemail", "Homeuser")";
+            var data = { correo: correo};
+            console.log(data);
+            $.post({
+                url, data, beforeSend: function () {}
+             })
+            .fail(function () {
+                    alert("error");
+            })
+            .done(function (data) {
+
+                var Miembro = {
+                    usuario: $("#usuario").val(),
+                    Edad: data.data[0].Edad,
+                    Direccion: $("#direccion").val(),
+                    Id_rol: 1,
+                    Email: $("#email").val(),
+                    Fecha_bautismo: data.data[0].Fecha_bautismo,
+                    Fecha_ingreso: data.data[0].Fecha_ingreso,
+                    Nombre_Completo: $("#nombrecompleto").val(),
+                    Nro_contacto: $("#numero").val(),
+                    Sexo: data.data[0].Sexo,
+                    Cedula: $("#cedula").val(),
+                    Id_Usuario: data.data[0].Id_Usuario,
+                }
+                console.log(Miembro);
+
+                var url2 = "@Url.Action("ModuserBD", "Homeuser")";
+
+                data = { obj: Miembro }
+                $.post(url2, data).done(function (data) {
+                    console.log(data);
+                });
+
+                window.location.reload()
+
+            });
+    }
+
+
+</script>

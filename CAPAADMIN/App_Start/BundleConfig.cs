@@ -23,6 +23,7 @@ namespace CAPAADMIN
                       "~/Scripts/bootstrap.bundle.js",
                       "~/Scripts/DataTables/jquery.dataTables.js",
                      "~/Scripts/DataTables/dataTables.responsive.js",
+                         "~/Scripts/main.js",
                      "~/Scripts/scripts.js"));
             bundles.Add(new Bundle("~/bundles/metadata").Include(
                      "~/Scripts/metadata.js"));
@@ -44,6 +45,16 @@ namespace CAPAADMIN
 
             bundles.Add(new StyleBundle("~/Content/login").Include(
                     "~/Content/login.css"));
+
+
+            bundles.Add(new StyleBundle("~/Content/cssuser").Include(
+                    "~/Content/bootstrap.css",
+                    "~/Content/font-awesome.css",
+                    "~/Content/site.css",
+                   "~/Content/report.css"));
+
+            bundles.Add(new StyleBundle("~/Content/CardStyle").Include(
+                    "~/Content/cardStyle.css"));
         }
 
     }

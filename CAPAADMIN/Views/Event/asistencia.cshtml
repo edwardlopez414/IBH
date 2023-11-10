@@ -39,6 +39,73 @@
                 </select>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label border-bottom border-info">Edad</label>
+                    <input type="number" class="pe-auto shadow form-control " id="edad" required aria-describedby="Descrip">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label border-bottom border-info">Numero Telefonico</label>
+                    <input type="text" class=" shadow form-control"  required id="contacto">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label border-bottom border-info">Direccion</label>
+                    <input type="text" class="pe-auto shadow form-control " id="direccion" required aria-describedby="Descrip">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label border-bottom border-info">Numero de cedula</label>
+                    <input type="text" class=" shadow form-control " id="cedula" required aria-describedby="Descrip">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label border-bottom border-info">Tareas de encargados</label>
+                    <select id="tipoeT" class="form-select h-auto ms-1" aria-label="Default select example">
+                        <option selected value="22">ninguna</option>
+                        <option value="1">Limpieza y arreglo</option>
+                        <option value="2">Control sonido y visuales</option>
+                        <option value="3">Encargados de canto</option>
+                        <option value="4">Encargados de Recepcion</option>
+                        <option value="5">Encargados de Mensaje</option>
+                        <option value="6">Encargados de Transporte</option>
+                        <option value="7">Encargados de ofrendas</option>
+                        <option value="8">Encargados de Comida</option>
+                        <option value="9">Encargados de visitas</option>
+                        <option value="10">Encargados de registro de asistentes</option>
+                        <option value="11">Encargados de limpieza y arreglo post evento</option>
+                        <option value="12">Encargados de niños</option>
+                        <option value="13">Encargados de dinamicas</option>
+                        <option value="14">Encargados de entrega de paquetes</option>
+                        <option value="15">Encargados de entrega de comida</option>
+                        <option value="16">Encargados de evento</option>
+                        <option value="17">Encargados de canto</option>
+                        <option value="18">Encargados de Mujeres</option>
+                        <option value="19">Encargados de Varones</option>
+                        <option value="20">Encargados de Ancianos</option>
+                        <option value="21">Encargados de adolecentes</option>
+                    </select>
+                </div>
+            </div>
+            @*<div class="col mb-3">
+                <div class="mb-3 ">
+
+                </div>
+            </div>*@
+        </div>
+
         <button type="button" onclick="agregarFila()" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill " viewBox="0 0 16 16">
                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
@@ -115,40 +182,76 @@
         if (eventoId) {
             $.post(url2, data).done(function (data) {
                 for (let key in data.resultado) {
-
-                    const nuevaFila = tabla.insertRow();
-                    const numFilas = tabla.rows.length;
-                    const nuevaCeldaCiudad = nuevaFila.insertCell();
-                    nuevaCeldaCiudad.contentEditable = true;
-                    nuevaCeldaCiudad.innerText = `${data.resultado[key].IdEvento}`;
-                    const nuevaCeldaEstado = nuevaFila.insertCell();
-                    nuevaCeldaEstado.contentEditable = true;
-                    nuevaCeldaEstado.innerText = `${data.resultado[key].Nombre}`;
-                    const tipofil = nuevaFila.insertCell();
-                    tipofil.contentEditable = true;
-                    tipofil.innerText = `${data.resultado[key].TipoAsistente}`;
-                    const nombrefil = nuevaFila.insertCell();
-                    nombrefil.contentEditable = true;
-                    nombrefil.innerText = `${data.resultado[key].Nombre_Completo}`;
-                    const deletestate = nuevaFila.insertCell();
-                    deletestate.contentEditable = true;
-                    deletestate.innerHTML = ` <button class = "btn btn-danger btn-deleteasistente">
+                    if (data.resultado[key].status == 0) {
+                        const nuevaFila = list2.insertRow();
+                        const numFilas = list2.rows.length;
+                        const nuevaCeldaCiudad = nuevaFila.insertCell();
+                        nuevaCeldaCiudad.contentEditable = true;
+                        nuevaCeldaCiudad.innerText = `${data.resultado[key].IdEvento}`;
+                        const nuevaCeldaEstado = nuevaFila.insertCell();
+                        nuevaCeldaEstado.contentEditable = true;
+                        nuevaCeldaEstado.innerText = `${data.resultado[key].Nombre}`;
+                        const tipofil = nuevaFila.insertCell();
+                        tipofil.contentEditable = true;
+                        tipofil.innerText = `${data.resultado[key].TipoAsistente}`;
+                        const nombrefil = nuevaFila.insertCell();
+                        nombrefil.contentEditable = true;
+                        nombrefil.innerText = `${data.resultado[key].Nombre_Completo}`;
+                        const deletestate = nuevaFila.insertCell();
+                        deletestate.contentEditable = true;
+                        deletestate.innerHTML = ` <button class = "btn btn-danger btn-deleteasistente">
                                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-light bi bi-x-square" viewBox="0 0 16 16">
                                           <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
                                           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                                           </svg>
                                           </button>`;
-                    $(nuevaFila).find(".btn-deleteasistente").click(function () {
-                        var row = $(this).closest("tr");
-                        var eventoid = row.find("td:eq(0)").text();
-                        var evento = row.find("td:eq(1)").text();
-                        var tipoAsistente = row.find("td:eq(2)").text();
-                        var nombreCompleto = row.find("td:eq(3)").text();
+                        $(nuevaFila).find(".btn-deleteasistente").click(function () {
+                            var row = $(this).closest("tr");
+                            var eventoid = row.find("td:eq(0)").text();
+                            var evento = row.find("td:eq(1)").text();
+                            var tipoAsistente = row.find("td:eq(2)").text();
+                            var nombreCompleto = row.find("td:eq(3)").text();
 
-                        Deleteasis(nombreCompleto,eventoid);
-                        $(this).closest("tr").remove();
+                            Deleteasis(nombreCompleto, eventoid);
+                            $(this).closest("tr").remove();
 
-                    });
+                        });
+                    } else {
+                        const nuevaFila = tabla.insertRow();
+                        const numFilas = tabla.rows.length;
+                        const nuevaCeldaCiudad = nuevaFila.insertCell();
+                        nuevaCeldaCiudad.contentEditable = true;
+                        nuevaCeldaCiudad.innerText = `${data.resultado[key].IdEvento}`;
+                        const nuevaCeldaEstado = nuevaFila.insertCell();
+                        nuevaCeldaEstado.contentEditable = true;
+                        nuevaCeldaEstado.innerText = `${data.resultado[key].Nombre}`;
+                        const tipofil = nuevaFila.insertCell();
+                        tipofil.contentEditable = true;
+                        tipofil.innerText = `${data.resultado[key].TipoAsistente}`;
+                        const nombrefil = nuevaFila.insertCell();
+                        nombrefil.contentEditable = true;
+                        nombrefil.innerText = `${data.resultado[key].Nombre_Completo}`;
+                        const deletestate = nuevaFila.insertCell();
+                        deletestate.contentEditable = true;
+                        deletestate.innerHTML = ` <button class = "btn btn-danger btn-deleteasistente">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-light bi bi-x-square" viewBox="0 0 16 16">
+                                          <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                          </svg>
+                                          </button>`;
+                        $(nuevaFila).find(".btn-deleteasistente").click(function () {
+                            var row = $(this).closest("tr");
+                            var eventoid = row.find("td:eq(0)").text();
+                            var evento = row.find("td:eq(1)").text();
+                            var tipoAsistente = row.find("td:eq(2)").text();
+                            var nombreCompleto = row.find("td:eq(3)").text();
+
+                            Deleteasis(nombreCompleto, eventoid);
+                            $(this).closest("tr").remove();
+
+                        });
+                    }
+                   
                 }
 
             });
@@ -163,6 +266,13 @@
             let evento = $("#Nevento").val();
             let tipo = $("#tipo").val();
             let nombre = $("#nombreC").val();
+            let edad = $("#edad").val();
+            let direccion = $("#direccion").val();
+            let contacto = $("#contacto").val();
+            let cedula = $("#cedula").val();
+            const selectElement = document.getElementById('tipoeT');
+            const selectedValue = selectElement.value;
+           
             if (nombre == "") {
                 alert("El campo Nombre no puede estar vacio")
             } else
@@ -201,17 +311,23 @@
                     $(this).closest("tr").remove();
 
                 });
-                debugger;
-                addasis(eventoId, nombre, tipo)
+                
+                addasis(eventoId, nombre, tipo, edad, direccion, contacto, cedula, selectedValue)
 
             }
         }
-       function addasis(IdEvento,nombre,tipo) {
+    function addasis(IdEvento, nombre, tipo, edad, direccion, contacto, cedula, id_rol_event) {
               var EVENTO = {
                   IdEvento: IdEvento,
                   TipoAsistente: tipo,
-                  Nombre_Completo: nombre
-                }
+                  Nombre_Completo: nombre,
+                  edad: edad,
+                  direccion: direccion,
+                  contacto: contacto,
+                  cedula: cedula,
+                  id_rol_event: id_rol_event
+        }
+        console.log(EVENTO)
             var url2 = "@Url.Action("addasistencia", "Event")";
               data = { obj : EVENTO }
              $.post(url2, data).done(function (data) {

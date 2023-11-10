@@ -15,17 +15,17 @@ namespace capanegocio
         {
             return ONJEVENTO.listar();
         }
-        public List<ReportEvent> Repvento(string FI, string FF, string USER)
+        public List<ReportEvent> Repvento(string FI, string FF, string Nombre, int estado = 2)
         {
-            return ONJEVENTO.ReportEvent(FI,FF,USER);
+            return ONJEVENTO.ReportEvent(FI,FF, Nombre,estado);
         }
-        public List<ReportAsistent> RepAsis(string FI, string FF, string USER)
+        public List<ReportAsistent> RepAsis(string FI, string FF, string USER ,int rol)
         {
-            return ONJEVENTO.ReportAsistant(FI, FF, USER);
+            return ONJEVENTO.ReportAsistant(FI, FF, USER,rol);
         }
-        public List<ReportMiembro> REPMIEM(string FI, string FF, string USER, int edad, string sexo)
+        public List<ReportMiembro> REPMIEM(string FI, string FF, string USER, int edad, string sexo, int rol)
         {
-            return ONJEVENTO.ReporteMiembro(FI, FF, USER, edad,sexo);
+            return ONJEVENTO.ReporteMiembro(FI, FF, USER, edad,sexo,rol);
         }
 
         public List<EVENTO> EventPendin()

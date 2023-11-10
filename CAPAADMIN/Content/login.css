@@ -50,9 +50,7 @@
         height:100vh;
         margin:0;
     }
-    body {
-        background-size :c;
-    }
+   
 
 
 }
@@ -77,4 +75,11 @@
 
 }
 
+.contentimage {
+    z-index: 0;
+    opacity: 0.4;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 

@@ -1,0 +1,2 @@
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAUSER\obj\Debug\CAPAUSER.csproj.AssemblyReference.cache
+C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\CAPAUSER\obj\Debug\CAPAUSER.csproj.CoreCompileInputs.cache

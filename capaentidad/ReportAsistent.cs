@@ -16,6 +16,7 @@ namespace capaentidad
         public string Nombre { get; set; }
         public string  Fecha { get; set; }
 
+        public string rol_evento { get; set; }
         public string Descripcion { get; set; }
     }
 }

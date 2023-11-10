@@ -22,3 +22,16 @@ C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\ca
 C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.csproj.CopyComplete
 C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.dll
 C:\Users\edward.lopez\Desktop\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.pdb
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capanegocio.dll.config
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capanegocio.dll
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capanegocio.pdb
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capaD.dll
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capaentidad.dll
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capaD.pdb
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capaD.dll.config
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\bin\Release\capaentidad.pdb
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.csproj.AssemblyReference.cache
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.csproj.CoreCompileInputs.cache
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.csproj.CopyComplete
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.dll
+C:\Users\edward.lopez\Desktop\PERSONAL\PROYECTOS\IBH\IBHV1\IBH\capanegocio\obj\Release\capanegocio.pdb

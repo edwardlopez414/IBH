@@ -7,7 +7,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
-    <History>True|2023-11-06T19:34:22.5011474Z;False|2023-11-06T13:33:13.3231942-06:00;False|2023-11-06T13:32:56.5169691-06:00;True|2023-11-01T15:21:16.5370765-06:00;False|2023-11-01T15:19:37.0653294-06:00;</History>
+    <History>True|2023-11-13T06:14:30.6375549Z;True|2023-11-06T13:34:22.5011474-06:00;False|2023-11-06T13:33:13.3231942-06:00;False|2023-11-06T13:32:56.5169691-06:00;True|2023-11-01T15:21:16.5370765-06:00;False|2023-11-01T15:19:37.0653294-06:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

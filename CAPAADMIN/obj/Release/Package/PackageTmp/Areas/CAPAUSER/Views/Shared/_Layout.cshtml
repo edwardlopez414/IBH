@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title IBH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+    <!-- other style references -->
+    @Styles.Render("~/Content/cssuser")
+    @Styles.Render("~/Content/cardStyle")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="bg-dark paralel">
+
+    <div class="dv_detaillf" @*style="display:none"*@>
+        <section class="st_detaillf">
+            @RenderSection("DetailPreg", required: false)
+
+        </section>
+    </div>
+
+    <div class="nav_principal">
+        <a id="usercorreo" style="display:none" href="#">@User.Identity.Name</a>
+        <nav class="nav_container">
+            <ul class="ul_descript" id="ul_container">
+                <li id="item1" class="li_items active" onclick="mostrar1()">
+                    <img src="~/Content/RES/house-heart-fill.svg" alt="Alternate Text" />
+                </li>
+                <li id="item2" class="li_items">
+                    <img src="~/Content/RES/calendar2-check-fill.svg" alt="Alternate Text" onclick="mostrar2()" />
+                </li>
+                <li id="item3" class="li_items" onclick="redirectsetting()">         
+                    <img src="~/Content/RES/gear-fill.svg" alt="Alternate Text" />
+                </li>
+            </ul>
+        </nav>
+        <hr />
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <div class="dv_detailrg">
+        <section class="st_detailrg">
+            @RenderSection("DetailEvent", required: false)
+        </section>
+    </div>
+
+    <script>
+
+         function getparameter() {
+             var correo = document.getElementById("usercorreo").innerText;
+             var preregistro = {
+                  Descripcion: $("#Descripcion").val(),
+                  medicamento: $("#Medicamentos").val(),
+                  dosis: $("#dosis").val(),
+                  contacto_emergencias: $("#nroemergencia").val(),
+                  telefono: $("#Telefono").val(),
+                  id_user: "1",
+                  id_evento: $("#Idevento").val()
+             };
+              registro(correo, preregistro);
+        }
+
+        function registro(correo, preregistro)
+        {
+          var url2 = "@Url.Action("addasistencia2", "Homeuser")";
+          console.log(correo)
+          console.log(preregistro)
+          data = {
+              correo: correo,
+              preregistro : preregistro
+          }
+          $.post(url2,data).done(function(data) {
+          console.log(data);
+          });
+        }
+
+        function mostrar1()
+        {
+            pageredirect()
+            let liuno = document.getElementById("item1");
+            let div1 = document.getElementById("div1");
+            let div2 = document.getElementById("div2");
+            let div3 = document.getElementById("div3");
+            liuno.addEventListener("click", function () {
+                div1.style.display = "";
+                div2.style.display = "none";
+              
+            });
+
+        }
+        function mostrar2()
+        {
+            pageredirect()
+            let lidos = document.getElementById("item2");
+            let div1 = document.getElementById("div1");
+            let div2 = document.getElementById("div2");
+            let div3 = document.getElementById("div3");
+            lidos.addEventListener("click", function () {
+                div1.style.display = "none";
+                div2.style.display = "";
+            });}
+        function mostrar3()
+        {
+            let litres = document.getElementById("item3");
+            let div1 = document.getElementById("div1");
+            let div2 = document.getElementById("div2");
+
+            liuno.addEventListener("click", function () {
+                div1.style.display = "none";
+                div2.style.display = "none";
+                div3.style.display = "";
+            });
+        }
+    function redirectsetting() {
+        window.location.href = '@Url.Action("Setting", "Homeuser", new { area = "CAPAUSER" })';
+    }
+
+        function pageredirect() {
+
+            var sPath = window.location.pathname;
+            var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+            if (sPage == "Setting") {
+                window.location.href = '@Url.Action("index", "Homeuser", new { area = "CAPAUSER" })';
+            }
+        }
+
+        
+
+        var sPath = window.location.pathname;
+        var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

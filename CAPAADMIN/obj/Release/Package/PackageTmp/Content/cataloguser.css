@@ -1,0 +1,12 @@
+﻿.principalMAIN {
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+}
+a {
+    text-decoration:none;
+}
+
+
+

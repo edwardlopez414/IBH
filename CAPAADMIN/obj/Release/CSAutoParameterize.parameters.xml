@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="cadena-Web.config Connection String" description="cadena Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=IBHPROC.mssql.somee.com;Initial Catalog=IBHPROC;user id=barakielop002_SQLLogin_1;pwd=rb469wdnna;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\edward\.lopez\\Desktop\\PERSONAL\\PROYECTOS\\IBH\\IBHV1\\IBH\\CAPAADMIN\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='cadena']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\edward\.lopez\\Desktop\\PERSONAL\\PROYECTOS\\IBH\\IBHV1\\IBH\\CAPAADMIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='cadena']/@connectionString" />
+  </parameter>
+  <parameter name="CAPAADMINContext-Web.config Connection String" description="CAPAADMINContext Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=CAPAADMINContext-20231018140030; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|CAPAADMINContext-20231018140030.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\edward\.lopez\\Desktop\\PERSONAL\\PROYECTOS\\IBH\\IBHV1\\IBH\\CAPAADMIN\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CAPAADMINContext']/@connectionString" />
+  </parameter>
+</parameters>

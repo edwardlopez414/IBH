@@ -8,7 +8,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://win8041.site4now.net:21/site1</_PublishTargetUrl>
-    <History>False|2023-10-04T02:27:45.6630157Z;False|2023-10-03T20:07:40.0445556-06:00;True|2023-09-04T14:52:39.0884576-06:00;True|2023-09-04T12:08:34.2388252-06:00;</History>
+    <History>False|2023-11-16T03:40:59.5934713Z;False|2023-10-03T20:27:45.6630157-06:00;False|2023-10-03T20:07:40.0445556-06:00;True|2023-09-04T14:52:39.0884576-06:00;True|2023-09-04T12:08:34.2388252-06:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -19,16 +19,16 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.dll">
-      <publishTime>04/09/2023 11:41:06</publishTime>
+      <publishTime>09/04/2023 11:41:06</publishTime>
     </File>
     <File Include="bin/CAPAADMIN.pdb">
-      <publishTime>04/09/2023 11:41:06</publishTime>
+      <publishTime>09/04/2023 11:41:06</publishTime>
     </File>
     <File Include="bin/capaD.dll">
-      <publishTime>04/09/2023 11:00:56</publishTime>
+      <publishTime>09/04/2023 11:00:56</publishTime>
     </File>
     <File Include="bin/capaD.pdb">
-      <publishTime>04/09/2023 11:00:56</publishTime>
+      <publishTime>09/04/2023 11:00:56</publishTime>
     </File>
     <File Include="bin/capaentidad.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -37,10 +37,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/capanegocio.dll">
-      <publishTime>04/09/2023 11:00:56</publishTime>
+      <publishTime>09/04/2023 11:00:56</publishTime>
     </File>
     <File Include="bin/capanegocio.pdb">
-      <publishTime>04/09/2023 11:00:56</publishTime>
+      <publishTime>09/04/2023 11:00:56</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -832,7 +832,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/error.css">
-      <publishTime>07/11/2023 22:02:18</publishTime>
+      <publishTime>11/07/2023 22:02:18</publishTime>
     </File>
     <File Include="Content/font-awesome.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -847,10 +847,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/Res/404.png">
-      <publishTime>07/11/2023 19:52:26</publishTime>
+      <publishTime>11/07/2023 19:52:26</publishTime>
     </File>
     <File Include="Content/Res/cart.svg">
-      <publishTime>07/11/2023 16:43:37</publishTime>
+      <publishTime>11/07/2023 16:43:37</publishTime>
     </File>
     <File Include="Content/Res/ICON.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -859,13 +859,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/Res/icons8-church-96.png">
-      <publishTime>03/09/2023 20:44:46</publishTime>
+      <publishTime>09/03/2023 20:44:46</publishTime>
     </File>
     <File Include="Content/Res/plantillaxls.xlsx">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>03/09/2023 16:42:29</publishTime>
+      <publishTime>09/03/2023 16:42:29</publishTime>
     </File>
     <File Include="Content/stylemetadata.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1204,37 +1204,37 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Event/Addevent.cshtml">
-      <publishTime>02/09/2023 10:19:50</publishTime>
+      <publishTime>09/02/2023 10:19:50</publishTime>
     </File>
     <File Include="Views/Event/AprovateEvent.cshtml">
-      <publishTime>02/09/2023 10:25:17</publishTime>
+      <publishTime>09/02/2023 10:25:17</publishTime>
     </File>
     <File Include="Views/Event/asistencia.cshtml">
-      <publishTime>09/04/2023 14:01:24</publishTime>
+      <publishTime>04/09/2023 14:01:24</publishTime>
     </File>
     <File Include="Views/Event/Catalogevent.cshtml">
-      <publishTime>03/09/2023 16:04:24</publishTime>
+      <publishTime>09/03/2023 16:04:24</publishTime>
     </File>
     <File Include="Views/Event/EventInv.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Event/ModEvent.cshtml">
-      <publishTime>04/09/2023 11:43:35</publishTime>
+      <publishTime>09/04/2023 11:43:35</publishTime>
     </File>
     <File Include="Views/Home/Adduser.cshtml">
-      <publishTime>03/09/2023 16:18:24</publishTime>
+      <publishTime>09/03/2023 16:18:24</publishTime>
     </File>
     <File Include="Views/Home/Cataloguser.cshtml">
-      <publishTime>03/09/2023 16:17:32</publishTime>
+      <publishTime>09/03/2023 16:17:32</publishTime>
     </File>
     <File Include="Views/Home/error.cshtml">
-      <publishTime>07/11/2023 22:00:06</publishTime>
+      <publishTime>11/07/2023 22:00:06</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/09/2023 16:13:04</publishTime>
+      <publishTime>09/01/2023 16:13:04</publishTime>
     </File>
     <File Include="Views/Home/Moduser.cshtml">
-      <publishTime>04/09/2023 11:48:23</publishTime>
+      <publishTime>09/04/2023 11:48:23</publishTime>
     </File>
     <File Include="Views/Home/reporteevento.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1243,25 +1243,25 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Login/restablecerpass.cshtml">
-      <publishTime>07/12/2023 09:24:01</publishTime>
+      <publishTime>12/07/2023 09:24:01</publishTime>
     </File>
     <File Include="Views/Login/Viewpass.cshtml">
-      <publishTime>07/12/2023 08:47:26</publishTime>
+      <publishTime>12/07/2023 08:47:26</publishTime>
     </File>
     <File Include="Views/Report/RPAsistencia.cshtml">
-      <publishTime>04/09/2023 11:21:50</publishTime>
+      <publishTime>09/04/2023 11:21:50</publishTime>
     </File>
     <File Include="Views/Report/RPEvent.cshtml">
-      <publishTime>04/09/2023 11:22:00</publishTime>
+      <publishTime>09/04/2023 11:22:00</publishTime>
     </File>
     <File Include="Views/Report/RPMiembro.cshtml">
-      <publishTime>04/09/2023 11:21:02</publishTime>
+      <publishTime>09/04/2023 11:21:02</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/09/2023 21:00:20</publishTime>
+      <publishTime>09/03/2023 21:00:20</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1270,7 +1270,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/09/2023 11:52:18</publishTime>
+      <publishTime>09/04/2023 11:52:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

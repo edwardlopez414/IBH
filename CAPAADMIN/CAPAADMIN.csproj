@@ -368,7 +368,9 @@
     <None Include="Properties\PublishProfiles\barakielop1400-001-site1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcomunitys-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ibhcomunitys-001-site1 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcomunitys-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ibhcomunitys-001-site1 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcore-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcore-001-site1 - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\ibhcore-001-site1 - FTP2.pubxml" />
@@ -444,6 +446,7 @@
     <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
     <Content Include="Scripts\DataTables\dataTables.uikit.js" />
     <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\getDatos.js" />
     <Content Include="Scripts\DataTables\jquery.dataTables.js" />
     <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
     <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
